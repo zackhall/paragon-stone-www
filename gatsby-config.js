@@ -38,6 +38,9 @@ module.exports = {
       options: {
         typekit: {
           id: 'udf7nae'
+        },
+        google: {
+          families: ['Material Icons']
         }
       }
     },
