@@ -52,10 +52,42 @@ class Navigation extends React.Component {
         <aside className={this.state.isDrawerActive ? 'drawer-menu is-active' : 'drawer-menu' }>
           <div className="has-text-right" >
             <span
-              className="nav-icon"
+              className="nav-icon nav-icon-inverted"
               onClick={() => this.setState({isDrawerActive: !this.state.isDrawerActive})} >
               close
             </span>
+          </div>
+          <div className="menu-container">
+            <div className="menu">
+              <p className="menu-label">
+                General
+              </p>
+              <ul className="menu-list">
+                <li>
+                  <Link>About</Link>
+                </li>
+                <li>
+                  <Link>Contact</Link>
+                </li>
+              </ul>
+              <p className="menu-label">
+                Products
+              </p>
+              <ul className="menu-list">
+                <Link>Prarie Stone</Link>
+                <Link>Ledgestone</Link>
+                <Link>Summit Ledge</Link>
+                <Link>Limestone</Link>
+                <Link>Fieldstone</Link>
+                <Link>Manor Stone</Link>
+                <Link>River Rock</Link>
+                <Link>Stacked Stone</Link>
+                <Link>Ashlar Stone</Link>
+                <Link>Foundation Stone</Link>
+                <Link>Brick</Link>
+                <Link>Accessories</Link>
+              </ul>
+            </div>
           </div>
         </aside>
       </nav>
