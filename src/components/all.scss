@@ -1,18 +1,14 @@
 @import "~bulma/sass/utilities/initial-variables";
 
 // Config vars
-$kaldi-red: #FD461E;
-$kaldi-red-invert: #fff;
-
 $paragon-blue: #1A3551;
 $paragon-yellow: #FED839;
-
 $inactive-color: #8C99A8;
 
-$family-sans-serif: europa, sans-serif;
+$primary: $paragon-blue;
+$primary-invert: $paragon-yellow;
 
-$primary: $kaldi-red;
-$primary-invert: $kaldi-red-invert;
+$family-sans-serif: europa, sans-serif;
 
 $bg-img: url('../img/bg.png');
 $nav-bg: url('../img/nav-bg.svg');
@@ -95,6 +91,27 @@ body {
     transition-delay: 300ms;
   }
 }
+
+
+/************
+ * BannerImage
+ * Styles and variables
+ ***********/
+.banner-image-container {
+  width: 100vw;
+  height: 700px;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin: 0 -50vw;
+  background-size: cover;
+  background-position: bottom;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
 
 .content .taglist {
   list-style: none;
