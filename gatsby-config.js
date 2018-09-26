@@ -33,6 +33,14 @@ module.exports = {
         modulePath: `${__dirname}/src/cms/cms.js`,
       },
     },
+    {
+      resolve: 'gatsby-plugin-web-font-loader',
+      options: {
+        typekit: {
+          id: 'udf7nae'
+        }
+      }
+    },
     'gatsby-plugin-netlify', // make sure to keep it last in the array
   ],
 }

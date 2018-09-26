@@ -4,8 +4,26 @@
 $kaldi-red: #FD461E
 $kaldi-red-invert: #fff
 
+$family-sans-serif: europa, sans-serif;
+
 $primary: $kaldi-red
 $primary-invert: $kaldi-red-invert
+
+$bg-img: url('../img/bg.png')
+$nav-bg: url('../img/nav-bg.svg')
+
+body
+  background: $bg-img
+
+.navigation
+  background-image: $nav-bg, $bg-img
+  background-position: center
+  // background-size: 35%
+  // background-repeat: no-repeat
+  background-blend-mode: overlay
+  > .container
+    padding-top: 1.5rem
+    padding-bottom: 1.5rem
 
 .content .taglist
   list-style: none
