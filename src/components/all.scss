@@ -9,6 +9,7 @@ $primary: $paragon-blue;
 $primary-invert: $paragon-yellow;
 
 $family-sans-serif: europa, sans-serif;
+$family-serif: grad, serif;
 
 $bg-img: url('../img/bg.png');
 $nav-bg: url('../img/nav-bg.svg');
@@ -25,6 +26,16 @@ $nav-bg: url('../img/nav-bg.svg');
 
 body {
   background: $bg-img;
+}
+
+.title,
+h1, h2, h3, h4, h5, h6 {
+  font-family: $family-serif;
+}
+
+.subtitle {
+  font-family: $family-sans-serif;
+  font-weight: 600 !important;
 }
 
 /************
@@ -109,6 +120,78 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+
+/************
+ * Tile
+ * Styles and variables
+ ***********/
+.block {
+  height: 100%;
+  width: 100%;
+  box-shadow: 0 2px 24px 0 rgba(0,0,0,0.26);
+  background-color: #fff;
+  padding: 1em 1.5em;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  background-repeat: no-repeat;
+
+  &.block--height-1 {
+    min-height: 240px;
+
+    @media screen and (min-width: 1088px) {
+      & {
+        min-height: 240px;
+      }
+    }
+
+    @media screen and (min-width: 1440px) {
+      & {
+        min-height: 285px;
+      }
+    }
+  }
+
+  &.block--height-2 {
+    min-height: 240px;
+
+    @media screen and (min-width: 1088px) {
+      & {
+        min-height: 480px;
+      }
+    }
+
+    @media screen and (min-width: 1440px) {
+      & {
+        min-height: 590px;
+      }
+    }
+  }
+}
+
+
+/************
+ * Modify Bulma Container
+ * Styles and variables
+ ***********/
+.section {
+  margin: auto;
+
+  @media screen and (min-width: 1088px) {
+    & {
+      max-width: 960px;
+      width: 960px;
+    }
+  }
+
+  @media screen and (min-width: 1440px) {
+    & {
+      max-width: 1200px;
+      width: 1200px;
+    }
+  }
 }
 
 

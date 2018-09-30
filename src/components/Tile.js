@@ -1,0 +1,50 @@
+import React from 'react'
+import { Link } from 'gatsby'
+
+const Tile = ({
+  size,
+  number,
+  title,
+  subtitle,
+  bgSrc,
+  bgSize,
+  bgPosition,
+  isInverted
+}) => (
+  <div
+    className={`
+      block
+      ${ size === 4 ? 'block--height-2' : 'block--height-1' }
+      ${ isInverted && 'has-text-white' }
+    `}
+    style={{
+      backgroundImage: bgSrc ? `url(${bgSrc})` : 'none',
+      backgroundSize: bgSize || 'cover',
+      backgroundPosition: bgPosition || 'center'
+    }}
+  >
+    <div className="top">
+      <p className={`
+        subtitle is-3
+        ${ isInverted && 'has-text-white' }
+      `}>
+        {number}
+      </p>
+    </div>
+    <div className="bottom">
+      <p className={`
+        title
+        ${ size === 1 && 'title is-5 is-size-3-mobile'}
+        ${ isInverted && 'has-text-white' }
+      `}>
+        {title}
+      </p>
+      {
+        subtitle &&
+        <p>{subtitle}</p>
+      }
+    </div>
+  </div>
+)
+
+export default Tile;
