@@ -115,6 +115,21 @@ h1, h2, h3, h4, h5, h6 {
   background: rgba($footer-color, 0.25);
 }
 
+/************
+ * Footer
+ * Styles and variables
+ ***********/
+ .footer {
+  background: $footer-color !important;
+}
+
+.footer-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 2.5rem;
+}
+
 
 /************
  * BannerImage
