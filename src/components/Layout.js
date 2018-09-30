@@ -3,6 +3,7 @@ import Helmet from 'react-helmet'
 
 import Navbar from '../components/Navbar'
 import Navigation from '../components/Navigation'
+import PreFooter from '../components/PreFooter'
 import './all.scss'
 
 const TemplateWrapper = ({ children }) => (
@@ -10,6 +11,7 @@ const TemplateWrapper = ({ children }) => (
     <Helmet title="Home | Paragon Stone" />
     <Navigation />
     <div>{children}</div>
+    <PreFooter />
   </div>
 )
 
