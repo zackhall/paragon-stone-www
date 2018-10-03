@@ -4,6 +4,8 @@ import { Link, graphql } from 'gatsby'
 import Layout from '../components/Layout'
 import BannerImage from '../components/BannerImage'
 import Tile from '../components/Tile'
+import Gallery from '../components/Gallery'
+import GalleryItem from '../components/GalleryItem'
 
 import bannerSrc from '../img/banner-image.png'
 import tile1bg from '../img/tile-1-bg.png'
@@ -70,36 +72,14 @@ export default class IndexPage extends React.Component {
         </section>
 
         <section className="section">
-          <div className="container">
-            <div className="content">
-              <h1 className="has-text-weight-bold is-size-2">Meet Paragon Stone</h1>
-            </div>
-            {posts
-              .map(({ node: post }) => (
-                <div
-                  className="content"
-                  style={{ border: '1px solid #eaecee', padding: '2em 4em' }}
-                  key={post.id}
-                >
-                  <p>
-                    <Link className="has-text-primary" to={post.fields.slug}>
-                      {post.frontmatter.title}
-                    </Link>
-                    <span> &bull; </span>
-                    <small>{post.frontmatter.date}</small>
-                  </p>
-                  <p>
-                    {post.excerpt}
-                    <br />
-                    <br />
-                    <Link className="button is-small" to={post.fields.slug}>
-                      Keep Reading →
-                    </Link>
-                  </p>
-                </div>
-              ))}
-          </div>
+          <Gallery>
+            <GalleryItem offset={0} src="https://source.unsplash.com/weekly?water" />
+            <GalleryItem offset={1} src="https://source.unsplash.com/weekly?tree" />
+            <GalleryItem offset={2} src="https://source.unsplash.com/weekly?car" />
+          </Gallery>
         </section>
+
+
       </Layout>
     )
   }

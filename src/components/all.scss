@@ -28,6 +28,10 @@ $button-border-width: 2px;
   cursor: pointer;
 }
 
+.is-relative {
+  position: relative;
+}
+
 body {
   background: $bg-img;
 }
@@ -149,6 +153,41 @@ h1, h2, h3, h4, h5, h6 {
   align-items: center;
 }
 
+/************
+ * Gallery
+ * Styles and variables
+ ***********/
+.gallery-container {
+  display: flex;
+}
+
+.gallery-main-image,
+.gallery-next-image,
+.gallery-prev-image {
+  position: relative;
+  padding: calc(0.75 * 50%) 0 0 0 !important;
+  box-sizing: border-box;
+  overflow:hidden;
+  flex: 0 0 50%;
+}
+
+.gallery-main-image {
+  margin-left: 25%;
+}
+
+.gallery-next-image,
+.gallery-prev-image {
+  margin: 0 1.5rem;
+  opacity: 0.25;
+}
+
+.gallery-prev-image {
+  transform: translateX(calc(-300% - 6rem));
+}
+
+.parallax-gallery {
+  top: 0;
+}
 
 /************
  * Tile
