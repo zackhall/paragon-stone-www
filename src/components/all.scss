@@ -39,6 +39,7 @@ body {
 .title,
 h1, h2, h3, h4, h5, h6 {
   font-family: $family-serif;
+  font-weight: 400 !important;
 }
 
 .subtitle {
@@ -158,7 +159,29 @@ h1, h2, h3, h4, h5, h6 {
  * Styles and variables
  ***********/
 .gallery-container {
+  position: relative;
+}
+
+.gallery-images-container {
   display: flex;
+}
+
+.gallery-description {
+  position: relative;
+  padding: 5rem;
+  z-index: 99;
+}
+
+.gallery-banner {
+  width: 100vw;
+  height: 400px;
+  position: absolute;
+  left: 50%;
+  right: 50%;
+  margin: 0 -50vw;
+  top: 0;
+  background: $paragon-blue;
+  z-index: 0;
 }
 
 .gallery-main-image,
@@ -169,6 +192,7 @@ h1, h2, h3, h4, h5, h6 {
   box-sizing: border-box;
   overflow:hidden;
   flex: 0 0 50%;
+  z-index: 99;
 }
 
 .gallery-main-image {
@@ -178,7 +202,15 @@ h1, h2, h3, h4, h5, h6 {
 .gallery-next-image,
 .gallery-prev-image {
   margin: 0 1.5rem;
-  opacity: 0.25;
+
+  .gallery-overlay {
+    background: rgba(#fff, 0.7%);
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    z-index: 1;
+  }
 }
 
 .gallery-prev-image {

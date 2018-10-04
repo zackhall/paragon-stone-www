@@ -72,7 +72,7 @@ export default class IndexPage extends React.Component {
         </section>
 
         <section className="section">
-          <Gallery>
+          <Gallery title="Experience the difference.">
             <GalleryItem offset={0} src="https://source.unsplash.com/weekly?water" />
             <GalleryItem offset={1} src="https://source.unsplash.com/weekly?tree" />
             <GalleryItem offset={2} src="https://source.unsplash.com/weekly?car" />
