@@ -67,7 +67,7 @@ class Gallery extends React.Component {
             </Parallax>
           </div>
         </div>
-        <div className="gallery-banner"></div>
+        <div className="gallery-banner" />
       </div>
     )
   }

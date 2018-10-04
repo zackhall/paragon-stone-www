@@ -15,6 +15,7 @@ $family-serif: grad, serif;
 
 $bg-img: url('../img/bg.png');
 $nav-bg: url('../img/nav-bg.svg');
+$logo-bw: url('../img/logo-bw.svg');
 
 $button-border-width: 2px;
 
@@ -181,7 +182,24 @@ h1, h2, h3, h4, h5, h6 {
   margin: 0 -50vw;
   top: 0;
   background: $paragon-blue;
+
   z-index: 0;
+
+  &::after {
+    content: "";
+    background: $logo-bw;
+    opacity: 0.25;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    z-index: -1;
+    background-size: 50%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-blend-mode: overlay;
+  }
 }
 
 .gallery-main-image,
