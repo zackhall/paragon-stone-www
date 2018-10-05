@@ -72,10 +72,25 @@ export default class IndexPage extends React.Component {
         </section>
 
         <section className="section">
-          <Gallery title="Experience the difference.">
-            <GalleryItem offset={0} src="https://source.unsplash.com/weekly?water" />
-            <GalleryItem offset={1} src="https://source.unsplash.com/weekly?tree" />
-            <GalleryItem offset={2} src="https://source.unsplash.com/weekly?car" />
+          <Gallery title="Experience the difference."
+                   description="Inspiration, a lot of perspiration, and the technology to see it through…that’s the Paragon Stone difference. We only use the finest raw materials. Detail with surfaces that are so true-to-life, the quality and realism have to be seen to be believed."
+          >
+            <GalleryItem  offset={0}
+                          title="Poplar Bluff"
+                          src="https://source.unsplash.com/weekly?construction"
+            />
+            <GalleryItem  offset={1}
+                          title="Poplar Bluff 2"
+                          src="https://source.unsplash.com/weekly?engineering"
+            />
+            <GalleryItem  offset={2}
+                          title="Poplar Bluff 3"
+                          src="https://source.unsplash.com/weekly?manufacturing"
+            />
+            <GalleryItem  offset={3}
+                          title="Poplar Bluff 4"
+                          src="https://source.unsplash.com/weekly?house"
+            />
           </Gallery>
         </section>
 

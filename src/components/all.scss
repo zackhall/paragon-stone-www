@@ -49,6 +49,24 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /************
+ * Padding helpers
+ ***********/
+
+$spacer-size: 5rem;
+
+.has-padding-top-large {
+  padding-top: $spacer-size * 1;
+}
+
+.has-padding-top-medium {
+  padding-top: $spacer-size * 0.5;
+}
+
+.has-padding-top-small {
+  padding-top: $spacer-size * 0.25;
+}
+
+/************
  * Menu
  * Styles and variables
  * Nav animations based on: https://codepen.io/equinusocio/pen/wPvvmv
@@ -237,6 +255,27 @@ h1, h2, h3, h4, h5, h6 {
 
 .parallax-gallery {
   top: 0;
+}
+
+.current-slide {
+  font-size: 4rem;
+  font-weight: 600;
+  min-width: 5rem;
+  display: inline-block;
+  line-height: 4rem;
+}
+
+.total-slides {
+  font-size: 1rem;
+  font-weight: 600;
+  display: inline-block;
+}
+
+.gallery-icon {
+  @extend %material-icons;
+  cursor: pointer;
+  margin: 1rem;
+  font-size: 2rem;
 }
 
 /************
