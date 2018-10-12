@@ -170,7 +170,7 @@ $spacer-size: 5rem;
   background-position: bottom;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-end;
 }
 
 /************
@@ -328,11 +328,12 @@ $spacer-size: 5rem;
 
 
 /************
- * Modify Bulma Container
+ * Modify Bulma Sections
  * Styles and variables
  ***********/
 .section {
-  margin: auto;
+  margin-left: auto;
+  margin-right: auto;
 
   @media screen and (min-width: 1088px) {
     & {

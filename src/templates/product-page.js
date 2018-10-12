@@ -16,12 +16,17 @@ export const ProductPageTemplate = ({
   gallery,
 }) => (
   <>
-    <BannerImage src={bannerImage} />
+    <BannerImage
+      src={bannerImage}
+      title={title}
+    />
 
     <section className="section">
       <div className="columns">
         <div className="column is-3">
-          <p>Finishes</p>
+          <h3 className="subtitle is-uppercase">
+            Finishes
+          </h3>
         </div>
         <div className="column">
           <div className="columns">
