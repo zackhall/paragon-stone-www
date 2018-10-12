@@ -20,7 +20,7 @@ export const ProductPageTemplate = ({
 
     <section className="section">
       <div className="columns">
-        <div className="column">
+        <div className="column is-3">
           <p>Finishes</p>
         </div>
         <div className="column">
@@ -29,7 +29,7 @@ export const ProductPageTemplate = ({
               finishes.map((finish, index) => (
                 <div className="column is-4">
                   <p>{finish.name}</p>
-                  <img src="{finish.image}" alt=""/>
+                  <img src={finish.image} alt=""/>
                 </div>
               ))
             }
