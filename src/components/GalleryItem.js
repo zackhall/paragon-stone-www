@@ -11,9 +11,6 @@ const GalleryItem = ({offset, src, onClick}) => (
         width: '100%'
       }} />
     </Parallax.Layer>
-    <Parallax.Layer offset={offset} speed={0.2} onClick={onClick} >
-      <p>Aloha!</p>
-    </Parallax.Layer>
   </React.Fragment>
 )
 
