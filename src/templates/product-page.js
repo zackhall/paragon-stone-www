@@ -56,7 +56,7 @@ export const ProductPageTemplate = ({
         <div className="column">
           <div className="columns">
             {
-              finishes.map((finish, index) => (
+              finishes && finishes.map((finish, index) => (
                 <div className="column is-4">
                   <h3 className="title is-5">
                     {finish.name}
@@ -75,7 +75,7 @@ export const ProductPageTemplate = ({
                 description="Inspiration, a lot of perspiration, and the technology to see it through…that’s the Paragon Stone difference. We only use the finest raw materials. Detail with surfaces that are so true-to-life, the quality and realism have to be seen to be believed."
       >
         {
-          gallery.map((
+          gallery && gallery.map((
               item,
               index
             ) => (
