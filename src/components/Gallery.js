@@ -108,7 +108,7 @@ class Gallery extends React.Component {
           </div>
           <div className="column">
             <p className="subtitle is-uppercase">Shown</p>
-            <h4 className="title is-4">{children[index].props.title}</h4>
+            <h4 className="title is-4">{children && children[index].props.title}</h4>
           </div>
           <div className="column">
             <p>{description}</p>
