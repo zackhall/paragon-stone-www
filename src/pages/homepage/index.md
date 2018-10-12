@@ -2,11 +2,11 @@
 templateKey: home-page
 title: Paragon Stone
 gallery:
-  - image: /img/jumbotron.jpg
-    text: Poplar Bluff 1
-  - image: /img/coffee-gear.png
-    text: Poplar Bluff 2
-  - image: /img/tutorials.png
-    text: Poplar Bluff 3
+  - image: /img/poplar-bluff-manor-stone.jpg
+    text: Poplar Bluff Manor Stone
+  - image: /img/auburn-limestone.jpg
+    text: Auburn Limestone
+  - image: /img/poplar-bluff-ledgestone.jpg
+    text: Poplar Bluff Ledgestone
 ---
 
