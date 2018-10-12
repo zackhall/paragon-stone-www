@@ -18,7 +18,10 @@ export const HomePageTemplate =({
   gallery,
 }) => (
   <>
-    <BannerImage src={bannerSrc} />
+    <BannerImage
+      src={bannerSrc}
+      title="Naturally inspired beauty."
+    />
     <section className="section">
       <div className="columns">
         <div className="column">

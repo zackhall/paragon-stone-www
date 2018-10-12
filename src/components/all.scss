@@ -19,11 +19,30 @@ $logo-bw: url('../img/logo-bw.svg');
 
 $button-border-width: 2px;
 
+/************
+ * Mixins and Partials
+ ***********/
+
 %material-icons {
   font-family: 'Material Icons';
   font-size: 24px;
   display: inline-block;
 }
+
+.icon-font {
+  @extend %material-icons;
+}
+
+@mixin padding-y($value) {
+  padding-top: $value !important;
+  padding-bottom: $value !important;
+}
+
+@mixin margin-y($value) {
+  margin-top: $value !important;
+  margin-bottom: $value !important;
+}
+
 
 .cursor-pointer {
   cursor: pointer;
@@ -52,18 +71,54 @@ h1, h2, h3, h4, h5, h6 {
  * Padding helpers
  ***********/
 
-$spacer-size: 5rem;
+// 1rem => 16px
+// 4rem => 64px;
+$spacer-size: 4rem;
 
-.has-padding-top-large {
-  padding-top: $spacer-size * 1;
+.has-padding {
+  &-top {
+    &-small { padding-top: $spacer-size * 0.25 !important; }
+    &-medium { padding-top: $spacer-size * 0.5 !important; }
+    &-large { padding-top: $spacer-size * 1 !important; }
+  }
+  &-bottom {
+    &-small { padding-bottom: $spacer-size * 0.25 !important; }
+    &-medium { padding-bottom: $spacer-size * 0.5 !important; }
+    &-large { padding-bottom: $spacer-size * 1 !important; }
+  }
+  &-y {
+    &-small { @include padding-y($spacer-size * 0.25); }
+    &-medium { @include padding-y($spacer-size * 0.5); }
+    &-large { @include padding-y($spacer-size * 1); }
+  }
+  &-right {
+    &-small { padding-right: $spacer-size * 0.25 !important; }
+    &-medium { padding-right: $spacer-size * 0.5 !important; }
+    &-large { padding-right: $spacer-size * 1 !important; }
+  }
+  &-left {
+    &-small { padding-left: $spacer-size * 0.25 !important; }
+    &-medium { padding-left: $spacer-size * 0.5 !important; }
+    &-large { padding-left: $spacer-size * 1 !important; }
+  }
 }
 
-.has-padding-top-medium {
-  padding-top: $spacer-size * 0.5;
-}
-
-.has-padding-top-small {
-  padding-top: $spacer-size * 0.25;
+.has-margin {
+  &-top {
+    &-small { margin-top: $spacer-size * 0.25 !important; }
+    &-medium { margin-top: $spacer-size * 0.5 !important; }
+    &-large { margin-top: $spacer-size * 1 !important; }
+  }
+  &-bottom {
+    &-small { margin-bottom: $spacer-size * 0.25 !important; }
+    &-medium { margin-bottom: $spacer-size * 0.5 !important; }
+    &-large { margin-bottom: $spacer-size * 1 !important; }
+  }
+  &-y {
+    &-small { @include margin-y($spacer-size * 0.25); }
+    &-medium { @include margin-y($spacer-size * 0.5); }
+    &-large { @include margin-y($spacer-size * 1); }
+  }
 }
 
 /************
@@ -326,6 +381,14 @@ $spacer-size: 5rem;
   }
 }
 
+/************
+ * Product Page
+ * Styles and variables
+ ***********/
+ .tech-specs-container {
+   background: $paragon-blue;
+ }
+
 
 /************
  * Modify Bulma Sections
@@ -347,25 +410,6 @@ $spacer-size: 5rem;
       max-width: 1200px;
       width: 1200px;
     }
-  }
-}
-
-
-
-.content .taglist {
-  list-style: none;
-  margin-bottom: 0;
-  margin-left: 0;
-  margin-right: 1.5rem;
-  margin-top: 1.5rem;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: left;
-  align-items: center;
-  li {
-    padding: 0 2rem 1rem 0;
-    margin-bottom: 1.5rem;
-    margin-top: 0;
   }
 }
 

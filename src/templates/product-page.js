@@ -21,10 +21,35 @@ export const ProductPageTemplate = ({
       title={title}
     />
 
-    <section className="section">
+    <div className="tech-specs-container has-text-white">
+      <div className="section has-padding-y-large">
+        <div className="columns">
+          <div className="column">
+            <p className="subtitle has-text-white">
+              Meet {title}
+            </p>
+          </div>
+          <div className="column is-6 has-padding-right-small">
+            {description}
+          </div>
+          <div className="column">
+            <div className="columns">
+              <div className="column is-narrow icon-font">
+                transform
+              </div>
+              <div className="column">
+                <p>{techSpecs}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <section className="section has-padding-y-large">
       <div className="columns">
         <div className="column is-3">
-          <h3 className="subtitle is-uppercase">
+          <h3 className="subtitle">
             Finishes
           </h3>
         </div>
@@ -33,7 +58,9 @@ export const ProductPageTemplate = ({
             {
               finishes.map((finish, index) => (
                 <div className="column is-4">
-                  <p>{finish.name}</p>
+                  <h3 className="title is-5">
+                    {finish.name}
+                  </h3>
                   <img src={finish.image} alt=""/>
                 </div>
               ))
