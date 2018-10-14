@@ -56,14 +56,16 @@ export const ProductPageTemplate = ({
         <div className="column">
           <div className="columns">
             {
-              finishes && finishes.map((finish, index) => (
-                <div className="column is-4">
-                  <h3 className="title is-5">
-                    {finish.name}
-                  </h3>
-                  <img src={finish.image} alt=""/>
-                </div>
-              ))
+              finishes && finishes.length ? (
+                finishes.map((finish, index) => (
+                  <div className="column is-4">
+                    <h3 className="title is-5">
+                      {finish.name}
+                    </h3>
+                    <img src={finish.image} alt=""/>
+                  </div>
+                ))
+              ) : null
             }
           </div>
         </div>
@@ -75,7 +77,8 @@ export const ProductPageTemplate = ({
                 description="Inspiration, a lot of perspiration, and the technology to see it through…that’s the Paragon Stone difference. We only use the finest raw materials. Detail with surfaces that are so true-to-life, the quality and realism have to be seen to be believed."
       >
         {
-          gallery && gallery.map((
+          gallery && gallery.length ? (
+            gallery.map((
               item,
               index
             ) => (
@@ -85,8 +88,8 @@ export const ProductPageTemplate = ({
                 title={item.text}
                 src={item.image}
               />
-            )
-          )
+            ))
+          ) : null
         }
       </Gallery>
     </section>
