@@ -11,13 +11,13 @@ techSpecs: |-
   HEIGHT RANGE 2" to 13"
 bannerImage: /img/poplar-bluff-manor-stone.jpg
 finishes:
-  - image: /img/sample_alder-prairie-stone.jpeg
+  - image: /img/sample_alder-prairie-stone.jpg
     name: Alder Prairie Stone
-  - image: /img/sample_auburn-prairie-stone.jpeg
+  - image: /img/sample_auburn-prairie-stone.jpg
     name: Auburn Prairie Stone
-  - image: /img/sample_catalpa-prairie-stone.jpeg
+  - image: /img/sample_catalpa-prairie-stone.jpg
     name: Catalpa Prairie Stone
-  - image: /img/sample_monterey-prairie-stone.jpeg
+  - image: /img/sample_monterey-prairie-stone.jpg
     name: Monterey Prairie Stone
 gallery:
   - image: /img/poplar-bluff-manor-stone.jpg
