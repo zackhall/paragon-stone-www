@@ -58,7 +58,7 @@ export const ProductPageTemplate = ({
             {
               finishes && finishes.length ? (
                 finishes.map((finish, index) => (
-                  <div className="column is-4">
+                  <div className="column is-4 has-margin-bottom-medium">
                     <h3 className="title is-5">
                       {finish.name}
                     </h3>
