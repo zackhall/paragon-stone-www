@@ -16,7 +16,7 @@ const ProductPagePreview = ({ entry }) => {
       techSpecs={entry.getIn(['data', 'techSpecs'])}
       bannerImage={entry.getIn(['data', 'bannerImage'])}
       finishes={finishes}
-      gallery={gallery}
+      // gallery={gallery}
     />
   )
 }
