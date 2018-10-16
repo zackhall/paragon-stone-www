@@ -18,9 +18,6 @@ const ProductPagePreview = ({ entry }) => {
       finishes={finishes}
       gallery={gallery}
     />
-    <div>
-      Hello!
-    </div>
   )
 }
 
