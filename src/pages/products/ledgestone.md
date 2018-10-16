@@ -11,7 +11,18 @@ techSpecs: |-
   HEIGHT RANGE 1 to 6 inches
 bannerImage: /img/poplar-bluff-ledgestone.jpg
 finishes:
-  - {}
+  - image: /img/sample_amaretto-ledgestone.jpg
+    name: Amaretto Ledgestone
+  - image: /img/sample_bluegrass-ledgestone.jpg
+    name: Bluegrass Ledgestone
+  - image: /img/sample_catalpa-ledgestone.jpg
+    name: Catalpa Ledgestone
+  - image: /img/sample_cheyenne-ledgestone.jpg
+    name: Cheyenne Ledgestone
+  - image: /img/sample_poplar-bluff-ledgestone.jpg
+    name: Poplar Bluff Ledgestone
+  - image: /img/sample_rosewood-ledgestone.jpg
+    name: Rosewood Ledgestone
 gallery:
   - image: /img/poplar-bluff-ledgestone.jpg
     text: Poplar Bluff Ledgestone
