@@ -12,11 +12,11 @@ const ProductPagePreview = ({ entry }) => {
   return (
     <ProductPageTemplate
       title={entry.getIn(['data', 'title'])}
-      // description={entry.getIn(['data', 'description'])}
-      // bannerImage={entry.getIn(['data', 'bannerImage'])}
-      // techSpecs={entry.getIn(['data', 'techSpecs'])}
-      // finishes={finishes}
-      // gallery={gallery}
+      description={entry.getIn(['data', 'description'])}
+      techSpecs={entry.getIn(['data', 'techSpecs'])}
+      bannerImage={entry.getIn(['data', 'bannerImage'])}
+      finishes={finishes}
+      gallery={gallery}
     />
   )
 }
