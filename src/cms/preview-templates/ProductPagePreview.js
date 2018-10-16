@@ -10,15 +10,14 @@ const ProductPagePreview = ({ entry }) => {
   const gallery = entryGallery ? entryGallery.toJS() : []
 
   return (
-    // <ProductPageTemplate
-    //   title={entry.getIn(['data', 'title'])}
-    //   description={entry.getIn(['data', 'description'])}
-    //   bannerImage={entry.getIn(['data', 'bannerImage'])}
-    //   techSpecs={entry.getIn(['data', 'techSpecs'])}
-    //   finishes={finishes}
-    //   gallery={gallery}
-    // />
-    <div>Hi.</div>
+    <ProductPageTemplate
+      title={entry.getIn(['data', 'title'])}
+      description={entry.getIn(['data', 'description'])}
+      bannerImage={entry.getIn(['data', 'bannerImage'])}
+      techSpecs={entry.getIn(['data', 'techSpecs'])}
+      finishes={finishes}
+      gallery={gallery}
+    />
   )
 }
 
