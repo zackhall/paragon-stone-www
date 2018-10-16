@@ -3,11 +3,11 @@ import PropTypes from 'prop-types'
 import { ProductPageTemplate } from '../../templates/product-page'
 
 const ProductPagePreview = ({ entry }) => {
-  const entryFinishes = entry.getIn(['data', 'finishes'])
-  const finishes = entryFinishes ? entryFinishes.toJS() : []
+  // const entryFinishes = entry.getIn(['data', 'finishes'])
+  // const finishes = entryFinishes ? entryFinishes.toJS() : []
 
-  const entryGallery = entry.getIn(['data', 'gallery'])
-  const gallery = entryGallery ? entryGallery.toJS() : []
+  // const entryGallery = entry.getIn(['data', 'gallery'])
+  // const gallery = entryGallery ? entryGallery.toJS() : []
 
   return (
     <ProductPageTemplate
@@ -15,8 +15,8 @@ const ProductPagePreview = ({ entry }) => {
       description={entry.getIn(['data', 'description'])}
       bannerImage={entry.getIn(['data', 'bannerImage'])}
       techSpecs={entry.getIn(['data', 'techSpecs'])}
-      finishes={finishes}
-      gallery={gallery}
+      // finishes={finishes}
+      // gallery={gallery}
     />
   )
 }
