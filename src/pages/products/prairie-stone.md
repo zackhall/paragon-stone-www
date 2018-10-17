@@ -6,10 +6,12 @@ description: >-
   profiles. It’s a an original created by our artisans’ view of the perfect
   stone. It blends just the right amount of linear and random features with rich
   textures and an expressive color palette.
+bannerImage: /img/poplar-bluff-manor-stone.jpg
 techSpecs: |-
   LENGTH RANGE 4" to 21"
   HEIGHT RANGE 2" to 13"
-bannerImage: /img/poplar-bluff-manor-stone.jpg
+categories:
+  - Irregular Stone
 finishes:
   - image: /img/sample_alder-prairie-stone.jpg
     name: Alder Prairie Stone
