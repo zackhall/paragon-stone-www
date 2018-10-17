@@ -6,10 +6,12 @@ description: >-
   Ledgestone. Roughly textured and varying in height, Ledgestone captures the
   drama of both subtle and bold ambient light. Nature inspired us to recreate
   this beautiful rock, now we hope it inspires your new creation.
+bannerImage: /img/poplar-bluff-ledgestone.jpg
 techSpecs: |-
   LENGTH RANGE 4 to 20 inches
   HEIGHT RANGE 1 to 6 inches
-bannerImage: /img/poplar-bluff-ledgestone.jpg
+categories:
+  - Rectangular Stone
 finishes:
   - image: /img/sample_amaretto-ledgestone.jpg
     name: Amaretto Ledgestone
