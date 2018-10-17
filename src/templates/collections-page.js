@@ -1,51 +1,51 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { Link, graphql } from 'gatsby'
-import Layout from '../components/Layout'
-import Content, { HTMLContent } from '../components/Content'
 import get from 'lodash/get'
+import groupBy from 'lodash/groupBy'
 
-export const CollectionsPageTemplate = ({ title, content, contentComponent, products }) => {
+import BannerImage from '../components/BannerImage'
+import Content, { HTMLContent } from '../components/Content'
+import Collection from '../components/Collection'
+import Layout from '../components/Layout'
+
+export const CollectionsPageTemplate = ({
+  title,
+  bannerImage,
+  content,
+  contentComponent,
+  collections,
+}) => {
   const PageContent = contentComponent || Content
-  console.log(products)
+  console.log(collections)
 
   return (
     <>
-      <section className="section section--gradient">
+      {
+        bannerImage ?
+          <BannerImage
+            src={bannerImage}
+            title={title}
+          /> :
+          <section className="section">
+            <container>
+              <h2 className="title is-size-3">
+                {title}
+              </h2>
+            </container>
+          </section>
+      }
+      <section className="section">
         <div className="container">
-          <div className="columns">
-            <div className="column is-10 is-offset-1">
-              <div className="section">
-                <h2 className="title is-size-3 has-text-weight-bold is-bold-light">
-                  {title}
-                </h2>
-                <PageContent className="content" content={content} />
-              </div>
-            </div>
-          </div>
+          <PageContent className="content" content={content} />
         </div>
       </section>
       <section className="section">
-        <div className="columns">
-          {
-            products && products.length ? (
-              products.map((product, index) => (
-                <div className="column is-3 has-margin-bottom-medium"
-                     key={product.slug}
-                >
-                  <h3 className="title is-5">
-                    <Link to={product.slug}>
-                      {product.title}
-                    </Link>
-                  </h3>
-                  <Link to={product.slug}>
-                    <img src={product.image} alt=""/>
-                  </Link>
-                </div>
-              ))
-            ) : null
-          }
-        </div>
+        {
+          Object.keys(collections).map((key) => (
+            <Collection title={key} products={collections[key]} />
+          ))
+        }
       </section>
     </>
   )
@@ -53,9 +53,10 @@ export const CollectionsPageTemplate = ({ title, content, contentComponent, prod
 
 CollectionsPageTemplate.propTypes = {
   title: PropTypes.string.isRequired,
+  bannerImage: PropTypes.string,
   content: PropTypes.string,
   contentComponent: PropTypes.func,
-  products: PropTypes.array,
+  collections: PropTypes.object,
 }
 
 const CollectionsPage = ({ data }) => {
@@ -65,18 +66,22 @@ const CollectionsPage = ({ data }) => {
       .map(product =>
         ({
           slug:  get(product, 'node.fields.slug'),
-          title: get(product, 'node.frontmatter.title'),
+          name: get(product, 'node.frontmatter.title'),
           image: get(product, 'node.frontmatter.finishes[0].image'),
+          categories: get(product, 'node.frontmatter.categories[0]', 'None'),
         })
       )
+
+  const collections = groupBy(products, 'categories')
 
   return (
     <Layout>
       <CollectionsPageTemplate
         contentComponent={HTMLContent}
         title={post.frontmatter.title}
+        bannerImage={post.frontmatter.bannerImage}
         content={post.html}
-        products={products}
+        collections={collections}
       />
     </Layout>
   )
@@ -94,6 +99,7 @@ export const collectionsPageQuery = graphql`
       html
       frontmatter {
         title
+        bannerImage
       }
     }
     allMarkdownRemark(
@@ -106,6 +112,7 @@ export const collectionsPageQuery = graphql`
           }
           frontmatter {
             title
+            categories
             finishes {
               image
             }

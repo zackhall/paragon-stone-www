@@ -58,3 +58,4 @@ collections:
           - {label: "Template Key", name: "templateKey", widget: "hidden", default: "collections-page"}
           - {label: Title, name: title, widget: string}
           - {label: "Body", name: "body", widget: "markdown"}
+          - {label: "Banner Image", name: "bannerImage", widget: "image"}
