@@ -28,8 +28,9 @@ collections:
       - {label: "Template Key", name: "templateKey", widget: "hidden", default: "product-page"}
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Description", name: "description", widget: "text"}
-      - {label: "Technical Specifications", name: "techSpecs", widget: "text"}
       - {label: "Banner Image", name: "bannerImage", widget: "image"}
+      - {label: "Technical Specifications", name: "techSpecs", widget: "text"}
+      - {label: "Categories", name: "categories", widget: "list"}
       - {label: Finishes, name: finishes, widget: list, fields: [{label: Image, name: image, widget: image}, {label: Name, name: name, widget: text}]}
       - {label: Gallery, name: gallery, widget: list, fields: [{label: Image, name: image, widget: image}, {label: Text, name: text, widget: text}]}
 
