@@ -1,7 +1,6 @@
 import React from 'react'
 import Helmet from 'react-helmet'
 
-import Navbar from '../components/Navbar'
 import Navigation from '../components/Navigation'
 import PreFooter from '../components/PreFooter'
 import Footer from '../components/Footer'
