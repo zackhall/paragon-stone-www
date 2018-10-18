@@ -32,9 +32,13 @@ class Navigation extends React.Component {
                 </div>
               </div>
               <div className="columns is-hidden-touch">
-                <div className="column has-text-centered">
+                <div className="column has-text-centered is-uppercase has-text-weight-bold">
                   <Link to='/collections'>
                     Products
+                  </Link>
+                  <span className="has-margin-x-small">/</span>
+                  <Link to='/about'>
+                    About
                   </Link>
                 </div>
               </div>

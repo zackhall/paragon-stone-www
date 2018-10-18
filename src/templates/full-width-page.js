@@ -21,6 +21,7 @@ export const FullWidthPageTemplate = ({
           <BannerImage
             src={bannerImage}
             title={title}
+            backgroundPosition='center'
           /> :
           <section className="section">
             <container>
@@ -52,6 +53,7 @@ const FullWidthPage = ({ data }) => {
       <FullWidthPageTemplate
         contentComponent={HTMLContent}
         title={post.frontmatter.title}
+        bannerImage={post.frontmatter.bannerImage}
         content={post.html}
       />
     </Layout>

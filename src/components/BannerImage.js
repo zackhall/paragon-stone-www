@@ -4,11 +4,13 @@ import { Link } from 'gatsby'
 const BannerImage = ({
   src,
   title,
+  backgroundPosition,
 }) => (
   <div
     className="banner-image-container"
     style={{
-      backgroundImage: `url(${src})`
+      backgroundImage: `url(${src})`,
+      backgroundPosition: backgroundPosition || 'bottom'
     }}
   >
     <div className="section">

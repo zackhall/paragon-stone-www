@@ -43,6 +43,15 @@ $button-border-width: 2px;
   margin-bottom: $value !important;
 }
 
+@mixin padding-x($value) {
+  padding-left: $value !important;
+  padding-right: $value !important;
+}
+
+@mixin margin-x($value) {
+  margin-left: $value !important;
+  margin-right: $value !important;
+}
 
 .cursor-pointer {
   cursor: pointer;
@@ -106,6 +115,11 @@ $spacer-size: 4rem;
     &-medium { padding-left: $spacer-size * 0.5 !important; }
     &-large { padding-left: $spacer-size * 1 !important; }
   }
+  &-x {
+    &-small { @include padding-x($spacer-size * 0.25); }
+    &-medium { @include padding-x($spacer-size * 0.5); }
+    &-large { @include padding-x($spacer-size * 1); }
+  }
 }
 
 .has-margin {
@@ -123,6 +137,11 @@ $spacer-size: 4rem;
     &-small { @include margin-y($spacer-size * 0.25); }
     &-medium { @include margin-y($spacer-size * 0.5); }
     &-large { @include margin-y($spacer-size * 1); }
+  }
+  &-x {
+    &-small { @include margin-x($spacer-size * 0.25); }
+    &-medium { @include margin-x($spacer-size * 0.5); }
+    &-large { @include margin-x($spacer-size * 1); }
   }
 }
 
@@ -231,6 +250,12 @@ $spacer-size: 4rem;
   display: flex;
   justify-content: center;
   align-items: flex-end;
+}
+
+.background-position {
+  &-top { background-position: top; }
+  &-center { background-position: center; }
+  &-bottom { background-position: bottom; }
 }
 
 /************
