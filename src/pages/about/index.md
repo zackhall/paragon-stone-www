@@ -1,5 +1,5 @@
 ---
-templateKey: 'about-page'
+templateKey: 'full-width-page'
 path: /about
 title: About our values
 ---
