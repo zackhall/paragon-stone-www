@@ -36,9 +36,7 @@ export const CollectionsPageTemplate = ({
           </section>
       }
       <section className="section">
-        <div className="container">
-          <PageContent className="content" content={content} />
-        </div>
+        <PageContent className="content" content={content} />
       </section>
       <section className="section">
         {
