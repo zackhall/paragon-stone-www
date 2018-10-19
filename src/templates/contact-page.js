@@ -36,7 +36,13 @@ export const ContactPageTemplate = ({
       </section>
 
       <div className="section">
-        <form name="contact" method="POST" netlify>
+        <form
+          name="contact"
+          method="POST"
+          action="/"
+          data-netlify="true"
+        >
+          <input type="hidden" name="form-name" value="contact" />
           <div className="field">
             <label className="label">Name</label>
             <div className="control">
@@ -53,7 +59,7 @@ export const ContactPageTemplate = ({
             <label className="label">Your Role:</label>
             <div className="control">
               <div className="select">
-                <select name="role" >
+                <select name="role">
                   <option value="architect">Architect</option>
                   <option value="builder">Builder</option>
                   <option value="designer">Designer</option>
