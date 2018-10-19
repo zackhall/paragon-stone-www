@@ -40,6 +40,10 @@ class Navigation extends React.Component {
                   <Link to='/about'>
                     About
                   </Link>
+                  <span className="has-margin-x-small">/</span>
+                  <Link to='/contact'>
+                    Contact
+                  </Link>
                 </div>
               </div>
             </div>

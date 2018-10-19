@@ -45,6 +45,14 @@ collections:
           - {label: "Title", name: "title", widget: "string"}
           - {label: "Banner Image", name: "bannerImage", widget: "image"}
           - {label: "Body", name: "body", widget: "markdown"}
+      - file: "src/pages/contact/index.md"
+        label: "Contact"
+        name: "contact"
+        fields:
+          - {label: "Template Key", name: "templateKey", widget: "hidden", default: "contact-page"}
+          - {label: "Title", name: "title", widget: "string"}
+          - {label: "Banner Image", name: "bannerImage", widget: "image"}
+          - {label: "Body", name: "body", widget: "markdown"}
       - file: "src/pages/homepage/index.md"
         label: "Homepage"
         name: "homepage"
