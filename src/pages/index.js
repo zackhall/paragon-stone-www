@@ -42,7 +42,16 @@ export const pageQuery = graphql`
             title
             gallery {
               text
-              image
+              image {
+                childImageSharp {
+                  resolutions(width: 400) {
+                    width
+                    height
+                    src
+                    srcSet
+                  }
+                }
+              }
             }
           }
         }

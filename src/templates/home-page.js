@@ -121,7 +121,16 @@ export const homePageQuery = graphql`
       frontmatter {
         title
         gallery {
-          image
+          image {
+            childImageSharp {
+              resolutions(width: 1600) {
+                width
+                height
+                src
+                srcSet
+              }
+            }
+          }
           text
         }
       }

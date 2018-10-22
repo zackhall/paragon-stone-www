@@ -139,13 +139,40 @@ export const pageQuery = graphql`
         title
         description
         techSpecs
-        bannerImage
+        bannerImage {
+          childImageSharp {
+            resolutions(width: 2048) {
+              width
+              height
+              src
+              srcSet
+            }
+          }
+        }
         finishes {
-          image
+          image {
+            childImageSharp {
+              resolutions(width: 600) {
+                width
+                height
+                src
+                srcSet
+              }
+            }
+          }
           name
         }
         gallery {
-          image
+          image {
+            childImageSharp {
+              resolutions(width: 1600) {
+                width
+                height
+                src
+                srcSet
+              }
+            }
+          }
           text
         }
       }

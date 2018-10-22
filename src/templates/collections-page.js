@@ -97,7 +97,16 @@ export const collectionsPageQuery = graphql`
       html
       frontmatter {
         title
-        bannerImage
+        bannerImage {
+          childImageSharp {
+            resolutions(width: 2048) {
+              width
+              height
+              src
+              srcSet
+            }
+          }
+        }
       }
     }
     allMarkdownRemark(
@@ -112,7 +121,16 @@ export const collectionsPageQuery = graphql`
             title
             categories
             finishes {
-              image
+              image {
+                childImageSharp {
+                  resolutions(width: 400) {
+                    width
+                    height
+                    src
+                    srcSet
+                  }
+                }
+              }
             }
           }
         }
