@@ -41,6 +41,10 @@ class Navigation extends React.Component {
                     About
                   </Link>
                   <span className="has-margin-x-small">/</span>
+                  <Link to='/gallery'>
+                    Gallery
+                  </Link>
+                  <span className="has-margin-x-small">/</span>
                   <Link to='/contact'>
                     Contact
                   </Link>
