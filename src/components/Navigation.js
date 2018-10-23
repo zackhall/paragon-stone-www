@@ -18,7 +18,7 @@ class Navigation extends React.Component {
     return (
       <nav className="navigation">
         <div className="container is-fluid">
-          <div className="columns is-vcentered">
+          <div className="columns is-mobile is-vcentered">
             <div className="column has-text-left is-hidden-touch">
               info@paragonstone.com
             </div>
