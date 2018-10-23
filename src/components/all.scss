@@ -241,7 +241,7 @@ $spacer-size: 4rem;
  ***********/
 .banner-image-container {
   width: 100vw;
-  height: 700px;
+  padding-top: (1 / 3) * 100%;
   position: relative;
   left: 50%;
   right: 50%;
