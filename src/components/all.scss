@@ -62,8 +62,25 @@ $button-border-width: 2px;
   position: relative;
 }
 
+html {
+  font-size: 14px !important;
+
+  @media screen and (min-width: 769px) {
+    & {
+      font-size: 15px !important;
+    }
+  }
+
+  @media screen and (min-width: 1024px) {
+    & {
+      font-size: 16px !important;
+    }
+  }
+}
+
 body {
   background: $bg-img;
+  overflow-x: hidden;
 }
 
 .title,
@@ -273,21 +290,32 @@ $spacer-size: 4rem;
 
 .gallery-description {
   position: relative;
-  padding: 5rem;
+  padding: 2.5rem;
   z-index: 99;
+
+  @media screen and (min-width: 769px) {
+    & {
+      padding: 5rem;
+    }
+  }
 }
 
 .gallery-banner {
   width: 100vw;
-  height: 400px;
+  height: 250px;
   position: absolute;
   left: 50%;
   right: 50%;
   margin: 0 -50vw;
   top: 0;
   background: $paragon-blue;
-
   z-index: 0;
+
+  @media screen and (min-width: 768px) {
+    & {
+      height: 400px;
+    }
+  }
 
   &::after {
     content: "";
@@ -310,15 +338,28 @@ $spacer-size: 4rem;
 .gallery-next-image,
 .gallery-prev-image {
   position: relative;
-  padding: calc(0.75 * 50%) 0 0 0 !important;
+  padding: calc(0.75 * 80%) 0 0 0 !important;
+  flex: 0 0 80%;
   box-sizing: border-box;
   overflow:hidden;
-  flex: 0 0 50%;
   z-index: 99;
+
+  @media screen and (min-width: 1088px) {
+    & {
+      flex: 0 0 50%;
+      padding: calc(0.75 * 50%) 0 0 0 !important;
+    }
+  }
 }
 
 .gallery-main-image {
-  margin-left: 25%;
+  margin-left: 10%;
+
+  @media screen and (min-width: 1088px) {
+    & {
+      margin-left: 25%;
+    }
+  }
 }
 
 .gallery-next-image,
