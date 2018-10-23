@@ -51,7 +51,7 @@ export const CollectionsPageTemplate = ({
 
 CollectionsPageTemplate.propTypes = {
   title: PropTypes.string.isRequired,
-  bannerImage: PropTypes.string,
+  bannerImage: PropTypes.object,
   content: PropTypes.string,
   contentComponent: PropTypes.func,
   collections: PropTypes.object,
@@ -77,7 +77,7 @@ const CollectionsPage = ({ data }) => {
       <CollectionsPageTemplate
         contentComponent={HTMLContent}
         title={post.frontmatter.title}
-        bannerImage={post.frontmatter.bannerImage}
+        bannerImage={post.frontmatter.bannerImage.childImageSharp.resolutions.src}
         content={post.html}
         collections={collections}
       />
@@ -123,14 +123,12 @@ export const collectionsPageQuery = graphql`
             finishes {
               image {
                 childImageSharp {
-                  resolutions(width: 400) {
-                    width
-                    height
-                    src
-                    srcSet
+                  fluid(maxWidth: 800, quality: 75) {
+                    ...GatsbyImageSharpFluid
                   }
                 }
               }
+              name
             }
           }
         }

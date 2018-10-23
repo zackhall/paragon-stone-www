@@ -41,17 +41,14 @@ export const pageQuery = graphql`
           frontmatter {
             title
             gallery {
-              text
               image {
                 childImageSharp {
-                  resolutions(width: 400) {
-                    width
-                    height
-                    src
-                    srcSet
+                  fluid(maxWidth: 800, quality: 75) {
+                    ...GatsbyImageSharpFluid
                   }
                 }
               }
+              text
             }
           }
         }

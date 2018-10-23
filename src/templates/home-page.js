@@ -79,13 +79,13 @@ export const HomePageTemplate =({
         {
           gallery.map((
               item,
-              index
+              index,
             ) => (
               <GalleryItem
                 offset={index}
                 key={index}
                 title={item.text}
-                src={item.image}
+                image={item.image}
               />
             )
           )
@@ -123,11 +123,8 @@ export const homePageQuery = graphql`
         gallery {
           image {
             childImageSharp {
-              resolutions(width: 1600) {
-                width
-                height
-                src
-                srcSet
+              fluid(maxWidth: 800, quality: 100) {
+                ...GatsbyImageSharpFluid
               }
             }
           }

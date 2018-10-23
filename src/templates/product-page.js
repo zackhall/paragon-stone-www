@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
+import Img from 'gatsby-image'
 
 import Layout from '../components/Layout'
 import BannerImage from '../components/BannerImage'
@@ -62,7 +63,11 @@ export const ProductPageTemplate = ({
                     <h3 className="title is-5">
                       {finish.name}
                     </h3>
-                    <img src={finish.image} alt=""/>
+                    <Img
+                      fluid={finish.image.childImageSharp.fluid}
+                      fadeIn={true}
+                      alt={finish.name}
+                    />
                   </div>
                 ))
               ) : null
@@ -86,7 +91,7 @@ export const ProductPageTemplate = ({
                 offset={index}
                 key={index}
                 title={item.text}
-                src={item.image}
+                image={item.image}
               />
             ))
           ) : null
@@ -100,7 +105,7 @@ ProductPageTemplate.propTypes = {
   title: PropTypes.string,
   description: PropTypes.string,
   techSpecs: PropTypes.string,
-  bannerImage: PropTypes.string,
+  bannerImage: PropTypes.object,
   finishes: PropTypes.array,
   gallery: PropTypes.array,
 }
@@ -114,7 +119,7 @@ const ProductPage = ({ data }) => {
         title={frontmatter.title}
         description={frontmatter.description}
         techSpecs={frontmatter.techSpecs}
-        bannerImage={frontmatter.bannerImage}
+        bannerImage={frontmatter.bannerImage.childImageSharp.resolutions.src}
         finishes={frontmatter.finishes}
         gallery={frontmatter.gallery}
       />
@@ -152,11 +157,8 @@ export const pageQuery = graphql`
         finishes {
           image {
             childImageSharp {
-              resolutions(width: 600) {
-                width
-                height
-                src
-                srcSet
+              fluid(maxWidth: 800, quality: 75) {
+                ...GatsbyImageSharpFluid
               }
             }
           }
@@ -165,11 +167,8 @@ export const pageQuery = graphql`
         gallery {
           image {
             childImageSharp {
-              resolutions(width: 1600) {
-                width
-                height
-                src
-                srcSet
+              fluid(maxWidth: 800, quality: 100) {
+                ...GatsbyImageSharpFluid
               }
             }
           }

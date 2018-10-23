@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'gatsby'
+import Img from 'gatsby-image'
 
 const Collection = ({ title, products }) => (
   products && products.length ?
@@ -28,9 +29,19 @@ const Collection = ({ title, products }) => (
                 {
                   product.slug ?
                     <Link to={product.slug}>
-                      <img src={product.image} alt={product.name} />
+                      <Img
+                        fluid={product.image.childImageSharp.fluid}
+                        fadeIn={true}
+                        alt={product.name}
+                      />
+                      {/* <img src={product.image} alt={product.name} /> */}
                     </Link> :
-                    <img src={product.image} alt={product.name} />
+                    <Img
+                      fluid={product.image.childImageSharp.fluid}
+                      fadeIn={true}
+                      alt={product.name}
+                    />
+                    // <img src={product.image} alt={product.name} />
                 }
 
               </div>

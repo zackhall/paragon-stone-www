@@ -48,13 +48,9 @@ export class GalleryPageTemplate extends React.Component {
     } = this.props
 
     const galleryImages = images.map((i, index) => ({
-      src: get(i, 'image.childImageSharp.resolutions.src'),
-      height: get(i, 'image.childImageSharp.resolutions.height'),
-      width: get(i, 'image.childImageSharp.resolutions.width'),
-      text: i.text,
+      ...get(i, 'image.childImageSharp.resolutions'),
+      caption: i.text,
     }))
-
-    console.log(galleryImages)
 
     return(
       <>
@@ -77,49 +73,6 @@ export class GalleryPageTemplate extends React.Component {
   }
 }
 
-// export const GalleryPageTemplate = ({
-//   title,
-//   images,
-//   content,
-//   contentComponent,
-// }) => {
-//   const galleryImages = images.map((i, index) => ({
-//     src: get(i, 'image.childImageSharp.resolutions.src'),
-//     height: get(i, 'image.childImageSharp.resolutions.height'),
-//     width: get(i, 'image.childImageSharp.resolutions.width'),
-//     text: i.text,
-//   }))
-//   return(
-//     <>
-//       <section className="section has-padding-y-large">
-//         <div className="columns">
-//           <div className="column is-3">
-//             <h3 className="subtitle">
-//               Images
-//             </h3>
-//           </div>
-//           <div className="column">
-//             <div className="columns">
-//               {
-//                 galleryImages && galleryImages.length ? (
-//                   galleryImages.map((image, index) => (
-//                     <div className="column is-4 has-margin-bottom-medium">
-//                       <h3 className="title is-5">
-//                         {image.text + image.height + image.width}
-//                       </h3>
-//                       <img src={image.src} alt=""/>
-//                     </div>
-//                   ))
-//                 ) : null
-//               }
-//             </div>
-//           </div>
-//         </div>
-//       </section>
-//     </>
-//   )
-// }
-
 GalleryPageTemplate.propTypes = {
   title: PropTypes.string,
   images: PropTypes.arrayOf(
@@ -134,6 +87,8 @@ GalleryPageTemplate.propTypes = {
 
 const GalleryPage = ({ data }) => {
   const { frontmatter, html } = data.markdownRemark
+  console.log('images')
+  console.log(frontmatter.images)
 
   return (
     <Layout>

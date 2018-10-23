@@ -41,7 +41,7 @@ export const FullWidthPageTemplate = ({
 FullWidthPageTemplate.propTypes = {
   title: PropTypes.string.isRequired,
   content: PropTypes.string,
-  bannerImage: PropTypes.string,
+  bannerImage: PropTypes.object,
   contentComponent: PropTypes.func,
 }
 
@@ -53,7 +53,7 @@ const FullWidthPage = ({ data }) => {
       <FullWidthPageTemplate
         contentComponent={HTMLContent}
         title={post.frontmatter.title}
-        bannerImage={post.frontmatter.bannerImage}
+        bannerImage={post.frontmatter.bannerImage.childImageSharp.resolutions.src}
         content={post.html}
       />
     </Layout>
