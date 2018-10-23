@@ -77,7 +77,7 @@ class Navigation extends React.Component {
               close
             </span>
           </div>
-          <div className="menu-container">
+          <div className="menu-container has-text-centered">
             <div className="menu">
               <p className="menu-label">
                 General
