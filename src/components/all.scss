@@ -27,6 +27,7 @@ $button-border-width: 2px;
   font-family: 'Material Icons';
   font-size: 24px;
   display: inline-block;
+  text-transform: lowercase !important;
 }
 
 .icon-font {
@@ -418,6 +419,58 @@ $spacer-size: 4rem;
  .tech-specs-container {
    background: $paragon-blue;
  }
+
+
+ /************
+ * Dropdown
+ * Styles and variables
+ ***********/
+.paragon-dropdown {
+  display: inline-block;
+  position: relative;
+
+  > a:after {
+    @extend %material-icons;
+    content: 'arrow_drop_down';
+    font-size: 1.5rem;
+    padding-left: 0.5rem;
+    line-height: 1rem;
+    vertical-align: sub;
+  }
+
+  ul {
+    list-style: none;
+    margin: 0 !important;
+    padding-left: 0;
+    visibility: hidden;
+    opacity: 0;
+    min-width: 15rem;
+    position: absolute;
+    transition: all 0.5s ease;
+    margin-top: 1rem;
+    left: -50%;
+    display: none;
+    background: $bg-img;
+    z-index: 99;
+    border-radius: 5px;
+    box-shadow: 0 2px 24px 0 rgba(0,0,0,0.26);
+
+    li {
+      @include margin-y(0.5rem);
+    }
+  }
+
+  &:hover ul,
+  &:focus-within ul,
+  ul:hover,
+  ul:focus {
+    visibility: visible;
+    opacity: 1;
+    display: block;
+  }
+
+}
+
 
 
 /************

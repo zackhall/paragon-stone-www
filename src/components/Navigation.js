@@ -2,6 +2,7 @@ import React from 'react'
 import { Link } from 'gatsby'
 import logo from '../img/logo.svg'
 import logobw from '../img/logo-bw.svg'
+import Dropdown from '../components/Dropdown'
 
 
 
@@ -33,9 +34,14 @@ class Navigation extends React.Component {
               </div>
               <div className="columns is-hidden-touch">
                 <div className="column has-text-centered is-uppercase has-text-weight-bold">
-                  <Link to='/collections'>
-                    Products
-                  </Link>
+                  <Dropdown text="Products" to="/collections">
+                    <Link to='/products/ledgestone/'>
+                      Ledgestone
+                    </Link>
+                    <Link to='/products/prairie-stone/'>
+                      Prairie Stone
+                    </Link>
+                  </Dropdown>
                   <span className="has-margin-x-small">/</span>
                   <Link to='/about'>
                     About
