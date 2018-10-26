@@ -76,3 +76,11 @@ collections:
           - {label: Title, name: "title", widget: "string"}
           - {label: Images, name: "images", widget: list, fields: [{label: Image, name: image, widget: image}, {label: Text, name: text, widget: text}] }
           - {label: "Body", name: "body", widget: "markdown"}
+      - file: "src/pages/brochure/index.md"
+        label: "Brochure"
+        name: "brochure"
+        fields:
+          - {label: "Template Key", name: "templateKey", widget: "hidden", default: "brochure-page"}
+          - {label: "Title", name: "title", widget: "string"}
+          - {label: "Banner Image", name: "bannerImage", widget: "image"}
+          - {label: "Body", name: "body", widget: "markdown"}
