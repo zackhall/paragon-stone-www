@@ -84,3 +84,18 @@ collections:
           - {label: "Title", name: "title", widget: "string"}
           - {label: "Banner Image", name: "bannerImage", widget: "image"}
           - {label: "Body", name: "body", widget: "markdown"}
+
+  - name: "siteMetadata"
+    label: "Site Metadata"
+    files:
+      - file: "src/siteMetadata/navigation.md"
+        label: "Navigation"
+        name: "navigation"
+        fields:
+          - label: "Navigation Items"
+            name: "navItems"
+            widget: "list"
+            fields:
+              - {label: "Page Title", name: title, widget: string }
+              - {label: Path, name: path, widget: string }
+              - {label: "Child Collection", name: childCollection, widget: string, default: "" }
