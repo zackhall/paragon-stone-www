@@ -42,7 +42,7 @@ export const BrochurePageTemplate = ({
         <form
           name="download-brochure"
           method="POST"
-          action="/"
+          action="/brochure/thanks"
           data-netlify="true"
         >
           <input type="hidden" name="form-name" value="download-brochure" />
@@ -74,7 +74,7 @@ export const BrochurePageTemplate = ({
         <form
           name="request-brochure"
           method="POST"
-          action="/"
+          action="/brochure/thanks"
           data-netlify="true"
         >
           <input type="hidden" name="form-name" value="request-brochure" />

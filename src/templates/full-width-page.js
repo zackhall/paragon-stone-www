@@ -47,13 +47,15 @@ FullWidthPageTemplate.propTypes = {
 
 const FullWidthPage = ({ data }) => {
   const { markdownRemark: post } = data
+  const bannerImage = post.frontmatter.bannerImage &&
+    post.frontmatter.bannerImage.childImageSharp.resolutions.src
 
   return (
     <Layout>
       <FullWidthPageTemplate
         contentComponent={HTMLContent}
         title={post.frontmatter.title}
-        bannerImage={post.frontmatter.bannerImage.childImageSharp.resolutions.src}
+        bannerImage={bannerImage}
         content={post.html}
       />
     </Layout>
