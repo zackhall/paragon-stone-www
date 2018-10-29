@@ -46,18 +46,18 @@ export const BrochurePageTemplate = ({
           data-netlify="true"
         >
           <input type="hidden" name="form-name" value="download-brochure" />
-          <div class="field is-horizontal">
-            <div class="field-label is-normal">
-              <label class="label">E-mail</label>
+          <div className="field is-horizontal">
+            <div className="field-label is-normal">
+              <label className="label">E-mail</label>
             </div>
-            <div class="field-body">
-              <div class="field">
-                <p class="control is-expanded">
-                  <input class="input" type="email" name="email" placeholder="e.g. thestoneguys@example.com" />
+            <div className="field-body">
+              <div className="field">
+                <p className="control is-expanded">
+                  <input className="input" type="email" name="email" placeholder="e.g. thestoneguys@example.com" />
                 </p>
               </div>
-              <div class="field">
-                <p class="control">
+              <div className="field">
+                <p className="control">
                   <button className="button is-link" type="submit">Download</button>
                 </p>
               </div>
@@ -78,24 +78,24 @@ export const BrochurePageTemplate = ({
           data-netlify="true"
         >
           <input type="hidden" name="form-name" value="request-brochure" />
-          <div class="field is-horizontal">
-            <div class="field-label is-normal">
-              <label class="label">From</label>
+          <div className="field is-horizontal">
+            <div className="field-label is-normal">
+              <label className="label">From</label>
             </div>
-            <div class="field-body">
-              <div class="field">
-                <p class="control is-expanded">
+            <div className="field-body">
+              <div className="field">
+                <p className="control is-expanded">
                   <input
-                    class="input"
+                    className="input"
                     type="text"
                     name="name"
                     placeholder="Name" />
                 </p>
               </div>
-              <div class="field">
-                <p class="control is-expanded">
+              <div className="field">
+                <p className="control is-expanded">
                   <input
-                    class="input"
+                    className="input"
                     type="email"
                     name="email"
                     placeholder="Email" />
@@ -104,19 +104,19 @@ export const BrochurePageTemplate = ({
             </div>
           </div>
 
-          <div class="field is-horizontal">
-            <div class="field-label"></div>
-            <div class="field-body">
-              <div class="field is-expanded">
-                <div class="field has-addons">
-                  <p class="control">
-                    <a class="button is-static">
+          <div className="field is-horizontal">
+            <div className="field-label"></div>
+            <div className="field-body">
+              <div className="field is-expanded">
+                <div className="field has-addons">
+                  <p className="control">
+                    <a className="button is-static">
                       +1
                     </a>
                   </p>
-                  <p class="control is-expanded">
+                  <p className="control is-expanded">
                     <input
-                      class="input"
+                      className="input"
                       type="tel"
                       name="tel"
                       placeholder="Your phone number" />
@@ -126,24 +126,24 @@ export const BrochurePageTemplate = ({
             </div>
           </div>
 
-          <div class="field is-horizontal">
-            <div class="field-label is-normal">
-              <label class="label">Address</label>
+          <div className="field is-horizontal">
+            <div className="field-label is-normal">
+              <label className="label">Address</label>
             </div>
-            <div class="field-body">
-              <div class="field">
-                <p class="control is-expanded">
+            <div className="field-body">
+              <div className="field">
+                <p className="control is-expanded">
                   <input
-                    class="input"
+                    className="input"
                     type="text"
                     name="streetAddress1"
                     placeholder="Street address" />
                 </p>
               </div>
-              <div class="field">
-                <p class="control is-expanded">
+              <div className="field">
+                <p className="control is-expanded">
                   <input
-                    class="input"
+                    className="input"
                     type="text"
                     name="streetAddress2"
                     placeholder="Apt/Unit/Box #" />
@@ -152,33 +152,33 @@ export const BrochurePageTemplate = ({
             </div>
           </div>
 
-          <div class="field is-horizontal">
-            <div class="field-label is-normal">
-              <label class="label"></label>
+          <div className="field is-horizontal">
+            <div className="field-label is-normal">
+              <label className="label"></label>
             </div>
-            <div class="field-body">
-              <div class="field">
-                <p class="control is-expanded">
+            <div className="field-body">
+              <div className="field">
+                <p className="control is-expanded">
                   <input
-                    class="input"
+                    className="input"
                     type="text"
                     name="city"
                     placeholder="City" />
                 </p>
               </div>
-              <div class="field">
-                <p class="control ">
+              <div className="field">
+                <p className="control ">
                   <input
-                    class="input"
+                    className="input"
                     type="text"
                     name="state"
                     placeholder="State" />
                 </p>
               </div>
-              <div class="field">
-                <p class="control">
+              <div className="field">
+                <p className="control">
                   <input
-                    class="input"
+                    className="input"
                     type="text"
                     name="zipCode"
                     placeholder="Zip code" />
@@ -187,15 +187,15 @@ export const BrochurePageTemplate = ({
             </div>
           </div>
 
-          <div class="field is-horizontal">
-            <div class="field-label is-normal">
-              <label class="label">Question</label>
+          <div className="field is-horizontal">
+            <div className="field-label is-normal">
+              <label className="label">Question</label>
             </div>
-            <div class="field-body">
-              <div class="field">
-                <div class="control">
+            <div className="field-body">
+              <div className="field">
+                <div className="control">
                   <textarea
-                    class="textarea"
+                    className="textarea"
                     name="comments"
                     placeholder="Any additional questions?">
                   </textarea>
@@ -204,11 +204,11 @@ export const BrochurePageTemplate = ({
             </div>
           </div>
 
-          <div class="field is-horizontal">
-            <div class="field-label"></div>
-            <div class="field-body">
-              <div class="field">
-                <div class="control">
+          <div className="field is-horizontal">
+            <div className="field-label"></div>
+            <div className="field-body">
+              <div className="field">
+                <div className="control">
                   <button className="button is-link" type="submit">
                     Request
                   </button>
