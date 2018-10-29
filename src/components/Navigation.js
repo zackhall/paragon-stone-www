@@ -34,7 +34,7 @@ class Navigation extends React.Component {
               <div className="columns">
                 <div className="column">
                   <Link to="/">
-                    <figure className="image">
+                    <figure className="image main-logo">
                       <img src={logo} alt="Paragon Stone" style={{ height: '80px' }} />
                     </figure>
                   </Link>
