@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { graphql } from 'gatsby'
+import { Link, graphql } from 'gatsby'
 import Layout from '../components/Layout'
 import BannerImage from '../components/BannerImage'
 import Tile from '../components/Tile'
@@ -25,26 +25,30 @@ export const HomePageTemplate =({
     <section className="section">
       <div className="columns">
         <div className="column">
-          <Tile
-            size={4}
-            number="01"
-            title="Find your perfect stone."
-            subtitle="Explore all of Paragon’s true-to-life manufactured stone products to find the right shape, texture, and color for your home."
-            bgSrc={tile1bg}
-            isInverted={true}
-          />
+          <Link to="/collections">
+            <Tile
+              size={4}
+              number="01"
+              title="Find your perfect stone."
+              subtitle="Explore all of Paragon’s true-to-life manufactured stone products to find the right shape, texture, and color for your home."
+              bgSrc={tile1bg}
+              isInverted={true}
+            />
+          </Link>
         </div>
         <div className="column">
           <div className="columns">
             <div className="column">
-              <Tile
-                size={2}
-                number="02"
-                title="Request your Paragon Stone brochure."
-                bgSrc={tile2bg}
-                bgSize="75%"
-                bgPosition="top right"
-              />
+              <Link to="/brochure">
+                <Tile
+                  size={2}
+                  number="02"
+                  title="Request your Paragon Stone brochure."
+                  bgSrc={tile2bg}
+                  bgSize="75%"
+                  bgPosition="top right"
+                />
+              </Link>
             </div>
           </div>
           <div className="columns">
