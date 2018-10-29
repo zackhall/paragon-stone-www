@@ -1,5 +1,6 @@
 ---
 templateKey: product-page
+collectionKey: products
 title: Ledgestone
 description: >-
   The interplay of light and shadows dance across the walls in Paragon Stone’s

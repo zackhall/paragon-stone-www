@@ -5,7 +5,6 @@ import Img from 'gatsby-image'
 
 const GalleryItem = ({title, offset, image, onClick}) => (
   <>
-  {console.log(image)}
     <Parallax.Layer offset={offset} speed={0} onClick={onClick} >
       <Img
         fluid={image.childImageSharp.fluid}

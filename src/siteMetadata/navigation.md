@@ -1,15 +1,17 @@
 ---
+templateKey: no-op
+fileKey: navigation
 navItems:
   - title: Products
-    path: /collections
+    to: "collections"
     childCollection: products
   - title: About
-    path: /about
+    to: about
     childCollection:
   - title: Gallery
-    path: /gallery
+    to: gallery
     childCollection:
   - title: Contact
-    path: /contact
+    to: contact
     childCollection:
 ---

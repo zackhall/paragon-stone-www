@@ -1,5 +1,6 @@
 ---
 templateKey: product-page
+collectionKey: products
 title: Prairie Stone
 description: >-
   Prairie Stone is a Paragon Stone exclusive and is one of our most popular

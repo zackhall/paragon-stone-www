@@ -87,8 +87,6 @@ GalleryPageTemplate.propTypes = {
 
 const GalleryPage = ({ data }) => {
   const { frontmatter, html } = data.markdownRemark
-  console.log('images')
-  console.log(frontmatter.images)
 
   return (
     <Layout>

@@ -2,10 +2,7 @@ import React from 'react'
 import { Link } from 'gatsby'
 
 const Dropdown = ({ text, to, children }) => (
-  <div className="paragon-dropdown">
-    {console.log(text)}
-    {console.log(to)}
-    {console.log(children)}
+  <div className="paragon-dropdown desktop-nav-item">
     <Link to={to}>{text}</Link>
     <ul>
       {

@@ -7,7 +7,6 @@ import Layout from '../components/Layout'
 import { HomePageTemplate } from '../templates/home-page'
 
 const IndexPage = ({data}) => {
-  console.log(data)
   const homepage = get(data, 'allMarkdownRemark.edges[0].node.frontmatter')
   const {title, gallery} = homepage
 

@@ -17,7 +17,6 @@ export const CollectionsPageTemplate = ({
   collections,
 }) => {
   const PageContent = contentComponent || Content
-  console.log(collections)
 
   return (
     <>

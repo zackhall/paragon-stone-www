@@ -228,6 +228,16 @@ $spacer-size: 4rem;
   }
 }
 
+.desktop-nav-item {
+  display: inline-block;
+
+  &:not(:last-child)::after {
+    content: '/';
+    display: inline-block;
+    @include margin-x($spacer-size * 0.25);
+  }
+}
+
 /************
  * PreFooter
  * Styles and variables

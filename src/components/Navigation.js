@@ -1,5 +1,9 @@
 import React from 'react'
-import { Link } from 'gatsby'
+import { Link, StaticQuery, graphql } from 'gatsby'
+import get from 'lodash/get'
+import groupBy from 'lodash/groupBy'
+import filter from 'lodash/filter'
+
 import logo from '../img/logo.svg'
 import logobw from '../img/logo-bw.svg'
 import Dropdown from '../components/Dropdown'
@@ -15,6 +19,10 @@ class Navigation extends React.Component {
   }
 
   render() {
+    const { navigation, pages} = this.props.data
+    const navItems = get(navigation, 'edges[0].node.frontmatter.navItems')
+    const collections = groupBy(pages && pages.edges, 'node.frontmatter.collectionKey')
+
     return (
       <nav className="navigation">
         <div className="container is-fluid">
@@ -34,26 +42,28 @@ class Navigation extends React.Component {
               </div>
               <div className="columns is-hidden-touch">
                 <div className="column has-text-centered is-uppercase has-text-weight-bold">
-                  <Dropdown text="Products" to="/collections">
-                    <Link to='/products/ledgestone/'>
-                      Ledgestone
-                    </Link>
-                    <Link to='/products/prairie-stone/'>
-                      Prairie Stone
-                    </Link>
-                  </Dropdown>
-                  <span className="has-margin-x-small">/</span>
-                  <Link to='/about'>
-                    About
-                  </Link>
-                  <span className="has-margin-x-small">/</span>
-                  <Link to='/gallery'>
-                    Gallery
-                  </Link>
-                  <span className="has-margin-x-small">/</span>
-                  <Link to='/contact'>
-                    Contact
-                  </Link>
+                  {
+                    navItems.map( ({title, to, childCollection}, index) => (
+                      childCollection && childCollection.length ?
+                        <Dropdown text={title} to={`/${to}`} key={to}>
+                          {
+                            collections[childCollection].map(item => (
+                              <Link
+                                to={`/${item.node.fields.slug}`}
+                                key={item.node.fields.slug}
+                              >
+                                {item.node.frontmatter.title}
+                              </Link>
+                            ))
+                          }
+                        </Dropdown> :
+                        <div className="desktop-nav-item" key={to}>
+                          <Link to={`/${to}`} >
+                            {title}
+                          </Link>
+                        </div>
+                    ))
+                  }
                 </div>
               </div>
             </div>
@@ -83,30 +93,43 @@ class Navigation extends React.Component {
                 General
               </p>
               <ul className="menu-list">
-                <li>
-                  <Link>About</Link>
-                </li>
-                <li>
-                  <Link>Contact</Link>
-                </li>
+                {
+                  filter(navItems, (item) => !item.childCollection)
+                    .map( ({to, title}) =>
+                      <li key={to}>
+                        <Link to={`/${to}`} >
+                          {title}
+                        </Link>
+                      </li>
+                    )
+                }
               </ul>
-              <p className="menu-label">
-                Products
-              </p>
-              <ul className="menu-list">
-                <Link>Prarie Stone</Link>
-                <Link>Ledgestone</Link>
-                <Link>Summit Ledge</Link>
-                <Link>Limestone</Link>
-                <Link>Fieldstone</Link>
-                <Link>Manor Stone</Link>
-                <Link>River Rock</Link>
-                <Link>Stacked Stone</Link>
-                <Link>Ashlar Stone</Link>
-                <Link>Foundation Stone</Link>
-                <Link>Brick</Link>
-                <Link>Accessories</Link>
-              </ul>
+              {
+                filter(navItems, (item) => !!item.childCollection)
+                  .map( ({to, title, childCollection}) =>
+                    <React.Fragment key={to}>
+                      <p className="menu-label">
+                        {title}
+                      </p>
+                      <ul className="menu-list">
+                        <li>
+                          <Link to={`/${to}`}>
+                            See all
+                          </Link>
+                        </li>
+                        {
+                          collections[childCollection].map(item => (
+                            <li key={item.node.fields.slug}>
+                              <Link to={`/${item.node.fields.slug}`}>
+                                {item.node.frontmatter.title}
+                              </Link>
+                            </li>
+                          ))
+                        }
+                      </ul>
+                    </ React.Fragment >
+                  )
+              }
             </div>
           </div>
         </aside>
@@ -115,4 +138,44 @@ class Navigation extends React.Component {
   }
 }
 
-export default Navigation
+export default (props) => (
+  <StaticQuery
+    query={graphql`
+      query {
+        navigation: allMarkdownRemark(
+          limit: 1000,
+          filter:{ frontmatter: { fileKey: { eq: "navigation"} }}
+        ) {
+          edges {
+            node {
+              frontmatter {
+                navItems {
+                  title
+                  to
+                  childCollection
+                }
+              }
+            }
+          }
+        }
+        pages: allMarkdownRemark {
+          edges {
+            node {
+              id
+              fields {
+                slug
+              }
+              frontmatter {
+                title
+                collectionKey
+              }
+            }
+          }
+        }
+      }
+    `}
+    render={ data => <Navigation data={data} {...props} /> }
+  />
+)
+
+// export default Navigation
