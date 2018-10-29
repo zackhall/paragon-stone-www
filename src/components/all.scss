@@ -181,6 +181,8 @@ $spacer-size: 4rem;
   background-image: $nav-bg, $bg-img;
   background-position: center;
   background-blend-mode: overlay;
+  border-bottom: 1px solid lighten($footer-color, 25%);
+
   > .container {
     padding-top: 1.5rem;
     padding-bottom: 1.5rem;
