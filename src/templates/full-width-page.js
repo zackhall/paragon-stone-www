@@ -106,7 +106,7 @@ export const fullWidthPageQuery = graphql`
           }
         }
         attachment {
-          file
+          # file
           text
         }
       }
