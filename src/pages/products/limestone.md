@@ -1,0 +1,42 @@
+---
+templateKey: product-page
+collectionKey: products
+title: Limestone
+description: >-
+  After millions of years of pressure, the earth gives birth to a magnificent
+  rock. Paragon Stone’s Limestone captures this Midwestern quarried stone in all
+  its glory. We meticulously reproduced limestone’s bold, rough, hand-split look
+  in a range of beautiful color blends reminiscent of grand historic homes.
+bannerImage: /img/auburn-limestone.jpg
+techSpecs: |-
+  LENGTH RANGE 4" to 22"
+  HEIGHT RANGE 2" to 8"
+  Jumpers up to 12" by 12"
+categories:
+  - Rectangular Stone
+finishes:
+  - image: /img/sample_auburn-limestone.jpg
+    name: Auburn Limestone
+  - image: /img/sample_bluegrass-limestone.jpg
+    name: Bluegrass Limestone
+  - image: /img/sample_clove-brook-limestone.jpg
+    name: Clove Brook Limestone
+  - image: /img/sample_poplar-bluff-limestone.jpg
+    name: Poplar Bluff Limestone
+  - image: /img/sample_Brandywine-Limestone.jpg
+    name: Brandywine Limestone
+  - image: /img/sample_cinder-limestone.jpg
+    name: Cinder Limestone
+  - image: /img/sample_ohio-blue-vein-limestone.jpg
+    name: Ohio Blue Vein Limestone
+  - image: /img/sample_ohio-tan-limestone.jpg
+    name: Ohio Tan Limestone
+  - image: /img/sample_ohio-white-vein-limestone.jpg
+    name: Ohio White Vein Limestone
+  - image: /img/sample_sequoia-limestone.jpg
+    name: Sequoia Limestone
+gallery:
+  - image: /img/auburn-limestone.jpg
+    text: Auburn Limestone
+---
+
