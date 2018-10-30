@@ -2,6 +2,9 @@
 templateKey: full-width-page
 title: About us
 bannerImage: /img/tim-fink-paragon-stone0000.jpg
+attachment:
+  file: /img/Paragon-Stone-Brochure.pdf
+  text: Yeehaw
 ---
 > “TO SOME PEOPLE, WE’RE JUST KNOWN AS THE STONE GUYS”
 
