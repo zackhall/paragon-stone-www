@@ -7,7 +7,10 @@ const PreFooter = () => (
       <p className="subtitle">
         Like what you see?
       </p>
-      <Link className="button is-primary is-outlined is-uppercase">
+      <Link
+        className="button is-primary is-outlined is-uppercase"
+        to="/contact"
+      >
         Let's talk
       </Link>
     </section>
