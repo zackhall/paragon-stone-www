@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { graphql } from 'gatsby'
+import { Link, graphql } from 'gatsby'
 
 import BannerImage from '../components/BannerImage'
 import Content, { HTMLContent } from '../components/Content'
@@ -9,6 +9,7 @@ import Layout from '../components/Layout'
 export const FullWidthPageTemplate = ({
   title,
   bannerImage,
+  attachment,
   content,
   contentComponent,
 }) => {
@@ -18,21 +19,38 @@ export const FullWidthPageTemplate = ({
     <>
       {
         bannerImage ?
-          <BannerImage
-            src={bannerImage}
-            title={title}
-            backgroundPosition='center'
-          /> :
-          <section className="section">
-            <container>
+            <BannerImage
+              src={bannerImage}
+              title={title}
+              backgroundPosition='center'
+            /> : null
+      }
+
+      <section className="section">
+        <container>
+          {
+            !bannerImage ?
               <h2 className="title is-size-3">
                 {title}
-              </h2>
-            </container>
-          </section>
-      }
-      <section className="section">
-        <PageContent className="content" content={content} />
+              </h2> : null
+          }
+          {
+            !!attachment ?
+              <article className="message is-primary">
+                <div className="message-body">
+                  <p>
+                    {attachment.text}
+                  </p>
+                  <p>
+                    <Link to={attachment.file}>
+                      Download Now
+                    </Link>
+                  </p>
+                </div>
+              </article> : null
+          }
+          <PageContent className="content" content={content} />
+        </container>
       </section>
     </>
   )
@@ -40,8 +58,9 @@ export const FullWidthPageTemplate = ({
 
 FullWidthPageTemplate.propTypes = {
   title: PropTypes.string.isRequired,
-  content: PropTypes.string,
   bannerImage: PropTypes.object,
+  attachment: PropTypes.object,
+  content: PropTypes.string,
   contentComponent: PropTypes.func,
 }
 
@@ -49,14 +68,16 @@ const FullWidthPage = ({ data }) => {
   const { markdownRemark: post } = data
   const bannerImage = post.frontmatter.bannerImage &&
     post.frontmatter.bannerImage.childImageSharp.resolutions.src
+  const attachment = post.frontmatter.attachment
 
   return (
     <Layout>
       <FullWidthPageTemplate
-        contentComponent={HTMLContent}
         title={post.frontmatter.title}
         bannerImage={bannerImage}
+        attachment={attachment}
         content={post.html}
+        contentComponent={HTMLContent}
       />
     </Layout>
   )
@@ -83,6 +104,10 @@ export const fullWidthPageQuery = graphql`
               srcSet
             }
           }
+        }
+        attachment {
+          file
+          text
         }
       }
     }

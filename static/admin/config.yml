@@ -92,6 +92,7 @@ collections:
           - {label: "Template Key", name: "templateKey", widget: "hidden", default: "full-width-page"}
           - {label: "Title", name: "title", widget: "string"}
           - {label: "Banner Image", name: "bannerImage", widget: "image"}
+          - {label: "Attachment", name: "attachment", widget: "object", fields: [{ label: File, name: file, widget: file}, {label: Text, name: text, widget: text}]}
           - {label: "Body", name: "body", widget: "markdown"}
 
   - name: "siteMetadata"
