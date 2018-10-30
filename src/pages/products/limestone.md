@@ -10,7 +10,9 @@ description: >-
 bannerImage: /img/auburn-limestone.jpg
 techSpecs: |-
   LENGTH RANGE 4" to 22"
+
   HEIGHT RANGE 2" to 8"
+
   Jumpers up to 12" by 12"
 categories:
   - Rectangular Stone
