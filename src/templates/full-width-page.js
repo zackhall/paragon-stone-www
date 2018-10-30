@@ -9,7 +9,6 @@ import Layout from '../components/Layout'
 export const FullWidthPageTemplate = ({
   title,
   bannerImage,
-  attachment,
   content,
   contentComponent,
 }) => {
@@ -34,21 +33,6 @@ export const FullWidthPageTemplate = ({
                 {title}
               </h2> : null
           }
-          {
-            !!attachment ?
-              <article className="message is-primary">
-                <div className="message-body">
-                  <p>
-                    {attachment.text}
-                  </p>
-                  <p>
-                    <Link to={attachment.file}>
-                      Download Now
-                    </Link>
-                  </p>
-                </div>
-              </article> : null
-          }
           <PageContent className="content" content={content} />
         </container>
       </section>
@@ -59,7 +43,6 @@ export const FullWidthPageTemplate = ({
 FullWidthPageTemplate.propTypes = {
   title: PropTypes.string.isRequired,
   bannerImage: PropTypes.object,
-  attachment: PropTypes.object,
   content: PropTypes.string,
   contentComponent: PropTypes.func,
 }
@@ -68,14 +51,12 @@ const FullWidthPage = ({ data }) => {
   const { markdownRemark: post } = data
   const bannerImage = post.frontmatter.bannerImage &&
     post.frontmatter.bannerImage.childImageSharp.resolutions.src
-  const attachment = post.frontmatter.attachment
 
   return (
     <Layout>
       <FullWidthPageTemplate
         title={post.frontmatter.title}
         bannerImage={bannerImage}
-        attachment={attachment}
         content={post.html}
         contentComponent={HTMLContent}
       />
@@ -104,10 +85,6 @@ export const fullWidthPageQuery = graphql`
               srcSet
             }
           }
-        }
-        attachment {
-          # file
-          text
         }
       }
     }
