@@ -15,25 +15,32 @@ class Navigation extends React.Component {
     this.state = {
       isDrawerActive: false
     }
-  }
 
-  componentDidUpdate() {
-    // prevent scrolling when drawer open by hiding overflow on body.
-    const styles = {
+    this.styles = {
       body: {
         height: '100vh',
         overflow: 'hidden',
       }
     }
+  }
 
+  componentDidUpdate() {
+    // prevent scrolling when drawer open by hiding overflow on body.
     if (this.state.isDrawerActive) {
-      for (var i in styles.body) {
-        document.body.style[i] = styles.body[i]
+      for (var i in this.styles.body) {
+        document.body.style[i] = this.styles.body[i]
       }
     } else {
-      for (var i in styles.body) {
+      for (var i in this.styles.body) {
         document.body.style[i] = null
       }
+    }
+  }
+
+  componentWillUnmount() {
+    // make sure to unlock the scrolling on page body.
+    for (var i in this.styles.body) {
+      document.body.style[i] = null
     }
   }
 
