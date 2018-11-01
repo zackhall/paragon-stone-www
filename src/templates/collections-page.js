@@ -39,9 +39,21 @@ export const CollectionsPageTemplate = ({
       </section>
       <section className="section">
         {
-          Object.keys(collections).map((key) => (
-            <Collection title={key} products={collections[key]} />
-          ))
+          Object
+            .keys(collections)
+            .sort((a, b) => {
+              const aUpper = a.toUpperCase(),
+                    bUpper = b.toUpperCase()
+
+              if (aUpper === 'NONE') { return 1 }
+              if (bUpper === 'NONE') { return -1 }
+              if (aUpper > bUpper)   { return 1 }
+              if (aUpper < bUpper)   { return -1 }
+              return 0
+            })
+            .map((key) => (
+              <Collection title={ key.toUpperCase() !== 'NONE' ? key : 'Other'} products={collections[key]} />
+            ))
         }
       </section>
     </>
@@ -70,6 +82,8 @@ const CollectionsPage = ({ data }) => {
       )
 
   const collections = groupBy(products, 'categories')
+  console.log('collections')
+  console.log(collections)
 
   return (
     <Layout>

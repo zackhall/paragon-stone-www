@@ -6,7 +6,6 @@ description: To be added.
 bannerImage: /img/sample_old-town-red-brick.jpg
 techSpecs: UNKNOWN
 categories:
-  - Other
 finishes:
   - image: /img/sample_old-town-red-brick.jpg
     name: Old Town Red Brick
