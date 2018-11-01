@@ -80,9 +80,7 @@ export const ProductPageTemplate = ({
     {
       gallery && gallery.length ? (
         <section className="section">
-          <Gallery title="Experience the difference."
-                    description="Inspiration, a lot of perspiration, and the technology to see it through…that’s the Paragon Stone difference. We only use the finest raw materials. Detail with surfaces that are so true-to-life, the quality and realism have to be seen to be believed."
-          >
+          <Gallery title="Experience the difference.">
             {
               gallery.map((
                   item,

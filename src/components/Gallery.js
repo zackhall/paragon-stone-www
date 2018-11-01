@@ -24,7 +24,7 @@ class Gallery extends React.Component {
   }
 
   render() {
-    const {title, description, children} = this.props
+    const {title, children} = this.props
     const {index} = this.state
     const length = (children && children.length) || 0
 
