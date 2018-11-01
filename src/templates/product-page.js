@@ -77,27 +77,29 @@ export const ProductPageTemplate = ({
       </div>
     </section>
 
-    <section className="section">
-      <Gallery title="Experience the difference."
-                description="Inspiration, a lot of perspiration, and the technology to see it through…that’s the Paragon Stone difference. We only use the finest raw materials. Detail with surfaces that are so true-to-life, the quality and realism have to be seen to be believed."
-      >
-        {
-          gallery && gallery.length ? (
-            gallery.map((
-              item,
-              index
-            ) => (
-              <GalleryItem
-                offset={index}
-                key={index}
-                title={item.text}
-                image={item.image}
-              />
-            ))
-          ) : null
-        }
-      </Gallery>
-    </section>
+    {
+      gallery && gallery.length ? (
+        <section className="section">
+          <Gallery title="Experience the difference."
+                    description="Inspiration, a lot of perspiration, and the technology to see it through…that’s the Paragon Stone difference. We only use the finest raw materials. Detail with surfaces that are so true-to-life, the quality and realism have to be seen to be believed."
+          >
+            {
+              gallery.map((
+                  item,
+                  index
+                ) => (
+                  <GalleryItem
+                    offset={index}
+                    key={index}
+                    title={item.text}
+                    image={item.image}
+                  />
+                ))
+            }
+          </Gallery>
+        </section>
+      ) : null
+    }
   </>
 )
 
