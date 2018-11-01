@@ -8,7 +8,7 @@ const Footer = ({data}) => {
   const links =
     data && data.pages && data.pages.edges.map(page => (
       <p key={page.node.id} >
-        <Link to={page.node.fields.slug} >
+        <Link to={page.node.fields.slug} className="has-text-white">
           {page.node.frontmatter.title}
         </Link>
       </p>
