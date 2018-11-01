@@ -7,12 +7,11 @@ import logobw from '../img/logo-bw.svg'
 const Footer = ({data}) => {
   const links =
     data && data.pages && data.pages.edges.map(page => (
-      <Link
-        to={page.node.fields.slug}
-        key={page.node.id}
-      >
-        {page.node.frontmatter.title}
-      </Link>
+      <p key={page.node.id} >
+        <Link to={page.node.fields.slug} >
+          {page.node.frontmatter.title}
+        </Link>
+      </p>
     ))
 
   return (
@@ -51,7 +50,7 @@ const Footer = ({data}) => {
             }
           </div>
           <div className="column">
-            <p className="subtitle is-uppercase has-text-white">&nbsp;</p>
+            <p className="subtitle is-uppercase has-text-white is-hidden-touch">&nbsp;</p>
             {
               _(links)
                 .chunk(Math.ceil(links.length / 2))
