@@ -10,7 +10,6 @@ categories:
 finishes:
   - image: /img/sample_pecan-foundation-stone.jpg
     name: Pecan Foundation Stone
-gallery:
-  - {}
+gallery: []
 ---
 
