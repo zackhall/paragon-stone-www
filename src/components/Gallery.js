@@ -95,16 +95,20 @@ class Gallery extends React.Component {
                 { `/${(length).toString().padStart(2, '0')}` }
               </span>
             </div>
-            <div>
-              <span className="gallery-icon"
-                   onClick={() => this.scrollTo(this.mod(index-1, length))}
-              >
-                arrow_back
-              </span>
-              <span className="gallery-icon"
-                   onClick={() => this.scrollTo(this.mod(index+1, length))}
-              >arrow_forward</span>
-            </div>
+            {
+              length > 1 ?
+                <div>
+                  <span className="gallery-icon"
+                      onClick={() => this.scrollTo(this.mod(index-1, length))}
+                  >
+                    arrow_back
+                  </span>
+                  <span className="gallery-icon"
+                      onClick={() => this.scrollTo(this.mod(index+1, length))}
+                  >arrow_forward</span>
+                </div>
+                : null
+            }
           </div>
           <div className="column">
             <p className="subtitle is-uppercase">Shown</p>
