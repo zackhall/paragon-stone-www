@@ -85,8 +85,13 @@ class Gallery extends React.Component {
         </div>
         <div className="gallery-banner" />
 
-        <div className="columns has-padding-top-medium">
+        <div className="columns is-mobile has-padding-top-medium">
+          <div className="column is-hidden-touch"></div>
           <div className="column">
+            <p className="subtitle is-uppercase">Shown</p>
+            <h4 className="title is-4">{children && children[index].props.title}</h4>
+          </div>
+          <div className="column has-text-right">
             <div>
               <span className="current-slide">
                 { (index + 1).toString().padStart(2, '0') }
@@ -110,14 +115,7 @@ class Gallery extends React.Component {
                 : null
             }
           </div>
-          <div className="column">
-            <p className="subtitle is-uppercase">Shown</p>
-            <h4 className="title is-4">{children && children[index].props.title}</h4>
-          </div>
-          <div className="column">
-            <p>{description}</p>
-          </div>
-          <div className="column"></div>
+          <div className="column is-hidden-touch"></div>
         </div>
       </div>
     )

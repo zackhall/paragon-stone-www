@@ -350,8 +350,8 @@ $spacer-size: 4rem;
 .gallery-next-image,
 .gallery-prev-image {
   position: relative;
-  padding: calc(0.75 * 80%) 0 0 0 !important;
-  flex: 0 0 80%;
+  padding: calc(0.75 * 100%) 0 0 0 !important;
+  flex: 0 0 100%;
   box-sizing: border-box;
   overflow:hidden;
   z-index: 99;
@@ -365,7 +365,7 @@ $spacer-size: 4rem;
 }
 
 .gallery-main-image {
-  margin-left: 10%;
+  margin-left: 0%;
 
   @media screen and (min-width: 1088px) {
     & {
