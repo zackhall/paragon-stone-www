@@ -5,7 +5,6 @@ import groupBy from 'lodash/groupBy'
 import filter from 'lodash/filter'
 
 import logo from '../img/logo.svg'
-import logobw from '../img/logo-bw.svg'
 import Dropdown from '../components/Dropdown'
 
 
@@ -15,6 +14,26 @@ class Navigation extends React.Component {
     super(props)
     this.state = {
       isDrawerActive: false
+    }
+  }
+
+  componentDidUpdate() {
+    // prevent scrolling when drawer open by hiding overflow on body.
+    const styles = {
+      body: {
+        height: '100vh',
+        overflow: 'hidden',
+      }
+    }
+
+    if (this.state.isDrawerActive) {
+      for (var i in styles.body) {
+        document.body.style[i] = styles.body[i]
+      }
+    } else {
+      for (var i in styles.body) {
+        document.body.style[i] = null
+      }
     }
   }
 
