@@ -16,7 +16,7 @@ const Footer = ({data}) => {
 
   return (
     <div className="footer">
-      <section className="section has-text-white">
+      <section className="section has-text-white has-text-centered-touch">
         <div className="footer-logo">
           <img src={logobw} alt="Paragon Stone Manufactured Stone Veneers Logo" />
         </div>
