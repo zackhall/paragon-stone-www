@@ -44,6 +44,7 @@ collections:
         fields:
           - {label: "Template Key", name: "templateKey", widget: "hidden", default: "home-page"}
           - {label: Title, name: title, widget: string}
+          - {label: "Banner Image", name: "bannerImage", widget: "image"}
           - {label: Gallery, name: gallery, widget: list, fields: [{label: Image, name: image, widget: image}, {label: Text, name: text, widget: text}]}
       - file: "src/pages/about/index.md"
         label: "About"

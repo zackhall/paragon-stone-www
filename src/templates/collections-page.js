@@ -23,7 +23,7 @@ export const CollectionsPageTemplate = ({
       {
         bannerImage ?
           <BannerImage
-            src={bannerImage}
+            img={bannerImage}
             title={title}
           /> :
           <section className="section">
@@ -82,15 +82,12 @@ const CollectionsPage = ({ data }) => {
       )
 
   const collections = groupBy(products, 'categories')
-  console.log('collections')
-  console.log(collections)
-
   return (
     <Layout>
       <CollectionsPageTemplate
         contentComponent={HTMLContent}
         title={post.frontmatter.title}
-        bannerImage={post.frontmatter.bannerImage.childImageSharp.resolutions.src}
+        bannerImage={post.frontmatter.bannerImage.childImageSharp.fluid}
         content={post.html}
         collections={collections}
       />
@@ -112,11 +109,8 @@ export const collectionsPageQuery = graphql`
         title
         bannerImage {
           childImageSharp {
-            resolutions(width: 2048) {
-              width
-              height
-              src
-              srcSet
+            fluid(maxWidth: 1600, maxHeight: 750, quality: 75) {
+              ...GatsbyImageSharpFluid
             }
           }
         }

@@ -19,7 +19,7 @@ export const BrochurePageTemplate = ({
       {
         bannerImage ?
           <BannerImage
-            src={bannerImage}
+            img={bannerImage}
             title={title}
             backgroundPosition='center'
           /> :
@@ -237,7 +237,7 @@ const BrochurePage = ({ data }) => {
       <BrochurePageTemplate
         contentComponent={HTMLContent}
         title={post.frontmatter.title}
-        bannerImage={post.frontmatter.bannerImage.childImageSharp.resolutions.src}
+        bannerImage={post.frontmatter.bannerImage.childImageSharp.fluid}
         content={post.html}
       />
     </Layout>
@@ -258,11 +258,8 @@ export const BrochurePageQuery = graphql`
         title
         bannerImage {
           childImageSharp {
-            resolutions(width: 2048) {
-              width
-              height
-              src
-              srcSet
+            fluid(maxWidth: 1600, maxHeight: 750, quality: 75) {
+              ...GatsbyImageSharpFluid
             }
           }
         }

@@ -19,7 +19,7 @@ export const FullWidthPageTemplate = ({
       {
         bannerImage ?
             <BannerImage
-              src={bannerImage}
+              img={bannerImage}
               title={title}
               backgroundPosition='center'
             /> : null
@@ -50,7 +50,7 @@ FullWidthPageTemplate.propTypes = {
 const FullWidthPage = ({ data }) => {
   const { markdownRemark: post } = data
   const bannerImage = post.frontmatter.bannerImage &&
-    post.frontmatter.bannerImage.childImageSharp.resolutions.src
+    post.frontmatter.bannerImage.childImageSharp.fluid
 
   return (
     <Layout>
@@ -78,11 +78,8 @@ export const fullWidthPageQuery = graphql`
         title
         bannerImage {
           childImageSharp {
-            resolutions(width: 2048) {
-              width
-              height
-              src
-              srcSet
+            fluid(maxWidth: 1600, maxHeight: 750, quality: 75) {
+              ...GatsbyImageSharpFluid
             }
           }
         }

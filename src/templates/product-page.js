@@ -18,7 +18,7 @@ export const ProductPageTemplate = ({
 }) => (
   <>
     <BannerImage
-      src={bannerImage}
+      img={bannerImage}
       title={title}
     />
 
@@ -112,6 +112,8 @@ ProductPageTemplate.propTypes = {
 
 const ProductPage = ({ data }) => {
   const { frontmatter } = data.markdownRemark
+  const bannerImage = frontmatter.bannerImage &&
+    frontmatter.bannerImage.childImageSharp.fluid
 
   return (
     <Layout>
@@ -119,7 +121,7 @@ const ProductPage = ({ data }) => {
         title={frontmatter.title}
         description={frontmatter.description}
         techSpecs={frontmatter.techSpecs}
-        bannerImage={frontmatter.bannerImage.childImageSharp.resolutions.src}
+        bannerImage={bannerImage}
         finishes={frontmatter.finishes}
         gallery={frontmatter.gallery}
       />
@@ -146,11 +148,8 @@ export const pageQuery = graphql`
         techSpecs
         bannerImage {
           childImageSharp {
-            resolutions(width: 2048) {
-              width
-              height
-              src
-              srcSet
+            fluid(maxWidth: 1600, maxHeight: 750, quality: 75) {
+              ...GatsbyImageSharpFluid
             }
           }
         }

@@ -1,23 +1,26 @@
 import React from 'react'
 import { Link } from 'gatsby'
+import Img from 'gatsby-image'
 
 const BannerImage = ({
-  src,
+  img,
   title,
   backgroundPosition,
 }) => (
-  <div
-    className="banner-image-container"
-    style={{
-      backgroundImage: `url(${src})`,
-      backgroundPosition: backgroundPosition || 'bottom'
-    }}
-  >
-    <div className="section">
-      <h1 className="title is-1 has-text-white">
-        {title}
-      </h1>
+  <div className="banner-image-container">
+    <div className="banner-image-content">
+      <div className="section">
+        <h1 className="title is-1 has-text-white">
+          {title}
+        </h1>
+      </div>
     </div>
+    <Img
+      fluid={img}
+      fadeIn={true}
+      alt={title}
+      className="banner-image-bg"
+     />
   </div>
 )
 

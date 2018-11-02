@@ -7,7 +7,6 @@ import Tile from '../components/Tile'
 import Gallery from '../components/Gallery'
 import GalleryItem from '../components/GalleryItem'
 
-import bannerSrc from '../img/banner-image.png'
 import tile1bg from '../img/tile-1-bg.png'
 import tile2bg from '../img/tile-2-bg.png'
 import tile3bg from '../img/tile-3-bg.png'
@@ -15,13 +14,17 @@ import tile4bg from '../img/tile-4-bg.png'
 
 export const HomePageTemplate =({
   title,
+  bannerImage,
   gallery,
 }) => (
   <>
-    <BannerImage
-      src={bannerSrc}
-      title="Naturally inspired beauty."
-    />
+    {
+      bannerImage ?
+        <BannerImage
+          img={bannerImage}
+          title="Naturally inspired beauty."
+        /> : null
+    }
     <section className="section">
       <div className="columns">
         <div className="column">
@@ -100,16 +103,20 @@ export const HomePageTemplate =({
 HomePageTemplate.propTypes = {
   title: PropTypes.string,
   gallery: PropTypes.array,
+  bannerImage: PropTypes.object,
 }
 
 const HomePage = ({ data }) => {
   const { frontmatter } = data.markdownRemark
+  const bannerImage = frontmatter.bannerImage &&
+    frontmatter.bannerImage.childImageSharp.fluid
 
   return (
     <Layout>
       <HomePageTemplate
         title={frontmatter.title}
         gallery={frontmatter.gallery}
+        bannerImage={bannerImage}
       />
     </Layout>
   )
@@ -122,6 +129,13 @@ export const homePageQuery = graphql`
     markdownRemark(id: { eq: $id }) {
       frontmatter {
         title
+        bannerImage {
+          childImageSharp {
+            fluid(maxWidth: 1600, maxHeight: 750, quality: 75) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
         gallery {
           image {
             childImageSharp {

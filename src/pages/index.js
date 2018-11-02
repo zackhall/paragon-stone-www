@@ -9,12 +9,15 @@ import { HomePageTemplate } from '../templates/home-page'
 const IndexPage = ({data}) => {
   const homepage = get(data, 'allMarkdownRemark.edges[0].node.frontmatter')
   const {title, gallery} = homepage
+  const bannerImage = homepage.bannerImage &&
+    homepage.bannerImage.childImageSharp.fluid
 
   return (
     <Layout>
       <HomePageTemplate
         title={title}
         gallery={gallery}
+        bannerImage={bannerImage}
       />
     </Layout>
   )
@@ -39,6 +42,17 @@ export const pageQuery = graphql`
         node {
           frontmatter {
             title
+            bannerImage {
+              childImageSharp {
+                fluid(
+                  maxWidth: 1600,
+                  maxHeight: 750,
+                  quality: 75
+                ) {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
             gallery {
               image {
                 childImageSharp {
