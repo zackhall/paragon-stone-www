@@ -270,11 +270,23 @@ $spacer-size: 4rem;
  ***********/
 .banner-image-container {
   width: 100vw;
-  padding-top: (2 / 5) * 100%;
+  padding-top: (3 / 4) * 100%;
   position: relative;
   left: 50%;
   right: 50%;
   margin: 0 -50vw;
+
+  @media screen and (min-width: 769px) {
+    & {
+      padding-top: (2 / 3) * 100%;
+    }
+  }
+
+  @media screen and (min-width: 1088px) {
+    & {
+      padding-top: (2 / 5) * 100%;
+    }
+  }
 
   .banner-image-bg,
   .banner-image-content {
@@ -292,12 +304,6 @@ $spacer-size: 4rem;
     align-items: flex-end;
     background: linear-gradient(to top, rgba(#000, 0.25), rgba(#000, 0.25) 20%, rgba(#000, 0.0) 35%);
   }
-}
-
-.background-position {
-  &-top { background-position: top; }
-  &-center { background-position: center; }
-  &-bottom { background-position: bottom; }
 }
 
 /************
