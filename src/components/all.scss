@@ -178,6 +178,7 @@ $spacer-size: 4rem;
  $menu-label-color: $inactive-color !default;
 
 .navigation {
+  position:relative;
   background-image: $nav-bg, $bg-img;
   background-position: center;
   background-blend-mode: overlay;
@@ -185,7 +186,29 @@ $spacer-size: 4rem;
 
   > .container {
     padding-top: 1.5rem;
-    padding-bottom: 1.5rem;
+
+    @media screen and (min-width: 1088px) {
+      & {
+        padding-bottom: 1.5rem;
+      }
+    }
+  }
+
+  > .section {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+
+  .navigation--main > * {
+    @include margin-y(1rem);
+  }
+
+  .navigation--mobile-menu-btn {
+    position: absolute;
+    right: 1.5rem;
+    top: 50%;
+    transform: translateY(-35%);
+    z-index: 1;
   }
 }
 
@@ -196,6 +219,23 @@ $spacer-size: 4rem;
 
   &.nav-icon-inverted {
     color: $paragon-yellow;
+  }
+}
+
+.nav-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  img {
+    height: 64px;
+    width: auto;
+
+    @media screen and (min-width: 769px) {
+      & {
+        height: 80px;
+      }
+    }
   }
 }
 

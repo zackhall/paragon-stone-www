@@ -51,57 +51,49 @@ class Navigation extends React.Component {
 
     return (
       <nav className="navigation">
-        <div className="container is-fluid">
+        <span
+          className="navigation--mobile-menu-btn nav-icon is-hidden-desktop"
+          onClick={() => this.setState({isDrawerActive: !this.state.isDrawerActive})} >
+          menu
+        </span>
+        <div className="section">
           <div className="columns is-mobile is-vcentered">
             <div className="column has-text-left is-hidden-touch">
               info@paragonstone.com
             </div>
-            <div className="column is-half-desktop">
-              <div className="columns">
-                <div className="column">
-                  <Link to="/">
-                    <figure className="image">
-                      <img src={logo} alt="Paragon Stone" style={{ height: '80px' }} />
-                    </figure>
-                  </Link>
-                </div>
+            <div className="column is-half-desktop navigation--main">
+              <div className="nav-logo">
+                <Link to="/">
+                  <img src={logo} alt="Paragon Stone" />
+                </Link>
               </div>
-              <div className="columns is-hidden-touch">
-                <div className="column has-text-centered is-uppercase has-text-weight-bold">
-                  {
-                    navItems.map( ({title, to, childCollection}, index) => (
-                      childCollection && childCollection.length ?
-                        <Dropdown text={title} to={`/${to}`} key={to}>
-                          {
-                            collections[childCollection].map(item => (
-                              <Link
-                                to={`/${item.node.fields.slug}`}
-                                key={item.node.fields.slug}
-                              >
-                                {item.node.frontmatter.title}
-                              </Link>
-                            ))
-                          }
-                        </Dropdown> :
-                        <div className="desktop-nav-item" key={to}>
-                          <Link to={`/${to}`} >
-                            {title}
-                          </Link>
-                        </div>
-                    ))
-                  }
-                </div>
+              <div className="is-hidden-touch has-text-centered is-uppercase has-text-weight-bold">
+                {
+                  navItems.map( ({title, to, childCollection}, index) => (
+                    childCollection && childCollection.length ?
+                      <Dropdown text={title} to={`/${to}`} key={to}>
+                        {
+                          collections[childCollection].map(item => (
+                            <Link
+                              to={`/${item.node.fields.slug}`}
+                              key={item.node.fields.slug}
+                            >
+                              {item.node.frontmatter.title}
+                            </Link>
+                          ))
+                        }
+                      </Dropdown> :
+                      <div className="desktop-nav-item" key={to}>
+                        <Link to={`/${to}`} >
+                          {title}
+                        </Link>
+                      </div>
+                  ))
+                }
               </div>
             </div>
             <div className="column has-text-right is-hidden-touch">
               (330) 930-0415
-            </div>
-            <div className="column is-narrow is-hidden-desktop">
-              <span
-                className="nav-icon"
-                onClick={() => this.setState({isDrawerActive: !this.state.isDrawerActive})} >
-                menu
-              </span>
             </div>
           </div>
         </div>
