@@ -29,6 +29,14 @@ const encode = (data) => {
 
 const ContactForm = () => (
   <div>
+    <form name="contact=page" netlify netlify-honeypot="bot-field" hidden>
+      <input type="text" name="name" />
+      <input type="email" name="email" />
+      <input type="tel" name="phone" />
+      <select name="role"></select>
+      <textarea name="message"></textarea>
+      <select name="referrer"></select>
+    </form>
     <Formik
       initialValues={{
         name: '',
