@@ -58,7 +58,6 @@ const ContactForm = () => (
           data-netlify="true"
           onSubmit={handleSubmit}
         >
-          {/* <Field name="form-name" type="hidden" /> */}
           <Field name="name" />
           <ErrorMessage name="name" />
           <Field name="email" type="email" />
