@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
 
 import BannerImage from '../components/BannerImage'
+import ContactForm from '../components/ContactForm'
 import Content, { HTMLContent } from '../components/Content'
 import Layout from '../components/Layout'
 
@@ -35,7 +36,8 @@ export const ContactPageTemplate = ({
       </section>
 
       <div className="section">
-        <form
+        <ContactForm />
+        {/* <form
           name="contact"
           method="POST"
           action="/"
@@ -79,7 +81,7 @@ export const ContactPageTemplate = ({
                   </p>
                   <p className="control is-expanded">
                     <input
-                      className="input"
+                      className="input"`1
                       type="tel"
                       name="tel"
                       placeholder="Your phone number (optional)" />
@@ -163,7 +165,7 @@ export const ContactPageTemplate = ({
               </div>
             </div>
           </div>
-        </form>
+        </form> */}
       </div>
     </>
   )
