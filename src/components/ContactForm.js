@@ -53,9 +53,6 @@ const ContactForm = () => (
       {({ errors, touched, handleSubmit }) => (
         <Form
           name="contact"
-          method="POST"
-          action="/"
-          data-netlify="true"
           onSubmit={handleSubmit}
         >
           <Field name="name" />
