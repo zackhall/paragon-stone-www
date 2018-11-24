@@ -63,7 +63,7 @@ const ContactForm = () => (
           name="contact"
           onSubmit={handleSubmit}
         >
-          <Field name="name" />
+          {/* <Field name="name" />
           <ErrorMessage name="name" />
           <Field name="email" type="email" />
           <ErrorMessage name="email" />
@@ -84,7 +84,125 @@ const ContactForm = () => (
             <option value="word-of-mouth">Word of Mouth</option>
             <option value="ads">Advertising</option>
           </Field>
-          <button type="submit">Submit</button>
+          <button type="submit">Submit</button> */}
+
+          <div className="field is-horizontal">
+            <div className="field-label is-normal">
+              <label className="label">From</label>
+            </div>
+            <div className="field-body">
+              <div className="field">
+                <p className="control is-expanded">
+                  <Field name="name" className="input" placeholder="Full Name" />
+                  <ErrorMessage name="name" />
+                </p>
+              </div>
+              <div className="field">
+                <p className="control is-expanded">
+                  <Field name="email" type="email" className="input" placeholder="E-mail" />
+                  <ErrorMessage name="email" />
+                </p>
+              </div>
+            </div>
+          </div>
+          <div className="field is-horizontal">
+            <div className="field-label"></div>
+            <div className="field-body">
+              <div className="field is-expanded">
+                <div className="field has-addons">
+                  <p className="control">
+                    <a className="button is-static">
+                      +1
+                    </a>
+                  </p>
+                  <p className="control is-expanded">
+                    <Field name="phone" type="tel" className="input" placeholder="Phone" />
+                  </p>
+                </div>
+              </div>
+              <ErrorMessage name="phone" />
+            </div>
+          </div>
+          <div className="field is-horizontal">
+            <div className="field-label">
+              <label className="label">Details</label>
+            </div>
+            <div className="field-body">
+              <div className="field">
+                <div className="control is-expanded">
+                  <div className="select" style={{width: '100%'}}>
+                    <Field name="role" component="select" placeholder="Your role" style={{width: '100%'}}>
+                      <option value="" disabled selected>What's your role?</option>
+                      <option value="architect">Architect</option>
+                      <option value="builder">Builder</option>
+                      <option value="designer">Designer</option>
+                      <option value="remodeler">Remodeler</option>
+                      <option value="subcontractor">Sub-contractor</option>
+                      <option value="homeowner">Homeowner</option>
+                    </Field>
+                  </div>
+                </div>
+              </div>
+              <div className="field">
+                <div className="control is-expanded">
+                  <div className="select" style={{width: '100%'}}>
+                    <Field name="referrer" component="select" placeholder="" style={{width: '100%'}}>
+                      <option value="" disabled selected>How did you hear about us?</option>
+                      <option value="search">Google or Bing</option>
+                      <option value="word-of-mouth">Word of Mouth</option>
+                      <option value="ads">Advertising</option>
+                    </Field>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="field is-horizontal">
+            <div className="field-label is-normal">
+              <label className="label">Message</label>
+            </div>
+            <div className="field-body">
+              <div className="field">
+                <div className="control">
+                  <Field component="textarea" name="message" className="textarea" />
+                  <ErrorMessage name="message" />
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* <div className="field is-horizontal">
+            <div className="field-label">
+              <label className="label">How did you hear about us?</label>
+            </div>
+            <div className="field-body">
+              <div className="field">
+                <div className="control is-expanded">
+                  <div className="select" style={{width: '100%'}}>
+                    <Field name="referrer" component="select" placeholder="How did you hear about us?" style={{width: '100%'}}>
+                      <option value="search">Google or Bing</option>
+                      <option value="word-of-mouth">Word of Mouth</option>
+                      <option value="ads">Advertising</option>
+                    </Field>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div> */}
+
+          <div className="field is-horizontal">
+            <div className="field-label"></div>
+            <div className="field-body">
+              <div className="field">
+                <div className="control">
+                  <button className="button is-link" type="submit">
+                    Send
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
         </Form>
       )}
     </Formik>
