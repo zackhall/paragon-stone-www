@@ -1,5 +1,5 @@
 ---
-templateKey: full-width-page
+templateKey: two-column-page
 title: About us
 bannerImage: /img/tim-fink-paragon-stone0000.jpg
 ---
