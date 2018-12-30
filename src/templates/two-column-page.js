@@ -32,7 +32,7 @@ export const TwoColumnPageTemplate = ({
                 fadeIn={true}
               />
             </div>
-            <div className="column is-three-fifths has-padding-top-large has-padding-left-medium">
+            <div className="column is-three-fifths has-padding-left-medium">
               <PageContent className="content" content={content} />
             </div>
           </div>

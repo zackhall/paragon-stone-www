@@ -3,7 +3,7 @@ templateKey: two-column-page
 title: About us
 bannerImage: /img/tim-fink-paragon-stone0000.jpg
 ---
-## “TO SOME PEOPLE, WE’RE JUST KNOWN AS THE STONE GUYS”
+## — “To some people, we’re simply known as The Stone Guys™.”
 
 <br/>
 
