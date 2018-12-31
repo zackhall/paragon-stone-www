@@ -38,9 +38,10 @@ export const ContactPageTemplate = ({
       <div className="section">
         <div className="columns">
           <div className="column is-two-thirds has-padding-right-large has-padding-bottom-large">
-            <h3 className="title is-3">
+            <h3 className="title is-3 has-margin-bottom-small">
               Message us —
             </h3>
+            <p className="has-padding-bottom-medium">We're happy to help with your project, your business, or finding the nearest dealer. Get in touch with us using the form below or by reaching out directly through phone or e-mail.</p>
             <ContactForm />
           </div>
           <div className="column is-one-third">

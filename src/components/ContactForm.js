@@ -1,6 +1,7 @@
 import React from 'react'
 import { Formik, Form, Field, ErrorMessage } from 'formik'
 import * as Yup from 'yup'
+import { navigate } from 'gatsby'
 
 const ContactFormSchema =
   Yup.object().shape({
@@ -62,7 +63,7 @@ const ContactForm = () => (
           method: "POST",
           headers: { "Content-Type": "application/x-www-form-urlencoded" },
           body: encode({ "form-name": "contact-page", ...values })
-        }).then(() => alert("Success!"))
+        }).then(() => navigate('/brochure/thanks'))
           .catch(error => alert(error));
       }}
     >
@@ -151,7 +152,13 @@ const ContactForm = () => (
               <div className="has-text-danger"><ErrorMessage name="message" /></div>
             </div>
           </div>
-          <button className="button" type="submit">Submit</button>
+          <button
+            className="button"
+            type="submit"
+            disabled={Object.keys(touched).length === 0 || (errors && Object.keys(errors).length > 0)}
+          >
+            Submit
+          </button>
         </Form>
       )}
     </Formik>
