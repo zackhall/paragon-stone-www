@@ -10,13 +10,15 @@ const ContactFormSchema =
       .min(2, 'Name is too short.')
       .max(50, 'Name is too long.')
       .required('Name is required'),
+    company: Yup.string(),
     email: Yup.string()
       .email('Invalid email')
       .required('E-mail is required.'),
-    phone: Yup.string(),
+    phone: Yup.string()
+      .matches(/^[(]{0,1}[0-9]{3}[-)]{0,1}[\s]{0,1}[0-9]{3}[\s-]{0,1}[0-9]{4}$/, 'Invalid phone number. Use format XXX-XXX-XXXX.'),
     role: Yup.string(),
     message: Yup.string()
-      .min(10, 'Message is too short.')
+      .min(5, 'Message is too short.')
       .required('Message is required.'),
     referrer: Yup.string(),
   })
@@ -31,6 +33,7 @@ const ContactForm = () => (
   <div>
     <form name="contact-page" data-netlify="true" netlify-honeypot="bot-field" hidden>
       <input type="text" name="name" />
+      <input type="text" name="company" />
       <input type="email" name="email" />
       <input type="tel" name="phone" />
       <select name="role"></select>
@@ -40,6 +43,7 @@ const ContactForm = () => (
     <Formik
       initialValues={{
         name: '',
+        company: '',
         email: '',
         phone: '',
         role: '',
@@ -63,30 +67,62 @@ const ContactForm = () => (
           name="contact"
           onSubmit={handleSubmit}
         >
-          {/* <Field name="name" />
-          <ErrorMessage name="name" />
-          <Field name="email" type="email" />
-          <ErrorMessage name="email" />
-          <Field name="phone" type="tel" />
-          <ErrorMessage name="phone" />
-          <Field component="textarea" name="message" />
-          <ErrorMessage name="message" />
-          <Field name="role" component="select" placeholder="Your role">
-            <option value="architect">Architect</option>
-            <option value="builder">Builder</option>
-            <option value="designer">Designer</option>
-            <option value="remodeler">Remodeler</option>
-            <option value="subcontractor">Sub-contractor</option>
-            <option value="homeowner">Homeowner</option>
-          </Field>
-          <Field name="referrer" component="select" placeholder="">
-            <option value="search">Google or Bing</option>
-            <option value="word-of-mouth">Word of Mouth</option>
-            <option value="ads">Advertising</option>
-          </Field>
-          <button type="submit">Submit</button> */}
+          <div className="columns">
+            <div className="column">
+              <label htmlFor="name">First & Last Name*</label>
+              <Field name="name" className="full-width" />
+              <div className="has-text-danger"><ErrorMessage name="name" /></div>
+            </div>
+            <div className="column">
+              <label htmlFor="company">Company</label>
+              <Field name="company" type="text" className="full-width" />
+            </div>
+          </div>
+          <div className="columns">
+            <div className="column">
+              <label htmlFor="email">E-mail*</label>
+              <Field name="email" type="email" className="full-width" />
+              <div className="has-text-danger"><ErrorMessage name="email" /></div>
+            </div>
+            <div className="column">
+              <label htmlFor="phone">Phone Number</label>
+              <Field name="phone" type="tel" className="full-width" />
+              <div className="has-text-danger"><ErrorMessage name="phone" /></div>
+            </div>
+          </div>
+          <div className="columns">
+            <div className="column">
+              <label htmlFor="role">What's your role?</label>
+              <Field name="role" component="select" placeholder="Your role" className="full-width">
+                <option value="" disabled selected>&nbsp;</option>
+                <option value="architect">Architect</option>
+                <option value="builder">Builder</option>
+                <option value="designer">Designer</option>
+                <option value="remodeler">Remodeler</option>
+                <option value="subcontractor">Sub-contractor</option>
+                <option value="homeowner">Homeowner</option>
+              </Field>
+            </div>
+            <div className="column">
+              <label htmlFor="referrer">How did you hear about us?</label>
+              <Field name="referrer" component="select" placeholder="" className="full-width">
+                <option value="" disabled selected>&nbsp;</option>
+                <option value="search">Google or Bing</option>
+                <option value="word-of-mouth">Word of Mouth</option>
+                <option value="ads">Advertising</option>
+              </Field>
+            </div>
+          </div>
+          <div className="columns">
+            <div className="column">
+              <label htmlFor="message">Message*</label>
+              <Field component="textarea" name="message" className="full-width" />
+              <div className="has-text-danger"><ErrorMessage name="message" /></div>
+            </div>
+          </div>
+          <button className="button" type="submit">Submit</button>
 
-          <div className="field is-horizontal">
+          {/* <div className="field is-horizontal">
             <div className="field-label is-normal">
               <label className="label">From</label>
             </div>
@@ -170,7 +206,7 @@ const ContactForm = () => (
                 </div>
               </div>
             </div>
-          </div>
+          </div> */}
 
           {/* <div className="field is-horizontal">
             <div className="field-label">
@@ -191,7 +227,7 @@ const ContactForm = () => (
             </div>
           </div> */}
 
-          <div className="field is-horizontal">
+          {/* <div className="field is-horizontal">
             <div className="field-label"></div>
             <div className="field-body">
               <div className="field">
@@ -202,7 +238,7 @@ const ContactForm = () => (
                 </div>
               </div>
             </div>
-          </div>
+          </div> */}
         </Form>
       )}
     </Formik>

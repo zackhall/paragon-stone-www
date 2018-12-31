@@ -1,5 +1,3 @@
-@import "~bulma/sass/utilities/initial-variables";
-
 // Config vars
 $paragon-blue: #1A3551;
 $paragon-yellow: #FED839;
@@ -18,6 +16,8 @@ $nav-bg: url('../img/nav-bg.svg');
 $logo-bw: url('../img/logo-bw.svg');
 
 $button-border-width: 2px;
+
+@import "~bulma/sass/utilities/initial-variables";
 
 /************
  * Mixins and Partials
@@ -160,6 +160,80 @@ $spacer-size: 4rem;
     &-small { @include margin-x($spacer-size * 0.25); }
     &-medium { @include margin-x($spacer-size * 0.5); }
     &-large { @include margin-x($spacer-size * 1); }
+  }
+}
+
+
+/************
+ * Form elements
+ * Styles and variables
+ ***********/
+
+label {
+  font-family: $family-sans-serif;
+  font-weight: 600;
+  display: block;
+  margin-bottom: 0.25rem;
+}
+
+ input,
+ textarea {
+  font-size: 100%;
+  outline: 0;
+  padding: .5rem 2.5rem .5rem 1rem;
+  border: 1px solid currentColor;
+  border-radius: .25rem!important;
+  background-color: transparent;
+  border: 1px solid rgba(27,31,35,.2);
+  background-color: #FFF;
+
+  &.full-width {
+    width: 100%;
+  }
+}
+
+textarea {
+  height: 8rem;
+  resize: none;
+}
+
+select {
+  $select-icon: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg width='32px' height='32px' viewBox='0 0 32 32' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3Cg transform='translate(-736.000000, -1016.000000)' fill='%234D4D4D' fill-rule='nonzero'%3E%3Cpolygon points='736.108962 1016.5 766.8393 1016.5 751.474131 1039.83452'%3E%3C/polygon%3E%3C/g%3E%3C/svg%3E");
+
+  cursor: pointer;
+  -moz-appearance: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -webkit-appearance: none;
+  -webkit-user-select: none;
+  appearance: none;
+  font-size: 100%;
+  outline: 0;
+  padding: .5rem 2.5rem .5rem 1rem;
+  border: 1px solid currentColor;
+  border-radius: .25rem!important;
+  background-color: transparent;
+  border: 1px solid rgba(27,31,35,.2);
+  background-color: #FFF;
+  background-image: $select-icon;
+  background-position: center right 1rem;
+  background-size: .5rem .5rem;
+  background-repeat: no-repeat;
+
+  &::-ms-expand {
+    display: none;
+  }
+  &:focus {
+    border-color: #2188ff;
+    box-shadow: inset 0 1px 2px rgba(27,31,35,.075), 0 0 0 0.2em rgba(3,102,214,.3);
+  }
+  &:hover {
+    background-color: #e6ebf1;
+    border-color: rgba(27,31,35,.35);
+  }
+
+  &.full-width {
+    width: 100%;
   }
 }
 

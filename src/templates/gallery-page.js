@@ -60,12 +60,14 @@ export class GalleryPageTemplate extends React.Component {
             direction={"column"}
             onClick={this.openLightbox}
           />
-          <Lightbox images={galleryImages}
+          <Lightbox
+            images={galleryImages}
             onClose={this.closeLightbox}
             onClickPrev={this.gotoPrevious}
             onClickNext={this.gotoNext}
             currentImage={this.state.currentImage}
             isOpen={this.state.lightboxIsOpen}
+            backdropClosesModal={true}
           />
         </section>
       </>
@@ -119,7 +121,7 @@ export const pageQuery = graphql`
         images {
           image {
             childImageSharp {
-              resolutions(width: 800) {
+              resolutions(width: 1024) {
                 width
                 height
                 src
