@@ -56,14 +56,16 @@ export const HomePageTemplate =({
           </div>
           <div className="columns">
             <div className="column">
-              <Tile
-                size={1}
-                number="03"
-                title="Find out where you can buy Paragon Stone."
-                bgSrc={tile3bg}
-                bgSize="70%"
-                bgPosition="top right"
-              />
+              <Link to="/contact">
+                <Tile
+                  size={1}
+                  number="03"
+                  title="Find out where you can buy Paragon Stone."
+                  bgSrc={tile3bg}
+                  bgSize="70%"
+                  bgPosition="top right"
+                />
+              </Link>
             </div>
             <div className="column">
               <Tile

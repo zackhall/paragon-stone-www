@@ -28,15 +28,33 @@ export const ContactPageTemplate = ({
       <section className="section">
         {
           !bannerImage ?
-            <h2 className="title is-size-3">
+            <h1 className="title is-size-1">
               {title}
-            </h2> : null
+            </h1> : null
         }
         <PageContent className="content" content={content} />
       </section>
 
       <div className="section">
-        <ContactForm />
+        <div className="columns">
+          <div className="column is-two-thirds has-padding-right-large has-padding-bottom-large">
+            <h3 className="title is-3">
+              Message us —
+            </h3>
+            <ContactForm />
+          </div>
+          <div className="column is-one-third">
+            <h3 className="title is-3">
+              Office information —
+            </h3>
+            <p>445 South Crown Hill<br/>Orrville, OH 44647</p>
+            <p className="has-padding-top-small">
+              <b>Phone:</b> (330) 930-0415<br/>
+              <b>Fax:</b> (330) 930-0416<br/>
+              <b>E-mail:</b> info@paragonstone.com
+            </p>
+          </div>
+        </div>
       </div>
     </>
   )

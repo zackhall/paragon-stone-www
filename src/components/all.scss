@@ -109,31 +109,37 @@ $spacer-size: 4rem;
 
 .has-padding {
   &-top {
+    &-none { padding-top: 0 !important; }
     &-small { padding-top: $spacer-size * 0.25 !important; }
     &-medium { padding-top: $spacer-size * 0.5 !important; }
     &-large { padding-top: $spacer-size * 1 !important; }
   }
   &-bottom {
+    &-none { padding-bottom: 0 !important; }
     &-small { padding-bottom: $spacer-size * 0.25 !important; }
     &-medium { padding-bottom: $spacer-size * 0.5 !important; }
     &-large { padding-bottom: $spacer-size * 1 !important; }
   }
   &-y {
+    &-none { @include padding-y(0); }
     &-small { @include padding-y($spacer-size * 0.25); }
     &-medium { @include padding-y($spacer-size * 0.5); }
     &-large { @include padding-y($spacer-size * 1); }
   }
   &-right {
+    &-none { padding-right: 0 !important; }
     &-small { padding-right: $spacer-size * 0.25 !important; }
     &-medium { padding-right: $spacer-size * 0.5 !important; }
     &-large { padding-right: $spacer-size * 1 !important; }
   }
   &-left {
+    &-none { padding-left: 0 !important; }
     &-small { padding-left: $spacer-size * 0.25 !important; }
     &-medium { padding-left: $spacer-size * 0.5 !important; }
     &-large { padding-left: $spacer-size * 1 !important; }
   }
   &-x {
+    &-none { @include padding-x(0); }
     &-small { @include padding-x($spacer-size * 0.25); }
     &-medium { @include padding-x($spacer-size * 0.5); }
     &-large { @include padding-x($spacer-size * 1); }
@@ -142,21 +148,25 @@ $spacer-size: 4rem;
 
 .has-margin {
   &-top {
+    &-none { margin-top: 0 !important; }
     &-small { margin-top: $spacer-size * 0.25 !important; }
     &-medium { margin-top: $spacer-size * 0.5 !important; }
     &-large { margin-top: $spacer-size * 1 !important; }
   }
   &-bottom {
+    &-none { margin-bottom: 0 !important; }
     &-small { margin-bottom: $spacer-size * 0.25 !important; }
     &-medium { margin-bottom: $spacer-size * 0.5 !important; }
     &-large { margin-bottom: $spacer-size * 1 !important; }
   }
   &-y {
+    &-none { @include margin-y(0); }
     &-small { @include margin-y($spacer-size * 0.25); }
     &-medium { @include margin-y($spacer-size * 0.5); }
     &-large { @include margin-y($spacer-size * 1); }
   }
   &-x {
+    &-none { @include margin-x(0); }
     &-small { @include margin-x($spacer-size * 0.25); }
     &-medium { @include margin-x($spacer-size * 0.5); }
     &-large { @include margin-x($spacer-size * 1); }
