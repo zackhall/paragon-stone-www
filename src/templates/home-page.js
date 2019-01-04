@@ -68,13 +68,15 @@ export const HomePageTemplate =({
               </Link>
             </div>
             <div className="column">
-              <Tile
-                size={1}
-                number="04"
-                title="Become an official Paragon distributor."
-                bgSrc={tile4bg}
-                isInverted={true}
-              />
+              <Link to="/stone-distributors">
+                <Tile
+                  size={1}
+                  number="04"
+                  title="Become an official Paragon distributor."
+                  bgSrc={tile4bg}
+                  isInverted={true}
+                />
+              </Link>
             </div>
           </div>
         </div>

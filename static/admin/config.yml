@@ -63,6 +63,13 @@ collections:
           - {label: "Title", name: "title", widget: "string"}
           - {label: "Banner Image", name: "bannerImage", widget: "image"}
           - {label: "Body", name: "body", widget: "markdown"}
+      - file: "src/pages/stone-distributors/index.md"
+        label: "Distributors"
+        fields:
+          - {label: "Template Key", name: "templateKey", widget: "hidden", default: "full-width-page"}
+          - {label: "Title", name: "title", widget: "string"}
+          - {label: "Banner Image", name: "bannerImage", widget: "image"}
+          - {label: "Body", name: "body", widget: "markdown"}
       - file: "src/pages/collections/index.md"
         label: "Collections"
         name: "collections"
