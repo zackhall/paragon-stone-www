@@ -68,7 +68,7 @@ export const HomePageTemplate =({
               </Link>
             </div>
             <div className="column">
-              <Link to="/stone-distributors">
+              <Link to="/distributors">
                 <Tile
                   size={1}
                   number="04"
