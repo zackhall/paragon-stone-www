@@ -100,7 +100,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /************
- * Padding helpers
+ * Layout helpers
  ***********/
 
 // 1rem => 16px
@@ -152,25 +152,41 @@ $spacer-size: 4rem;
     &-small { margin-top: $spacer-size * 0.25 !important; }
     &-medium { margin-top: $spacer-size * 0.5 !important; }
     &-large { margin-top: $spacer-size * 1 !important; }
+    &-xlarge { margin-top: $spacer-size * 2 !important; }
   }
   &-bottom {
     &-none { margin-bottom: 0 !important; }
     &-small { margin-bottom: $spacer-size * 0.25 !important; }
     &-medium { margin-bottom: $spacer-size * 0.5 !important; }
     &-large { margin-bottom: $spacer-size * 1 !important; }
+    &-xlarge { margin-bottom: $spacer-size * 2 !important; }
   }
   &-y {
     &-none { @include margin-y(0); }
     &-small { @include margin-y($spacer-size * 0.25); }
     &-medium { @include margin-y($spacer-size * 0.5); }
     &-large { @include margin-y($spacer-size * 1); }
+    &-xlarge { @include margin-y($spacer-size * 2); }
   }
   &-x {
     &-none { @include margin-x(0); }
     &-small { @include margin-x($spacer-size * 0.25); }
     &-medium { @include margin-x($spacer-size * 0.5); }
     &-large { @include margin-x($spacer-size * 1); }
+    &-xlarge { @include margin-x($spacer-size * 2); }
   }
+}
+
+.flex-beginning-mobile {
+  @media screen and (max-width: 768px) {
+    & {
+      order: -1;
+    }
+  }
+}
+
+.flex-beginning {
+  order: -1;
 }
 
 
