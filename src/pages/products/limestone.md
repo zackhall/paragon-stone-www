@@ -40,5 +40,15 @@ finishes:
 gallery:
   - image: /img/auburn-limestone.jpg
     text: Auburn Limestone
+  - image: /img/inspiration_brandywine-limestone-2.jpg
+    text: Brandywine Limestone
+  - image: /img/inspiration_cinder-limestone-4.jpg
+    text: Cinder Limestone
+  - image: /img/inspiration_ohio-tan-limestone-1.jpg
+    text: Ohio Tan Limestone
+  - image: /img/Clove-Brook-Limestone.jpg
+    text: Clove Brook Limestone
+  - image: /img/inspiration_poplar-bluff-limestone-3.jpg
+    text: Poplar Bluff Limestone
 ---
 
