@@ -6,7 +6,7 @@ bannerImage: /img/banner_paragon-stone-veneers-ledgestone.png
 <div class="columns has-margin-top-large">
   <div class="column is-half">
 
-![](/img/river-rock-fireplace0000.jpg)
+![null](/img/river-rock-fireplace0000.jpg)
 
   </div>
   <div class="column is-half flex-beginning">
@@ -18,7 +18,7 @@ bannerImage: /img/banner_paragon-stone-veneers-ledgestone.png
 <div class="columns has-margin-top-large">
   <div class="column is-half">
 
-![](/img/river-rock-fireplace0000.jpg)
+![null](/img/inspiration_cinder-manor-stone-5.jpg)
 
   </div>
   <div class="column is-half">
@@ -30,7 +30,7 @@ bannerImage: /img/banner_paragon-stone-veneers-ledgestone.png
 <div class="columns has-margin-top-large">
   <div class="column is-half">
 
-![](/img/river-rock-fireplace0000.jpg)
+![null](/img/inspiration_monterey-summit-ledge.jpg)
 
   </div>
   <div class="column is-half flex-beginning">
