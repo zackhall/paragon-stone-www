@@ -52,9 +52,17 @@ export class GalleryPageTemplate extends React.Component {
       caption: i.text,
     }))
 
+    const PageContent = contentComponent || Content
+
     return(
       <>
         <section className="section has-padding-y-large">
+          <h2 className="title is-size-2">
+                {title}
+          </h2>
+
+          <PageContent className="content" content={content} />
+
           <Gallery
             photos={galleryImages}
             direction={"column"}
