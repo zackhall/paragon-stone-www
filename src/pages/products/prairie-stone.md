@@ -23,11 +23,11 @@ finishes:
   - image: /img/sample_monterey-prairie-stone.jpg
     name: Monterey Prairie Stone
 gallery:
-  - image: /img/poplar-bluff-manor-stone.jpg
-    text: Poplar Bluff Manor Stone
-  - image: /img/auburn-limestone.jpg
-    text: Auburn Limestone
-  - image: /img/poplar-bluff-ledgestone.jpg
-    text: Poplar Bluff Ledgestone
+  - image: /img/Alder-Prairie-Stone.jpg
+    text: Alder Prairie Stone
+  - image: /img/Catalpa-Prairie-Stone.jpg
+    text: Catalpa Prairie Stone
+  - image: /img/inspiration_80-catalpa-summit-ledge-20-catalpa-prairie-3.jpg
+    text: 20% Catalpa Prairie Stone & 80% Catalpa Summit Ledge
 ---
 
