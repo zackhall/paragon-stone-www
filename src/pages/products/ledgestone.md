@@ -29,5 +29,13 @@ finishes:
 gallery:
   - image: /img/poplar-bluff-ledgestone.jpg
     text: Poplar Bluff Ledgestone
+  - image: /img/inspiration_catalpa-ledge-stone-catalpa-prairie-stone-2.jpg
+    text: Catalpa Ledgestone & Catalpa Prairie Stone
+  - image: /img/inspiration_poplar-bluff-ledge-1.jpg
+    text: Poplar Bluff Ledge
+  - image: /img/Cheyenne-ledge.jpg
+    text: Cheyenne Ledgestone
+  - image: /img/inspiration_poplar-bluff-ledge-2.jpg
+    text: Poplar Bluff Ledgestone
 ---
 
