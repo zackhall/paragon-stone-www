@@ -20,6 +20,8 @@ finishes:
     name: Yucatan River Rock
 gallery:
   - image: /img/river-rock-fireplace0000.jpg
-    text: Unknown River Rock
+    text: Hickory River Rock
+  - image: /img/inspiration_hickory-river-rock-2.jpg
+    text: Hickory River Rock
 ---
 
