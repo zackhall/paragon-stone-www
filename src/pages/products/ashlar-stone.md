@@ -2,9 +2,15 @@
 templateKey: product-page
 collectionKey: products
 title: Ashlar Stone
-description: To be added
+description: >-
+  This vintage pattern offers a more refined look with its rectangular pieces,
+  sculpted surfaces, chiseled edges, and clean lines. Ideal for larger projects
+  and commercial applications.
 bannerImage: /img/Pecan-Ashlar-Stone.jpg
-techSpecs: UNKNOWN
+techSpecs: |-
+  LENGTH RANGE 4" to 23"
+
+  HEIGHT RANGE 2" to 12"
 categories:
   - Rectangular Stone
 finishes:
