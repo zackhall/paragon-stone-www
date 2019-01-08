@@ -28,5 +28,7 @@ gallery:
     text: Sycamore Manor Stone
   - image: /img/poplar-bluff-manor-stone.jpg
     text: Poplar Bluff Manor Stone
+  - image: /img/inspiration_cinder-manor-stone-4.jpg
+    text: Cinder Manor Stone
 ---
 
