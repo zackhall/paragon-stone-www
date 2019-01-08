@@ -1,7 +1,7 @@
 ---
 templateKey: full-width-page
 title: Distributors
-bannerImage:
+bannerImage: /img/banner_paragon-stone-veneers-ledgestone.png
 ---
 <div class="columns has-margin-top-large">
   <div class="column is-half">
