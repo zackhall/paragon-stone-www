@@ -45,8 +45,8 @@ export const CollectionsPageTemplate = ({
               const aUpper = a.toUpperCase(),
                     bUpper = b.toUpperCase()
 
-              if (aUpper === 'NONE') { return 1 }
-              if (bUpper === 'NONE') { return -1 }
+              if (aUpper === 'NONE' || aUpper === 'OTHER') { return 1 }
+              if (bUpper === 'NONE' || bUpper === 'OTHER') { return -1 }
               if (aUpper > bUpper)   { return 1 }
               if (aUpper < bUpper)   { return -1 }
               return 0
