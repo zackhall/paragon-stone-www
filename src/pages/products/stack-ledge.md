@@ -19,7 +19,6 @@ finishes:
     name: Smokey Mountain Stack Ledge
   - image: /img/sample_Tuscan-Sunset-Stack-Ledge.jpg
     name: Tuscan Sunset Stack Ledge
-gallery:
-  - {}
+gallery: []
 ---
 
