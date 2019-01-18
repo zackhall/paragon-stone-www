@@ -1,9 +1,9 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { FullWidthPageTemplate } from '../../templates/about-page'
+import { FullWidthPageTemplate } from '../../templates/full-width-page'
 
 const FullWidthPagePreview = ({ entry, widgetFor }) => (
-  <AboutPageTemplate
+  <FullWidthPageTemplate
     title={entry.getIn(['data', 'title'])}
     content={widgetFor('body')}
   />
