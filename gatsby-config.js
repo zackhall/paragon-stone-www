@@ -1,9 +1,16 @@
 module.exports = {
   siteMetadata: {
-    title: 'Gatsby + Netlify CMS Starter',
+    title: 'Paragon Stone Architectural Stone Veneers',
+    siteUrl: 'https://paragonstone.com'
   },
   plugins: [
     'gatsby-plugin-react-helmet',
+    {
+      resolve: 'gatsby-plugin-sitemap',
+      options: {
+        exclude: ["/navigation", "/homepage", "/tags", "/tags/*", "/blog/*"]
+      }
+    },
     'gatsby-plugin-sass',
     {
       resolve: 'gatsby-source-filesystem',
