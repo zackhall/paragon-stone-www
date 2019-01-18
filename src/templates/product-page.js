@@ -2,6 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
 import Img from 'gatsby-image'
+import Helmet from 'react-helmet'
 
 import Layout from '../components/Layout'
 import BannerImage from '../components/BannerImage'
@@ -17,6 +18,8 @@ export const ProductPageTemplate = ({
   gallery,
 }) => (
   <>
+    <Helmet title={`${title} | Products | Paragon Stone Architectural Stone Veneers`} />
+
     <BannerImage
       img={bannerImage}
       title={title}

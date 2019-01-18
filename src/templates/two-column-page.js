@@ -2,6 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { Link, graphql } from 'gatsby'
 import Img from 'gatsby-image'
+import Helmet from 'react-helmet'
 
 import BannerImage from '../components/BannerImage'
 import Content, { HTMLContent } from '../components/Content'
@@ -17,6 +18,7 @@ export const TwoColumnPageTemplate = ({
 
   return (
     <>
+    <Helmet title={`${title} | Paragon Stone Architectural Stone Veneers`} />
       <section className="section has-padding-bottom-small">
         <h1 className="title is-size-1 has-text-centered">
           {title}

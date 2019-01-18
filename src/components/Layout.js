@@ -8,7 +8,7 @@ import './all.scss'
 
 const TemplateWrapper = ({ children }) => (
   <div>
-    <Helmet title="Home | Paragon Stone" />
+    <Helmet title="Paragon Stone Architectural Stone Veneers" />
     <Navigation />
     <div>{children}</div>
     <PreFooter />

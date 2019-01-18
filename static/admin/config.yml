@@ -59,7 +59,7 @@ collections:
         label: "Contact"
         name: "contact"
         fields:
-          - {label: "Template Key", name: "templateKey", widget: "hidden", default: "two-column-page"}
+          - {label: "Template Key", name: "templateKey", widget: "hidden", default: "contact-page"}
           - {label: "Title", name: "title", widget: "string"}
           - {label: "Banner Image", name: "bannerImage", widget: "image"}
           - {label: "Body", name: "body", widget: "markdown"}

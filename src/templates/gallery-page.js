@@ -2,8 +2,9 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
 import get from 'lodash/get'
-import Gallery from 'react-photo-gallery';
-import Lightbox from 'react-images';
+import Gallery from 'react-photo-gallery'
+import Lightbox from 'react-images'
+import Helmet from 'react-helmet'
 
 import Content, { HTMLContent } from '../components/Content'
 import Layout from '../components/Layout'
@@ -56,6 +57,7 @@ export class GalleryPageTemplate extends React.Component {
 
     return(
       <>
+        <Helmet title={`${title} | Paragon Stone Architectural Stone Veneers`} />
         <section className="section has-padding-y-large">
           <h2 className="title is-size-2">
                 {title}

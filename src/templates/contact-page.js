@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
+import Helmet from 'react-helmet'
 
 import BannerImage from '../components/BannerImage'
 import ContactForm from '../components/ContactForm'
@@ -17,6 +18,7 @@ export const ContactPageTemplate = ({
 
   return (
     <>
+      <Helmet title={`${title} | Paragon Stone Architectural Stone Veneers`} />
       {
         bannerImage ?
             <BannerImage

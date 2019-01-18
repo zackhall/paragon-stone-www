@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { Link, graphql } from 'gatsby'
+import Helmet from 'react-helmet'
 
 import BannerImage from '../components/BannerImage'
 import Content, { HTMLContent } from '../components/Content'
@@ -16,6 +17,7 @@ export const FullWidthPageTemplate = ({
 
   return (
     <>
+    <Helmet title={`${title} | Paragon Stone Architectural Stone Veneers`} />
       {
         bannerImage ?
             <BannerImage
