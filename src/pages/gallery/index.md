@@ -8,7 +8,8 @@ images:
     text: Auburn Limestone
   - image: /img/poplar-bluff-ledgestone.jpg
     text: Poplar Bluff Ledgestone
-  - image: /img/inspiration_50-stillwood-stack-ledge-50-tuscan-sunset-stack-ledge-2.jpg
+  - image: >-
+      /img/inspiration_50-stillwood-stack-ledge-50-tuscan-sunset-stack-ledge-2.jpg
     text: 50% stillwood Stack Ledge & 50% Tuscan Sunset Stack Ledge
   - image: /img/inspiration_80-catalpa-summit-ledge-20-catalpa-prairie-1.jpg
     text: 80% Catalpa Summit Ledge & 20% Catalpa Prairie
@@ -79,11 +80,11 @@ images:
   - image: /img/inspiration_ohio-tan-limestone-1.jpg
     text: Ohio Tan Limestone
   - image: /img/inspiration_paragon-stone-1.jpg
-    text: Paragon Stone
+    text: Custom Color Paragon Stone
   - image: /img/inspiration_paragon-stone-2.jpg
-    text: Paragon Stone
+    text: Custom Color Paragon Stone
   - image: /img/inspiration_paragon-stone-3.jpg
-    text: Paragon Stone
+    text: Custom Color Paragon Stone
   - image: /img/inspiration_poplar-bluff-ledge-1.jpg
     text: Poplar Bluff Ledge
   - image: /img/inspiration_poplar-bluff-ledge-2.jpg

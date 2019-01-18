@@ -7,7 +7,7 @@ description: >-
   casual warmth and simple elegance suitable for virtually any architectural
   application from window surrounds to interior fireplaces.
 bannerImage: /img/sample_old-town-red-brick.jpg
-techSpecs: DIMENSIONS 2 ¼" x 22 ⅝"
+techSpecs: DIMENSIONS 2 ¼" x 7 ⅝"
 categories:
   - Other
 finishes:
