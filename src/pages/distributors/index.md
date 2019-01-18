@@ -18,7 +18,7 @@ bannerImage: /img/banner_paragon-stone-veneers-ledgestone.png
 <div class="columns has-margin-top-large">
   <div class="column is-half">
 
-![null](/img/inspiration_cinder-manor-stone-5.jpg)
+![null](/img/inspiration_laredo-summit-ledge-2.jpg)
 
   </div>
   <div class="column is-half">
