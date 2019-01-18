@@ -350,10 +350,17 @@ select {
   transition: transform 0.5s cubic-bezier(0.4, 0.0, 0.2, 1);
   transition-delay: 100ms;
   background: $paragon-blue;
-  padding: 1.5rem;
+  padding: 3.5rem 1.5rem 1.5rem;
+  overflow-y: scroll;
   &.is-active {
     transform: none;
   }
+}
+
+.nav-controls {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
 }
 
 .menu-container {

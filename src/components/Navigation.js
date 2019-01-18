@@ -98,7 +98,7 @@ class Navigation extends React.Component {
           </div>
         </div>
         <aside className={this.state.isDrawerActive ? 'drawer-menu is-active' : 'drawer-menu' }>
-          <div className="has-text-right" >
+          <div className="nav-controls" >
             <span
               className="nav-icon nav-icon-inverted"
               onClick={() => this.setState({isDrawerActive: !this.state.isDrawerActive})} >
