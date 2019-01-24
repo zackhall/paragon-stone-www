@@ -51,6 +51,9 @@ export const AccessoryPageTemplate = ({
               </div>
               <div className="column is-9">
                   <img src={finish.image.publicURL} alt={finish.name} />
+                  <div>
+                    <small dangerouslySetInnerHTML={{__html: finish.caption && finish.caption.replace(/\n/g, "<br />")}}></small>
+                  </div>
               </div>
             </div>
           ))
@@ -145,6 +148,7 @@ export const pageQuery = graphql`
             }
           }
           name
+          caption
         }
         gallery {
           image {
