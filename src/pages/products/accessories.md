@@ -2,17 +2,17 @@
 templateKey: accessory-page
 collectionKey: products
 title: Accessories
-description: ' '
-bannerImage: /img/inspiration_hickory-river-rock-3.jpg
-techSpecs: ' '
+description: ''
+bannerImage:
+techSpecs: ''
 categories:
   - Other
 finishes:
   - image: /img/accessory_block.png
     name: Blocks
-  - image: /img/accessory_caps.png
+  - image: /img/accessory_caps_horizontal.jpg
     name: Caps
-  - image: /img/accessory_hearth-stones.png
+  - image: /img/accessory_hearth-stones_horizontal.jpg
     name: Hearth Stones
   - image: /img/accessory_trim-stones.png
     name: Trim Stones

@@ -21,29 +21,36 @@ export const AccessoryPageTemplate = ({
     <Helmet title={`${title} | Products | Paragon Stone Architectural Stone Veneers`} />
 
     {
-        bannerImage ?
-            <BannerImage
-              img={bannerImage}
-              title={title}
-            /> : null
-      }
+      bannerImage ?
+          <BannerImage
+            img={bannerImage}
+            title={title}
+          /> : null
+    }
+
+    <section className="section">
+      <container>
+        {
+          !bannerImage ?
+            <h2 className="title is-size-3">
+              {title}
+            </h2> : null
+        }
+      </container>
+    </section>
 
     <section className="section has-padding-y-large">
       {
         finishes && finishes.length ? (
           finishes.map((finish, index) =>(
-            <div className="columns">
+            <div className="columns has-margin-bottom-large">
               <div className="column is-3">
                 <div className="subtitle">
                   {finish.name}
                 </div>
               </div>
-              <div className="column is-8">
-                <Img
-                  fluid={finish.image.childImageSharp.fluid}
-                  fadeIn={true}
-                  alt={finish.name}
-                />
+              <div className="column is-9">
+                  <img src={finish.image.publicURL} alt={finish.name} />
               </div>
             </div>
           ))
@@ -129,9 +136,11 @@ export const pageQuery = graphql`
         }
         finishes {
           image {
+            publicURL
             childImageSharp {
-              fluid(maxWidth: 800, quality: 75) {
-                ...GatsbyImageSharpFluid
+              fixed(width: 800, quality: 75) {
+                # ...GatsbyImageSharpFluid
+                ...GatsbyImageSharpFixed
               }
             }
           }

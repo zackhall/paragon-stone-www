@@ -119,7 +119,7 @@ export const collectionsPageQuery = graphql`
       }
     }
     allMarkdownRemark(
-      filter: { frontmatter: { templateKey: { eq: "product-page" } }}
+      filter: { frontmatter: { templateKey: { in: ["product-page", "accessory-page"] } }}
     ) {
       edges {
         node {
