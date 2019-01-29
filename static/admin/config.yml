@@ -21,7 +21,7 @@ collections:
 
   - name: "products"
     label: "Products"
-    folder: "src/pages/products"
+    folder: "src/pages/product"
     create: true
     slug: "{{slug}}"
     fields:
@@ -71,9 +71,9 @@ collections:
           - {label: "Title", name: "title", widget: "string"}
           - {label: "Banner Image", name: "bannerImage", widget: "image"}
           - {label: "Body", name: "body", widget: "markdown"}
-      - file: "src/pages/collections/index.md"
-        label: "Collections"
-        name: "collections"
+      - file: "src/pages/products/index.md"
+        label: "Product Page"
+        name: "product-page"
         fields:
           - {label: "Template Key", name: "templateKey", widget: "hidden", default: "collections-page"}
           - {label: Title, name: title, widget: string}

@@ -1,6 +1,6 @@
 ---
 templateKey: collections-page
-title: Collections
+title: Products
 bannerImage: /img/banner_paragon-stone-veneers-ledgestone-prairiestone.png
 ---
 ### True-to-Life

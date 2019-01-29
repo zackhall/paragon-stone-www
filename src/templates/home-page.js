@@ -28,7 +28,7 @@ export const HomePageTemplate =({
     <section className="section">
       <div className="columns">
         <div className="column">
-          <Link to="/collections">
+          <Link to="/products">
             <Tile
               size={4}
               number="01"

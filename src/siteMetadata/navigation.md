@@ -3,7 +3,7 @@ templateKey: no-op
 fileKey: navigation
 navItems:
   - title: Products
-    to: "collections"
+    to: "products"
     childCollection: products
   - title: About
     to: about
