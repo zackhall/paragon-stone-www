@@ -4,3 +4,33 @@
 [build.environment]
   YARN_VERSION = "1.3.2"
   YARN_FLAGS = "--no-ignore-optional"
+[[redirects]]
+  from = "/prairie-stone"
+  to = "/product/prairie-stone"
+[[redirects]]
+  from = "/ledgestone"
+  to = "/product/ledgestone"
+[[redirects]]
+  from = "/limestone"
+  to = "/product/limestone"
+[[redirects]]
+  from = "/fieldstone"
+  to = "/product/fieldstone"
+[[redirects]]
+  from = "/manor-stone"
+  to = "/product/manor-stone"
+[[redirects]]
+  from = "/river-rock"
+  to = "/product/river-rock"
+[[redirects]]
+  from = "/stacked-stone"
+  to = "/product/stackstone"
+[[redirects]]
+  from = "/ashlar-stone"
+  to = "/product/ashlar-stone"
+[[redirects]]
+  from = "/brick"
+  to = "/product/brick"
+[[redirects]]
+  from = "/accessories"
+  to = "/product/accessories"

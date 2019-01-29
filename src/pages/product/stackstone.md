@@ -15,11 +15,11 @@ categories:
   - Rectangular Stone
 finishes:
   - image: /img/sample_birch-stackstone.jpg
-    name: Birch Stacked Stone
+    name: Birch Stackstone
   - image: /img/sample_cinder-stackstone.jpg
-    name: Cinder Stacked Stone
+    name: Cinder Stackstone
   - image: /img/sample_walnut-stackstone.jpg
-    name: Walnut Stacked Stone
+    name: Walnut Stackstone
 gallery: []
 ---
 
