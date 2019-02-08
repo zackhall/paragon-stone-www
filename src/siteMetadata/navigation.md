@@ -6,12 +6,12 @@ navItems:
     to: "products"
     childCollection: products
   - title: About
-    to: about
+    to: company
     childCollection:
   - title: Gallery
     to: gallery
     childCollection:
   - title: Contact
-    to: contact
+    to: contact-us
     childCollection:
 ---

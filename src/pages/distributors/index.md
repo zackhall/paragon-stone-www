@@ -37,7 +37,7 @@ bannerImage: /img/banner_paragon-stone-veneers-ledgestone.png
     <h2 class="title is-2">Let's do this.</h2>
     <p>If you're ready to join our team as a distributor, reach out to our office today.</p>
     <h4 class="title is-4">Office Information —</h4>
-    <p>445 South Crown Hill<br/>Orrville, OH 44647</p>
+    <p>445 South Crown Hill<br/>Orrville, OH 44667</p>
     <p className="has-padding-top-small">
       <b>Phone:</b> (330) 930-0415<br/>
       <b>Fax:</b> (330) 930-0416<br/>

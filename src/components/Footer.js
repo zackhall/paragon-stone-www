@@ -26,7 +26,7 @@ const Footer = ({data}) => {
               Paragon Stone
             </p>
             <p>
-              445 South Crown Hill <br />Orrville, OH 44647
+              445 South Crown Hill <br />Orrville, OH 44667
             </p>
           </div>
           <div className="column">

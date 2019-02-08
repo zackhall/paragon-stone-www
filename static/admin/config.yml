@@ -46,7 +46,7 @@ collections:
           - {label: Title, name: title, widget: string}
           - {label: "Banner Image", name: "bannerImage", widget: "image"}
           - {label: Gallery, name: gallery, widget: list, fields: [{label: Image, name: image, widget: image}, {label: Text, name: text, widget: text}]}
-      - file: "src/pages/about/index.md"
+      - file: "src/pages/company/index.md"
         label: "About"
         name: "about"
         fields:
@@ -55,7 +55,7 @@ collections:
           - {label: "Banner Image", name: "bannerImage", widget: "image"}
           - {label: "Attachment", name: "attachment", widget: "object", fields: [{ label: File, name: file, widget: file}, {label: Text, name: text, widget: text}]}
           - {label: "Body", name: "body", widget: "markdown"}
-      - file: "src/pages/contact/index.md"
+      - file: "src/pages/contact-us/index.md"
         label: "Contact"
         name: "contact"
         fields:
