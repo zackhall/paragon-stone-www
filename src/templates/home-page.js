@@ -56,7 +56,7 @@ export const HomePageTemplate =({
           </div>
           <div className="columns">
             <div className="column">
-              <Link to="/contact">
+              <Link to="/contact-us">
                 <Tile
                   size={1}
                   number="03"
