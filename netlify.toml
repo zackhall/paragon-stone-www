@@ -34,3 +34,6 @@
 [[redirects]]
   from = "/accessories"
   to = "/product/accessories"
+[[redirects]]
+  from = "/summit-ledge"
+  to = "/product/summit-ledge"
