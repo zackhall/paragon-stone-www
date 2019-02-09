@@ -34,7 +34,7 @@ const encode = (data) => {
 
 const ContactForm = () => (
   <div>
-    <form name="contact-page" data-netlify="true" netlify-honeypot="bot-field" hidden>
+    <form name="contact-page" data-netlify="true" netlify-honeypot="botfield" hidden>
       <input type="text" name="name" />
       <input type="text" name="company" />
       <input type="email" name="email" />
@@ -53,7 +53,8 @@ const ContactForm = () => (
         message: '',
         referrer: '',
         city: '',
-        state: ''
+        state: '',
+        botfield: ''
       }}
       validationSchema={ContactFormSchema}
       onSubmit={values => {
@@ -72,6 +73,9 @@ const ContactForm = () => (
           name="contact"
           onSubmit={handleSubmit}
         >
+          <div class="hidden">
+            <label>Don’t fill this out if you're human: <Field name="botfield" />
+          </div>
           <div className="columns">
             <div className="column">
               <h4 className="title is-4 has-margin-bottom-none">About —</h4>
