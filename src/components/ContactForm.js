@@ -153,6 +153,7 @@ const ContactForm = () => (
               <div className="has-text-danger"><ErrorMessage name="message" /></div>
             </div>
           </div>
+          <div data-netlify-recaptcha="true"></div>
           <button
             className="button"
             type="submit"
