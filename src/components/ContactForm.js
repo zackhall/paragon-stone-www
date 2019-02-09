@@ -74,7 +74,7 @@ const ContactForm = () => (
           onSubmit={handleSubmit}
         >
           <div class="hidden">
-            <label>Don’t fill this out if you're human: <Field name="botfield" />
+            <label>Don’t fill this out if you're human:</label><Field name="botfield" />
           </div>
           <div className="columns">
             <div className="column">
