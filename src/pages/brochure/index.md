@@ -1,7 +1,7 @@
 ---
 templateKey: brochure-page
 title: Request a Brochure
-bannerImage: /img/tim-fink-paragon-stone0000.jpg
+bannerImage: /img/inspiration_ohio-tan-limestone-1.jpg
 ---
 
 ## A WARM WELCOME AND HEARTFELT THANKS
