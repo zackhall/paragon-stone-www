@@ -66,6 +66,7 @@ class ContactForm extends React.Component {
           <select name="role"></select>
           <textarea name="message"></textarea>
           <select name="referrer"></select>
+          <input type="text" name="recaptcha" />
           <div data-netlify-recaptcha="true"></div>
         </form>
         <Formik
