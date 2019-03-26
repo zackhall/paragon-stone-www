@@ -1,7 +1,5 @@
 import React from 'react'
 
-const NoOp = () => (
-  <div></div>
-)
+const NoOp = () => <div />
 
 export default NoOp

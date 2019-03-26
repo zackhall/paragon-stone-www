@@ -19,41 +19,41 @@ export const ContactPageTemplate = ({
   return (
     <>
       <Helmet title={`${title} | Paragon Stone Architectural Stone Veneers`} />
-      {
-        bannerImage ?
-            <BannerImage
-              img={bannerImage}
-              title={title}
-              backgroundPosition='center'
-            /> : null
-      }
+      {bannerImage ? (
+        <BannerImage
+          img={bannerImage}
+          title={title}
+          backgroundPosition="center"
+        />
+      ) : null}
       <section className="section">
-        {
-          !bannerImage ?
-            <h1 className="title is-size-1">
-              {title}
-            </h1> : null
-        }
+        {!bannerImage ? <h1 className="title is-size-1">{title}</h1> : null}
         <PageContent className="content" content={content} />
       </section>
 
       <div className="section">
         <div className="columns">
           <div className="column is-two-thirds has-padding-right-large has-padding-bottom-large">
-            <h3 className="title is-3 has-margin-bottom-small">
-              Message us —
-            </h3>
-            <p className="has-padding-bottom-medium">We're happy to help with your project, your business, or finding the nearest dealer. Get in touch with us using the form below or by reaching out directly through phone or e-mail.</p>
+            <h3 className="title is-3 has-margin-bottom-small">Message us —</h3>
+            <p className="has-padding-bottom-medium">
+              We're happy to help with your project, your business, or finding
+              the nearest dealer. Get in touch with us using the form below or
+              by reaching out directly through phone or e-mail.
+            </p>
             <ContactForm />
           </div>
           <div className="column is-one-third">
-            <h3 className="title is-3">
-              Office information —
-            </h3>
-            <p>445 South Crown Hill<br/>Orrville, OH 44667</p>
+            <h3 className="title is-3">Office information —</h3>
+            <p>
+              445 South Crown Hill
+              <br />
+              Orrville, OH 44667
+            </p>
             <p className="has-padding-top-small">
-              <b>Phone:</b> (330) 930-0415<br/>
-              <b>Fax:</b> (330) 930-0416<br/>
+              <b>Phone:</b> (330) 930-0415
+              <br />
+              <b>Fax:</b> (330) 930-0416
+              <br />
               <b>E-mail:</b> info@paragonstone.com
             </p>
           </div>
@@ -72,7 +72,8 @@ ContactPageTemplate.propTypes = {
 
 const ContactPage = ({ data }) => {
   const { markdownRemark: post } = data
-  const bannerImage = post.frontmatter.bannerImage &&
+  const bannerImage =
+    post.frontmatter.bannerImage &&
     post.frontmatter.bannerImage.childImageSharp.fluid
 
   return (

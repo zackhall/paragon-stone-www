@@ -1,21 +1,21 @@
 module.exports = {
   siteMetadata: {
     title: 'Paragon Stone Architectural Stone Veneers',
-    siteUrl: 'https://paragonstone.com'
+    siteUrl: 'https://paragonstone.com',
   },
   plugins: [
     'gatsby-plugin-react-helmet',
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
-        trackingId: "UA-10184718-1"
-      }
+        trackingId: 'UA-10184718-1',
+      },
     },
     {
       resolve: 'gatsby-plugin-sitemap',
       options: {
-        exclude: ["/navigation", "/homepage", "/tags", "/tags/*", "/blog/*"]
-      }
+        exclude: ['/navigation', '/homepage', '/tags', '/tags/*', '/blog/*'],
+      },
     },
     'gatsby-plugin-sass',
     {
@@ -80,12 +80,12 @@ module.exports = {
       resolve: 'gatsby-plugin-web-font-loader',
       options: {
         typekit: {
-          id: 'udf7nae'
+          id: 'udf7nae',
         },
         google: {
-          families: ['Material Icons']
-        }
-      }
+          families: ['Material Icons'],
+        },
+      },
     },
     'gatsby-plugin-netlify', // make sure to keep it last in the array
   ],

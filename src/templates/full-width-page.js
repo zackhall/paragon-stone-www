@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { Link, graphql } from 'gatsby'
+import { graphql } from 'gatsby'
 import Helmet from 'react-helmet'
 
 import BannerImage from '../components/BannerImage'
@@ -17,24 +17,18 @@ export const FullWidthPageTemplate = ({
 
   return (
     <>
-    <Helmet title={`${title} | Paragon Stone Architectural Stone Veneers`} />
-      {
-        bannerImage ?
-            <BannerImage
-              img={bannerImage}
-              title={title}
-              backgroundPosition='center'
-            /> : null
-      }
+      <Helmet title={`${title} | Paragon Stone Architectural Stone Veneers`} />
+      {bannerImage ? (
+        <BannerImage
+          img={bannerImage}
+          title={title}
+          backgroundPosition="center"
+        />
+      ) : null}
 
       <section className="section">
         <container>
-          {
-            !bannerImage ?
-              <h2 className="title is-size-3">
-                {title}
-              </h2> : null
-          }
+          {!bannerImage ? <h2 className="title is-size-3">{title}</h2> : null}
           <PageContent className="content" content={content} />
         </container>
       </section>
@@ -51,7 +45,8 @@ FullWidthPageTemplate.propTypes = {
 
 const FullWidthPage = ({ data }) => {
   const { markdownRemark: post } = data
-  const bannerImage = post.frontmatter.bannerImage &&
+  const bannerImage =
+    post.frontmatter.bannerImage &&
     post.frontmatter.bannerImage.childImageSharp.fluid
 
   return (

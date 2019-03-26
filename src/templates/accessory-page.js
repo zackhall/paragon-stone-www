@@ -1,7 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
-import Img from 'gatsby-image'
 import Helmet from 'react-helmet'
 
 import Layout from '../components/Layout'
@@ -18,70 +17,56 @@ export const AccessoryPageTemplate = ({
   gallery,
 }) => (
   <>
-    <Helmet title={`${title} | Products | Paragon Stone Architectural Stone Veneers`} />
+    <Helmet
+      title={`${title} | Products | Paragon Stone Architectural Stone Veneers`}
+    />
 
-    {
-      bannerImage ?
-          <BannerImage
-            img={bannerImage}
-            title={title}
-          /> : null
-    }
+    {bannerImage ? <BannerImage img={bannerImage} title={title} /> : null}
 
     <section className="section">
       <container>
-        {
-          !bannerImage ?
-            <h2 className="title is-size-3">
-              {title}
-            </h2> : null
-        }
+        {!bannerImage ? <h2 className="title is-size-3">{title}</h2> : null}
       </container>
     </section>
 
     <section className="section has-padding-y-large">
-      {
-        finishes && finishes.length ? (
-          finishes.map((finish, index) =>(
+      {finishes && finishes.length
+        ? finishes.map((finish, index) => (
             <div className="columns has-margin-bottom-large">
               <div className="column is-3">
-                <div className="subtitle">
-                  {finish.name}
-                </div>
+                <div className="subtitle">{finish.name}</div>
               </div>
               <div className="column is-9">
-                  <img src={finish.image.publicURL} alt={finish.name} />
-                  <div>
-                    <small dangerouslySetInnerHTML={{__html: finish.caption && finish.caption.replace(/\n/g, "<br />")}}></small>
-                  </div>
+                <img src={finish.image.publicURL} alt={finish.name} />
+                <div>
+                  <small
+                    dangerouslySetInnerHTML={{
+                      __html:
+                        finish.caption &&
+                        finish.caption.replace(/\n/g, '<br />'),
+                    }}
+                  />
+                </div>
               </div>
             </div>
           ))
-        ) : null
-      }
+        : null}
     </section>
 
-    {
-      gallery && gallery.length ? (
-        <section className="section">
-          <Gallery title="Experience the difference.">
-            {
-              gallery.map((
-                  item,
-                  index
-                ) => (
-                  <GalleryItem
-                    offset={index}
-                    key={index}
-                    title={item.text}
-                    image={item.image}
-                  />
-                ))
-            }
-          </Gallery>
-        </section>
-      ) : null
-    }
+    {gallery && gallery.length ? (
+      <section className="section">
+        <Gallery title="Experience the difference.">
+          {gallery.map((item, index) => (
+            <GalleryItem
+              offset={index}
+              key={index}
+              title={item.text}
+              image={item.image}
+            />
+          ))}
+        </Gallery>
+      </section>
+    ) : null}
   </>
 )
 
@@ -96,8 +81,8 @@ AccessoryPageTemplate.propTypes = {
 
 const AccessoryPage = ({ data }) => {
   const { frontmatter } = data.markdownRemark
-  const bannerImage = frontmatter.bannerImage &&
-    frontmatter.bannerImage.childImageSharp.fluid
+  const bannerImage =
+    frontmatter.bannerImage && frontmatter.bannerImage.childImageSharp.fluid
 
   return (
     <Layout>

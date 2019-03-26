@@ -4,10 +4,12 @@ import _ from 'lodash'
 
 import logobw from '../img/logo-bw.svg'
 
-const Footer = ({data}) => {
+const Footer = ({ data }) => {
   const links =
-    data && data.pages && data.pages.edges.map(page => (
-      <p key={page.node.id} >
+    data &&
+    data.pages &&
+    data.pages.edges.map(page => (
+      <p key={page.node.id}>
         <Link to={page.node.fields.slug} className="has-text-white">
           {page.node.frontmatter.title}
         </Link>
@@ -18,7 +20,10 @@ const Footer = ({data}) => {
     <div className="footer">
       <section className="section has-text-white has-text-centered-touch">
         <div className="footer-logo">
-          <img src={logobw} alt="Paragon Stone Manufactured Stone Veneers Logo" />
+          <img
+            src={logobw}
+            alt="Paragon Stone Manufactured Stone Veneers Logo"
+          />
         </div>
         <div className="columns">
           <div className="column">
@@ -26,36 +31,33 @@ const Footer = ({data}) => {
               Paragon Stone
             </p>
             <p>
-              445 South Crown Hill <br />Orrville, OH 44667
+              445 South Crown Hill <br />
+              Orrville, OH 44667
             </p>
           </div>
           <div className="column">
-            <p className="subtitle is-uppercase has-text-white">
-              Contact us
-            </p>
+            <p className="subtitle is-uppercase has-text-white">Contact us</p>
             <p>
-              P: (330) 930-0415<br/>
-              F: (330) 930-0416<br/>
+              P: (330) 930-0415
+              <br />
+              F: (330) 930-0416
+              <br />
               E: info@paragonstone.com
             </p>
           </div>
           <div className="column">
-            <p className="subtitle is-uppercase has-text-white">
-              Products
-            </p>
-            {
-              _(links)
-                .chunk(Math.ceil(links.length / 2))
-                .first()
-            }
+            <p className="subtitle is-uppercase has-text-white">Products</p>
+            {_(links)
+              .chunk(Math.ceil(links.length / 2))
+              .first()}
           </div>
           <div className="column">
-            <p className="subtitle is-uppercase has-text-white is-hidden-touch">&nbsp;</p>
-            {
-              _(links)
-                .chunk(Math.ceil(links.length / 2))
-                .last()
-            }
+            <p className="subtitle is-uppercase has-text-white is-hidden-touch">
+              &nbsp;
+            </p>
+            {_(links)
+              .chunk(Math.ceil(links.length / 2))
+              .last()}
           </div>
         </div>
       </section>
@@ -63,7 +65,7 @@ const Footer = ({data}) => {
   )
 }
 
-export default (props) => (
+export default props => (
   <StaticQuery
     query={graphql`
       query {
@@ -84,6 +86,6 @@ export default (props) => (
         }
       }
     `}
-    render={ data => <Footer data={data} {...props} />}
+    render={data => <Footer data={data} {...props} />}
   />
 )

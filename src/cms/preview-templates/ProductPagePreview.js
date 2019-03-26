@@ -24,7 +24,7 @@ const ProductPagePreview = ({ entry }) => {
 ProductPagePreview.propTypes = {
   entry: PropTypes.shape({
     getIn: PropTypes.func,
-  })
+  }),
 }
 
 export default ProductPagePreview

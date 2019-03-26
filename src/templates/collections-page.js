@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { Link, graphql } from 'gatsby'
+import { graphql } from 'gatsby'
 import get from 'lodash/get'
 import groupBy from 'lodash/groupBy'
 import Helmet from 'react-helmet'
@@ -22,41 +22,44 @@ export const CollectionsPageTemplate = ({
   return (
     <>
       <Helmet title={`${title} | Paragon Stone Architectural Stone Veneers`} />
-      {
-        bannerImage ?
-          <BannerImage
-            img={bannerImage}
-            title={title}
-          /> :
-          <section className="section">
-            <container>
-              <h2 className="title is-size-3">
-                {title}
-              </h2>
-            </container>
-          </section>
-      }
+      {bannerImage ? (
+        <BannerImage img={bannerImage} title={title} />
+      ) : (
+        <section className="section">
+          <container>
+            <h2 className="title is-size-3">{title}</h2>
+          </container>
+        </section>
+      )}
       <section className="section">
         <PageContent className="content" content={content} />
       </section>
       <section className="section">
-        {
-          Object
-            .keys(collections)
-            .sort((a, b) => {
-              const aUpper = a.toUpperCase(),
-                    bUpper = b.toUpperCase()
+        {Object.keys(collections)
+          .sort((a, b) => {
+            const aUpper = a.toUpperCase(),
+              bUpper = b.toUpperCase()
 
-              if (aUpper === 'NONE' || aUpper === 'OTHER') { return 1 }
-              if (bUpper === 'NONE' || bUpper === 'OTHER') { return -1 }
-              if (aUpper > bUpper)   { return 1 }
-              if (aUpper < bUpper)   { return -1 }
-              return 0
-            })
-            .map((key) => (
-              <Collection title={ key.toUpperCase() !== 'NONE' ? key : 'Other'} products={collections[key]} />
-            ))
-        }
+            if (aUpper === 'NONE' || aUpper === 'OTHER') {
+              return 1
+            }
+            if (bUpper === 'NONE' || bUpper === 'OTHER') {
+              return -1
+            }
+            if (aUpper > bUpper) {
+              return 1
+            }
+            if (aUpper < bUpper) {
+              return -1
+            }
+            return 0
+          })
+          .map(key => (
+            <Collection
+              title={key.toUpperCase() !== 'NONE' ? key : 'Other'}
+              products={collections[key]}
+            />
+          ))}
       </section>
     </>
   )
@@ -72,16 +75,12 @@ CollectionsPageTemplate.propTypes = {
 
 const CollectionsPage = ({ data }) => {
   const { markdownRemark: post } = data
-  const products =
-    get(data, 'allMarkdownRemark.edges', [])
-      .map(product =>
-        ({
-          slug:  get(product, 'node.fields.slug'),
-          name: get(product, 'node.frontmatter.title'),
-          image: get(product, 'node.frontmatter.finishes[0].image'),
-          categories: get(product, 'node.frontmatter.categories[0]', 'None'),
-        })
-      )
+  const products = get(data, 'allMarkdownRemark.edges', []).map(product => ({
+    slug: get(product, 'node.fields.slug'),
+    name: get(product, 'node.frontmatter.title'),
+    image: get(product, 'node.frontmatter.finishes[0].image'),
+    categories: get(product, 'node.frontmatter.categories[0]', 'None'),
+  }))
 
   const collections = groupBy(products, 'categories')
   return (
@@ -119,7 +118,9 @@ export const collectionsPageQuery = graphql`
       }
     }
     allMarkdownRemark(
-      filter: { frontmatter: { templateKey: { in: ["product-page", "accessory-page"] } }}
+      filter: {
+        frontmatter: { templateKey: { in: ["product-page", "accessory-page"] } }
+      }
     ) {
       edges {
         node {

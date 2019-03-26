@@ -1,16 +1,16 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { Link, graphql } from 'gatsby'
+import { graphql } from 'gatsby'
 import get from 'lodash/get'
 
 import Layout from '../components/Layout'
 import { HomePageTemplate } from '../templates/home-page'
 
-const IndexPage = ({data}) => {
+const IndexPage = ({ data }) => {
   const homepage = get(data, 'allMarkdownRemark.edges[0].node.frontmatter')
-  const {title, gallery} = homepage
-  const bannerImage = homepage.bannerImage &&
-    homepage.bannerImage.childImageSharp.fluid
+  const { title, gallery } = homepage
+  const bannerImage =
+    homepage.bannerImage && homepage.bannerImage.childImageSharp.fluid
 
   return (
     <Layout>
@@ -36,7 +36,7 @@ IndexPage.propTypes = {
 export const pageQuery = graphql`
   query IndexQuery {
     allMarkdownRemark(
-      filter: { frontmatter: { templateKey: { eq: "home-page" } }}
+      filter: { frontmatter: { templateKey: { eq: "home-page" } } }
     ) {
       edges {
         node {
@@ -44,11 +44,7 @@ export const pageQuery = graphql`
             title
             bannerImage {
               childImageSharp {
-                fluid(
-                  maxWidth: 1600,
-                  maxHeight: 750,
-                  quality: 75
-                ) {
+                fluid(maxWidth: 1600, maxHeight: 750, quality: 75) {
                   ...GatsbyImageSharpFluid
                 }
               }

@@ -11,42 +11,37 @@ import Layout from '../components/Layout'
 
 export class GalleryPageTemplate extends React.Component {
   constructor() {
-    super();
-    this.state = { currentImage: 0 };
-    this.closeLightbox = this.closeLightbox.bind(this);
-    this.openLightbox = this.openLightbox.bind(this);
-    this.gotoNext = this.gotoNext.bind(this);
-    this.gotoPrevious = this.gotoPrevious.bind(this);
+    super()
+    this.state = { currentImage: 0 }
+    this.closeLightbox = this.closeLightbox.bind(this)
+    this.openLightbox = this.openLightbox.bind(this)
+    this.gotoNext = this.gotoNext.bind(this)
+    this.gotoPrevious = this.gotoPrevious.bind(this)
   }
   openLightbox(event, obj) {
     this.setState({
       currentImage: obj.index,
       lightboxIsOpen: true,
-    });
+    })
   }
   closeLightbox() {
     this.setState({
       currentImage: 0,
       lightboxIsOpen: false,
-    });
+    })
   }
   gotoPrevious() {
     this.setState({
       currentImage: this.state.currentImage - 1,
-    });
+    })
   }
   gotoNext() {
     this.setState({
       currentImage: this.state.currentImage + 1,
-    });
+    })
   }
   render() {
-    const {
-      title,
-      images,
-      content,
-      contentComponent,
-    } = this.props
+    const { title, images, content, contentComponent } = this.props
 
     const galleryImages = images.map((i, index) => ({
       ...get(i, 'image.childImageSharp.resolutions'),
@@ -55,19 +50,19 @@ export class GalleryPageTemplate extends React.Component {
 
     const PageContent = contentComponent || Content
 
-    return(
+    return (
       <>
-        <Helmet title={`${title} | Paragon Stone Architectural Stone Veneers`} />
+        <Helmet
+          title={`${title} | Paragon Stone Architectural Stone Veneers`}
+        />
         <section className="section has-padding-y-large">
-          <h2 className="title is-size-2">
-                {title}
-          </h2>
+          <h2 className="title is-size-2">{title}</h2>
 
           <PageContent className="content" content={content} />
 
           <Gallery
             photos={galleryImages}
-            direction={"column"}
+            direction={'column'}
             onClick={this.openLightbox}
           />
           <Lightbox

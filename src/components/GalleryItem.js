@@ -1,11 +1,11 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import {Parallax} from 'react-spring'
+import { Parallax } from 'react-spring'
 import Img from 'gatsby-image'
 
-const GalleryItem = ({title, offset, image, onClick}) => (
+const GalleryItem = ({ title, offset, image, onClick }) => (
   <>
-    <Parallax.Layer offset={offset} speed={0} onClick={onClick} >
+    <Parallax.Layer offset={offset} speed={0} onClick={onClick}>
       <Img
         fluid={image.childImageSharp.fluid}
         fadeIn={true}

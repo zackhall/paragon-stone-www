@@ -11,9 +11,7 @@ const TemplateWrapper = ({ children }) => (
   <div>
     <Helmet
       title="Paragon Stone Architectural Stone Veneers"
-      link={[
-          { rel: 'shortcut icon', type: 'image/png', href: `${favicon}` }
-      ]}
+      link={[{ rel: 'shortcut icon', type: 'image/png', href: `${favicon}` }]}
     />
     <Navigation />
     <div>{children}</div>

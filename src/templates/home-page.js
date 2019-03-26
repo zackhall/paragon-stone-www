@@ -12,19 +12,11 @@ import tile2bg from '../img/tile-2-bg.png'
 import tile3bg from '../img/tile-3-bg.png'
 import tile4bg from '../img/tile-4-bg.png'
 
-export const HomePageTemplate =({
-  title,
-  bannerImage,
-  gallery,
-}) => (
+export const HomePageTemplate = ({ title, bannerImage, gallery }) => (
   <>
-    {
-      bannerImage ?
-        <BannerImage
-          img={bannerImage}
-          title="Naturally inspired beauty."
-        /> : null
-    }
+    {bannerImage ? (
+      <BannerImage img={bannerImage} title="Naturally inspired beauty." />
+    ) : null}
     <section className="section">
       <div className="columns">
         <div className="column">
@@ -85,20 +77,14 @@ export const HomePageTemplate =({
 
     <section className="section">
       <Gallery title="Experience the difference.">
-        {
-          gallery.map((
-              item,
-              index,
-            ) => (
-              <GalleryItem
-                offset={index}
-                key={index}
-                title={item.text}
-                image={item.image}
-              />
-            )
-          )
-        }
+        {gallery.map((item, index) => (
+          <GalleryItem
+            offset={index}
+            key={index}
+            title={item.text}
+            image={item.image}
+          />
+        ))}
       </Gallery>
     </section>
   </>
@@ -112,8 +98,8 @@ HomePageTemplate.propTypes = {
 
 const HomePage = ({ data }) => {
   const { frontmatter } = data.markdownRemark
-  const bannerImage = frontmatter.bannerImage &&
-    frontmatter.bannerImage.childImageSharp.fluid
+  const bannerImage =
+    frontmatter.bannerImage && frontmatter.bannerImage.childImageSharp.fluid
 
   return (
     <Layout>

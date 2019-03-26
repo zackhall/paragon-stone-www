@@ -1,10 +1,9 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { Link, graphql } from 'gatsby'
+import { graphql } from 'gatsby'
 import Img from 'gatsby-image'
 import Helmet from 'react-helmet'
 
-import BannerImage from '../components/BannerImage'
 import Content, { HTMLContent } from '../components/Content'
 import Layout from '../components/Layout'
 
@@ -18,21 +17,16 @@ export const TwoColumnPageTemplate = ({
 
   return (
     <>
-    <Helmet title={`${title} | Paragon Stone Architectural Stone Veneers`} />
+      <Helmet title={`${title} | Paragon Stone Architectural Stone Veneers`} />
       <section className="section has-padding-bottom-small">
-        <h1 className="title is-size-1 has-text-centered">
-          {title}
-        </h1>
+        <h1 className="title is-size-1 has-text-centered">{title}</h1>
       </section>
 
       <section className="section">
         <container>
           <div className="columns">
             <div className="column is-two-fifths">
-              <Img
-                fluid={bannerImage}
-                fadeIn={true}
-              />
+              <Img fluid={bannerImage} fadeIn={true} />
             </div>
             <div className="column is-three-fifths has-padding-left-medium">
               <PageContent className="content" content={content} />
@@ -53,7 +47,8 @@ TwoColumnPageTemplate.propTypes = {
 
 const TwoColumnPage = ({ data }) => {
   const { markdownRemark: post } = data
-  const bannerImage = post.frontmatter.bannerImage &&
+  const bannerImage =
+    post.frontmatter.bannerImage &&
     post.frontmatter.bannerImage.childImageSharp.fluid
 
   return (

@@ -7,33 +7,27 @@ import filter from 'lodash/filter'
 import logo from '../img/logo.svg'
 import Dropdown from '../components/Dropdown'
 
-
-
 class Navigation extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      isDrawerActive: false
+      isDrawerActive: false,
     }
 
     this.styles = {
       body: {
         height: '100vh',
         overflow: 'hidden',
-      }
+      },
     }
   }
 
   componentDidUpdate() {
     // prevent scrolling when drawer open by hiding overflow on body.
-    if (this.state.isDrawerActive) {
-      for (var i in this.styles.body) {
-        document.body.style[i] = this.styles.body[i]
-      }
-    } else {
-      for (var i in this.styles.body) {
-        document.body.style[i] = null
-      }
+    for (let i in this.styles.body) {
+      document.body.style[i] = !!this.state.isDrawerActive
+        ? this.styles.body[i]
+        : null
     }
   }
 
@@ -45,15 +39,21 @@ class Navigation extends React.Component {
   }
 
   render() {
-    const { navigation, pages} = this.props.data
+    const { navigation, pages } = this.props.data
     const navItems = get(navigation, 'edges[0].node.frontmatter.navItems')
-    const collections = groupBy(pages && pages.edges, 'node.frontmatter.collectionKey')
+    const collections = groupBy(
+      pages && pages.edges,
+      'node.frontmatter.collectionKey'
+    )
 
     return (
       <nav className="navigation">
         <span
           className="navigation--mobile-menu-btn nav-icon is-hidden-desktop"
-          onClick={() => this.setState({isDrawerActive: !this.state.isDrawerActive})} >
+          onClick={() =>
+            this.setState({ isDrawerActive: !this.state.isDrawerActive })
+          }
+        >
           menu
         </span>
         <div className="section">
@@ -68,28 +68,25 @@ class Navigation extends React.Component {
                 </Link>
               </div>
               <div className="is-hidden-touch has-text-centered is-uppercase has-text-weight-bold">
-                {
-                  navItems.map( ({title, to, childCollection}, index) => (
-                    childCollection && childCollection.length ?
+                {navItems.map(
+                  ({ title, to, childCollection }, index) =>
+                    childCollection && childCollection.length ? (
                       <Dropdown text={title} to={`/${to}`} key={to}>
-                        {
-                          collections[childCollection].map(item => (
-                            <Link
-                              to={`/${item.node.fields.slug}`}
-                              key={item.node.fields.slug}
-                            >
-                              {item.node.frontmatter.title}
-                            </Link>
-                          ))
-                        }
-                      </Dropdown> :
+                        {collections[childCollection].map(item => (
+                          <Link
+                            to={`/${item.node.fields.slug}`}
+                            key={item.node.fields.slug}
+                          >
+                            {item.node.frontmatter.title}
+                          </Link>
+                        ))}
+                      </Dropdown>
+                    ) : (
                       <div className="desktop-nav-item" key={to}>
-                        <Link to={`/${to}`} >
-                          {title}
-                        </Link>
+                        <Link to={`/${to}`}>{title}</Link>
                       </div>
-                  ))
-                }
+                    )
+                )}
               </div>
             </div>
             <div className="column has-text-right is-hidden-touch">
@@ -97,57 +94,52 @@ class Navigation extends React.Component {
             </div>
           </div>
         </div>
-        <aside className={this.state.isDrawerActive ? 'drawer-menu is-active' : 'drawer-menu' }>
-          <div className="nav-controls" >
+        <aside
+          className={
+            this.state.isDrawerActive ? 'drawer-menu is-active' : 'drawer-menu'
+          }
+        >
+          <div className="nav-controls">
             <span
               className="nav-icon nav-icon-inverted"
-              onClick={() => this.setState({isDrawerActive: !this.state.isDrawerActive})} >
+              onClick={() =>
+                this.setState({ isDrawerActive: !this.state.isDrawerActive })
+              }
+            >
               close
             </span>
           </div>
           <div className="menu-container has-text-centered">
             <div className="menu">
-              <p className="menu-label">
-                General
-              </p>
+              <p className="menu-label">General</p>
               <ul className="menu-list">
-                {
-                  filter(navItems, (item) => !item.childCollection)
-                    .map( ({to, title}) =>
-                      <li key={to}>
-                        <Link to={`/${to}`} >
-                          {title}
-                        </Link>
-                      </li>
-                    )
-                }
+                {filter(navItems, item => !item.childCollection).map(
+                  ({ to, title }) => (
+                    <li key={to}>
+                      <Link to={`/${to}`}>{title}</Link>
+                    </li>
+                  )
+                )}
               </ul>
-              {
-                filter(navItems, (item) => !!item.childCollection)
-                  .map( ({to, title, childCollection}) =>
-                    <React.Fragment key={to}>
-                      <p className="menu-label">
-                        {title}
-                      </p>
-                      <ul className="menu-list">
-                        <li>
-                          <Link to={`/${to}`}>
-                            See all
+              {filter(navItems, item => !!item.childCollection).map(
+                ({ to, title, childCollection }) => (
+                  <React.Fragment key={to}>
+                    <p className="menu-label">{title}</p>
+                    <ul className="menu-list">
+                      <li>
+                        <Link to={`/${to}`}>See all</Link>
+                      </li>
+                      {collections[childCollection].map(item => (
+                        <li key={item.node.fields.slug}>
+                          <Link to={`/${item.node.fields.slug}`}>
+                            {item.node.frontmatter.title}
                           </Link>
                         </li>
-                        {
-                          collections[childCollection].map(item => (
-                            <li key={item.node.fields.slug}>
-                              <Link to={`/${item.node.fields.slug}`}>
-                                {item.node.frontmatter.title}
-                              </Link>
-                            </li>
-                          ))
-                        }
-                      </ul>
-                    </ React.Fragment >
-                  )
-              }
+                      ))}
+                    </ul>
+                  </React.Fragment>
+                )
+              )}
             </div>
           </div>
         </aside>
@@ -156,13 +148,13 @@ class Navigation extends React.Component {
   }
 }
 
-export default (props) => (
+export default props => (
   <StaticQuery
     query={graphql`
       query {
         navigation: allMarkdownRemark(
-          limit: 1000,
-          filter:{ frontmatter: { fileKey: { eq: "navigation"} }}
+          limit: 1000
+          filter: { frontmatter: { fileKey: { eq: "navigation" } } }
         ) {
           edges {
             node {
@@ -192,7 +184,7 @@ export default (props) => (
         }
       }
     `}
-    render={ data => <Navigation data={data} {...props} /> }
+    render={data => <Navigation data={data} {...props} />}
   />
 )
 

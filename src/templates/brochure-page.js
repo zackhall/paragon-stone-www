@@ -20,32 +20,27 @@ export const BrochurePageTemplate = ({
   return (
     <>
       <Helmet title={`${title} | Paragon Stone Architectural Stone Veneers`} />
-      {
-        bannerImage ?
-          <BannerImage
-            img={bannerImage}
-            title={title}
-            backgroundPosition='center'
-          /> :
-          <section className="section">
-            <container>
-              <h2 className="title is-size-3">
-                {title}
-              </h2>
-            </container>
-          </section>
-      }
+      {bannerImage ? (
+        <BannerImage
+          img={bannerImage}
+          title={title}
+          backgroundPosition="center"
+        />
+      ) : (
+        <section className="section">
+          <container>
+            <h2 className="title is-size-3">{title}</h2>
+          </container>
+        </section>
+      )}
       <section className="section">
         <PageContent className="content" content={content} />
       </section>
 
       <section className="section">
-        <h2 className="title is-2">
-          Download your brochure now.
-        </h2>
+        <h2 className="title is-2">Download your brochure now.</h2>
         <BrochureDownloadForm />
       </section>
-
 
       <div className="section">
         <h2 className="title is-2">
