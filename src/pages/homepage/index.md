@@ -1,7 +1,7 @@
 ---
 templateKey: home-page
 title: Paragon Stone
-bannerImage: /img/banner_paragon-stone-veneers-prairie-stone.png
+bannerImage: /img/banner_paragon-stone-veneers-prairie-stone.jpg
 gallery:
   - image: /img/poplar-bluff-manor-stone.jpg
     text: Poplar Bluff Manor Stone

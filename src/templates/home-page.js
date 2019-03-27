@@ -7,9 +7,9 @@ import Tile from '../components/Tile'
 import Gallery from '../components/Gallery'
 import GalleryItem from '../components/GalleryItem'
 
-import tile1bg from '../img/tile-1-bg.png'
-import tile2bg from '../img/tile-2-bg.png'
-import tile3bg from '../img/tile-3-bg.png'
+import tile1bg from '../img/tile-1-bg.jpg'
+import tile2bg from '../img/tile-2-bg.jpg'
+import tile3bg from '../img/tile-3-bg.jpg'
 import tile4bg from '../img/tile-4-bg.png'
 
 export const HomePageTemplate = ({ title, bannerImage, gallery }) => (
