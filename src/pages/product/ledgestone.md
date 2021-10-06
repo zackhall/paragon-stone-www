@@ -17,7 +17,7 @@ finishes:
   - image: /img/sample_alder-ledgestone.jpg
     name: Alder Ledgestone
   - image: /img/sample_moonlight-mist-ledgestone.jpg
-    name: Moonlight Mist
+    name: Moonlight Mist Ledgestone
   - image: /img/sample_amaretto-ledgestone.jpg
     name: Amaretto Ledgestone
   - image: /img/sample_bluegrass-ledgestone.jpg
