@@ -14,6 +14,10 @@ techSpecs: |-
 categories:
   - Rectangular Stone
 finishes:
+  - image: /img/sample_alder-ledgestone.jpg
+    name: Alder Ledgestone
+  - image: /img/sample_moonlight-mist-ledgestone.jpg
+    name: Moonlight Mist
   - image: /img/sample_amaretto-ledgestone.jpg
     name: Amaretto Ledgestone
   - image: /img/sample_bluegrass-ledgestone.jpg
@@ -26,6 +30,8 @@ finishes:
     name: Poplar Bluff Ledgestone
   - image: /img/sample_rosewood-ledgestone.jpg
     name: Rosewood Ledgestone
+  - image: /img/sample_Cascade-White-Ledgestone.jpg
+    name: Cascade White Ledgestone
 gallery:
   - image: /img/poplar-bluff-ledgestone.jpg
     text: Poplar Bluff Ledgestone
@@ -38,4 +44,3 @@ gallery:
   - image: /img/inspiration_poplar-bluff-ledge-2.jpg
     text: Poplar Bluff Ledgestone
 ---
-
