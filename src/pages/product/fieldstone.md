@@ -14,26 +14,21 @@ categories:
 finishes:
   - image: /img/sample_amaretto-fieldstone.jpg
     name: Amaretto Fieldstone
-  - image: /img/sample_butternut-fieldstone.jpg
-    name: Butternut Fieldstone
   - image: /img/sample_laramie-fieldstone.jpg
     name: Laramie Fieldstone
-  - image: /img/sample_poplar-bluff-fieldstone.jpg
-    name: Poplar Bluff Fieldstone
   - image: /img/sample_Rosewood-Fieldstone.jpg
     name: Rosewood Fieldstone
   - image: /img/sample_sierra-fieldstone.jpg
     name: Sierra Fieldstone
 gallery:
-  - image: /img/Poplar-Bluff-Fieldstone.jpg
-    text: Poplar Bluff Fieldstone
-  - image: /img/Rosewood-Ledgestone_Fieldstone.jpg
-    text: Rosewood Ledgestone & Fieldstone
   - image: /img/Sierra-Fieldstone.jpg
     text: Sierra Fieldstone
+  - image: /img/Rosewood-Ledgestone_Fieldstone.jpg
+    text: Rosewood Ledgestone & Fieldstone
   - image: /img/80-Amaretto-Summit-Ledge-20-Amaretto-Fieldstone.jpg
     text: 80% Amaretto Summit Ledge & 20% Amaretto Fieldstone
   - image: /img/80-Laredo-Mt.-Ledge-20-Laramie-Fieldstone.jpg
     text: 80% Laredo Mt. Ledge & 20% Laramie Fieldstone
+  - image: /img/Poplar-Bluff-Fieldstone.jpg
+    text: Poplar Bluff Fieldstone
 ---
-
