@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link, StaticQuery, graphql } from 'gatsby'
-import _ from 'lodash'
+import chunk from 'lodash/chunk'
 
 import logobw from '../img/logo-bw.svg'
 
@@ -8,13 +8,15 @@ const Footer = ({ data }) => {
   const links =
     data &&
     data.pages &&
-    data.pages.edges.map(page => (
+    data.pages.edges.map((page) => (
       <p key={page.node.id}>
         <Link to={page.node.fields.slug} className="has-text-white">
           {page.node.frontmatter.title}
         </Link>
       </p>
     ))
+
+  const [linkGroup1, linkGroup2] = chunk(links, Math.ceil(links.length / 2))
 
   return (
     <div className="footer">
@@ -47,17 +49,13 @@ const Footer = ({ data }) => {
           </div>
           <div className="column">
             <p className="subtitle is-uppercase has-text-white">Products</p>
-            {_(links)
-              .chunk(Math.ceil(links.length / 2))
-              .first()}
+            {linkGroup1}
           </div>
           <div className="column">
             <p className="subtitle is-uppercase has-text-white is-hidden-touch">
               &nbsp;
             </p>
-            {_(links)
-              .chunk(Math.ceil(links.length / 2))
-              .last()}
+            {linkGroup2}
           </div>
         </div>
       </section>
@@ -65,7 +63,7 @@ const Footer = ({ data }) => {
   )
 }
 
-export default props => (
+export default (props) => (
   <StaticQuery
     query={graphql`
       query {
@@ -86,6 +84,6 @@ export default props => (
         }
       }
     `}
-    render={data => <Footer data={data} {...props} />}
+    render={(data) => <Footer data={data} {...props} />}
   />
 )

@@ -1,4 +1,4 @@
-import CMS from 'netlify-cms'
+import CMS from 'netlify-cms-app'
 
 import FullWidthPagePreview from './preview-templates/FullWidthPagePreview'
 import BlogPostPreview from './preview-templates/BlogPostPreview'

@@ -44,7 +44,7 @@ export class GalleryPageTemplate extends React.Component {
     const { title, images, content, contentComponent } = this.props
 
     const galleryImages = images.map((i, index) => ({
-      ...get(i, 'image.childImageSharp.resolutions'),
+      ...get(i, 'image.childImageSharp.fixed'),
       caption: i.text,
     }))
 
@@ -126,7 +126,7 @@ export const pageQuery = graphql`
         images {
           image {
             childImageSharp {
-              resolutions(width: 1024) {
+              fixed(width: 1024) {
                 width
                 height
                 src

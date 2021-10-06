@@ -22,7 +22,7 @@ GalleryItem.propTypes = {
   title: PropTypes.string,
   offset: PropTypes.number,
   image: PropTypes.object,
-  onClick: PropTypes.function,
+  onClick: PropTypes.func,
 }
 
 export default GalleryItem

@@ -72,9 +72,9 @@ class Navigation extends React.Component {
                   ({ title, to, childCollection }, index) =>
                     childCollection && childCollection.length ? (
                       <Dropdown text={title} to={`/${to}`} key={to}>
-                        {collections[childCollection].map(item => (
+                        {collections[childCollection].map((item) => (
                           <Link
-                            to={`/${item.node.fields.slug}`}
+                            to={`${item.node.fields.slug}`}
                             key={item.node.fields.slug}
                           >
                             {item.node.frontmatter.title}
@@ -113,7 +113,7 @@ class Navigation extends React.Component {
             <div className="menu">
               <p className="menu-label">General</p>
               <ul className="menu-list">
-                {filter(navItems, item => !item.childCollection).map(
+                {filter(navItems, (item) => !item.childCollection).map(
                   ({ to, title }) => (
                     <li key={to}>
                       <Link to={`/${to}`}>{title}</Link>
@@ -121,7 +121,7 @@ class Navigation extends React.Component {
                   )
                 )}
               </ul>
-              {filter(navItems, item => !!item.childCollection).map(
+              {filter(navItems, (item) => !!item.childCollection).map(
                 ({ to, title, childCollection }) => (
                   <React.Fragment key={to}>
                     <p className="menu-label">{title}</p>
@@ -129,9 +129,9 @@ class Navigation extends React.Component {
                       <li>
                         <Link to={`/${to}`}>See all</Link>
                       </li>
-                      {collections[childCollection].map(item => (
+                      {collections[childCollection].map((item) => (
                         <li key={item.node.fields.slug}>
-                          <Link to={`/${item.node.fields.slug}`}>
+                          <Link to={`${item.node.fields.slug}`}>
                             {item.node.frontmatter.title}
                           </Link>
                         </li>
@@ -148,7 +148,7 @@ class Navigation extends React.Component {
   }
 }
 
-export default props => (
+export default (props) => (
   <StaticQuery
     query={graphql`
       query {
@@ -184,7 +184,7 @@ export default props => (
         }
       }
     `}
-    render={data => <Navigation data={data} {...props} />}
+    render={(data) => <Navigation data={data} {...props} />}
   />
 )
 
