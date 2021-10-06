@@ -23,18 +23,16 @@ finishes:
     name: Catalpa Summit Ledge
   - image: /img/sample_Harbor-Oak-Summit-Ledge.jpg
     name: Harbor Oak Summit Ledge
-  - image: /img/sample_laredo-summit-ledge.jpg
-    name: Laredo Summit Ledge
   - image: /img/sample_monterey-summit-ledge.jpg
     name: Monterey
   - image: /img/sample_poplar-bluff-summit-ledge.jpg
     name: Poplar Bluff Summit Ledge
-  - image: /img/sample_sierra-summit-ledge.jpg
-    name: Sierra Summit Ledge
   - image: /img/sample_wisconsin-summit-ledge.jpg
     name: Wisconsin Summit Ledge
-  - image: /img/sample_chestnut-summit-ledge.jpg
-    name: Chestnut Summit Ledge
+  - image: /img/sample_twilight_summit_ledge.jpg
+    name: Twilight Summit Ledge
+  - image: /img/sample_black_birch_summit_ledge.jpg
+    name: Black Birch Summit Ledge
 gallery:
   - image: /img/Catalpa-Summit-Ledge.jpg
     text: Catalpa Summit Ledge
@@ -47,4 +45,3 @@ gallery:
   - image: /img/inspiration_laredo-summit-ledge-3.jpg
     text: Laredo Summit Ledge
 ---
-
