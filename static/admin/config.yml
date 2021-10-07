@@ -100,11 +100,13 @@ collections:
                 name: colors
                 widget: select
                 multiple: true
+                required: false
                 options: ["Alder", "Amaretto", "Auburn", "Birch", "Bluegrass", "Black Birch", "Carbon Grey", "Cascade White", "Catalpa", "Cheyenne", "Clovebrook", "Cinder", "Harbor Oak", "Hickory", "Laramie", "Monterey", "Moonlight Mist", "Ohio Blue Vein", "Ohio Tan", "Ohio White Vein", "Old Town", "Pecan", "Pewter Moon", "Poplar Bluff", "Rosewood", "Sierra", "Smokey Moutain", "Stillwood", "Sycamore", "Tacoma", "Tuscan Sunset", "Twilight", "Walnut", "Wisconsin", "Yucatan"]
               - label: Stones
                 name: stones
                 widget: select
                 multiple: true
+                required: false
                 options: ["Ashlar Stone", "Brick", "Fieldstone", "Ledgestone", "Limestone", "Manor Stone", "Prairie Stone", "River Rock", "Stack Ledge", "Stackstone", "Summit Ledge"]
       - file: "src/pages/brochure/index.md"
         label: "Brochure"
