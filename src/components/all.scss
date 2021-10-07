@@ -1,9 +1,9 @@
 // Config vars
-$paragon-blue: #1A3551;
-$paragon-yellow: #FED839;
-$inactive-color: #8C99A8;
+$paragon-blue: #1a3551;
+$paragon-yellow: #fed839;
+$inactive-color: #8c99a8;
 
-$footer-color: #363B3E;
+$footer-color: #363b3e;
 
 $primary: $paragon-blue;
 $primary-invert: $paragon-yellow;
@@ -17,7 +17,7 @@ $logo-bw: url('../img/logo-bw.svg');
 
 $button-border-width: 2px;
 
-@import "~bulma/sass/utilities/initial-variables";
+@import '~bulma/sass/utilities/initial-variables';
 
 /************
  * Mixins and Partials
@@ -84,7 +84,12 @@ body {
 }
 
 .title,
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: $family-serif;
   font-weight: 400 !important;
   margin-bottom: 1.5rem;
@@ -105,6 +110,11 @@ h1, h2, h3, h4, h5, h6 {
   height: 0;
 }
 
+.btn-ghost {
+  background: none;
+  border: none;
+}
+
 /************
  * Layout helpers
  ***********/
@@ -115,71 +125,159 @@ $spacer-size: 4rem;
 
 .has-padding {
   &-top {
-    &-none { padding-top: 0 !important; }
-    &-small { padding-top: $spacer-size * 0.25 !important; }
-    &-medium { padding-top: $spacer-size * 0.5 !important; }
-    &-large { padding-top: $spacer-size * 1 !important; }
+    &-none {
+      padding-top: 0 !important;
+    }
+    &-small {
+      padding-top: $spacer-size * 0.25 !important;
+    }
+    &-medium {
+      padding-top: $spacer-size * 0.5 !important;
+    }
+    &-large {
+      padding-top: $spacer-size * 1 !important;
+    }
   }
   &-bottom {
-    &-none { padding-bottom: 0 !important; }
-    &-small { padding-bottom: $spacer-size * 0.25 !important; }
-    &-medium { padding-bottom: $spacer-size * 0.5 !important; }
-    &-large { padding-bottom: $spacer-size * 1 !important; }
+    &-none {
+      padding-bottom: 0 !important;
+    }
+    &-small {
+      padding-bottom: $spacer-size * 0.25 !important;
+    }
+    &-medium {
+      padding-bottom: $spacer-size * 0.5 !important;
+    }
+    &-large {
+      padding-bottom: $spacer-size * 1 !important;
+    }
   }
   &-y {
-    &-none { @include padding-y(0); }
-    &-small { @include padding-y($spacer-size * 0.25); }
-    &-medium { @include padding-y($spacer-size * 0.5); }
-    &-large { @include padding-y($spacer-size * 1); }
+    &-none {
+      @include padding-y(0);
+    }
+    &-small {
+      @include padding-y($spacer-size * 0.25);
+    }
+    &-medium {
+      @include padding-y($spacer-size * 0.5);
+    }
+    &-large {
+      @include padding-y($spacer-size * 1);
+    }
   }
   &-right {
-    &-none { padding-right: 0 !important; }
-    &-small { padding-right: $spacer-size * 0.25 !important; }
-    &-medium { padding-right: $spacer-size * 0.5 !important; }
-    &-large { padding-right: $spacer-size * 1 !important; }
+    &-none {
+      padding-right: 0 !important;
+    }
+    &-small {
+      padding-right: $spacer-size * 0.25 !important;
+    }
+    &-medium {
+      padding-right: $spacer-size * 0.5 !important;
+    }
+    &-large {
+      padding-right: $spacer-size * 1 !important;
+    }
   }
   &-left {
-    &-none { padding-left: 0 !important; }
-    &-small { padding-left: $spacer-size * 0.25 !important; }
-    &-medium { padding-left: $spacer-size * 0.5 !important; }
-    &-large { padding-left: $spacer-size * 1 !important; }
+    &-none {
+      padding-left: 0 !important;
+    }
+    &-small {
+      padding-left: $spacer-size * 0.25 !important;
+    }
+    &-medium {
+      padding-left: $spacer-size * 0.5 !important;
+    }
+    &-large {
+      padding-left: $spacer-size * 1 !important;
+    }
   }
   &-x {
-    &-none { @include padding-x(0); }
-    &-small { @include padding-x($spacer-size * 0.25); }
-    &-medium { @include padding-x($spacer-size * 0.5); }
-    &-large { @include padding-x($spacer-size * 1); }
+    &-none {
+      @include padding-x(0);
+    }
+    &-small {
+      @include padding-x($spacer-size * 0.25);
+    }
+    &-medium {
+      @include padding-x($spacer-size * 0.5);
+    }
+    &-large {
+      @include padding-x($spacer-size * 1);
+    }
   }
 }
 
 .has-margin {
   &-top {
-    &-none { margin-top: 0 !important; }
-    &-small { margin-top: $spacer-size * 0.25 !important; }
-    &-medium { margin-top: $spacer-size * 0.5 !important; }
-    &-large { margin-top: $spacer-size * 1 !important; }
-    &-xlarge { margin-top: $spacer-size * 2 !important; }
+    &-none {
+      margin-top: 0 !important;
+    }
+    &-small {
+      margin-top: $spacer-size * 0.25 !important;
+    }
+    &-medium {
+      margin-top: $spacer-size * 0.5 !important;
+    }
+    &-large {
+      margin-top: $spacer-size * 1 !important;
+    }
+    &-xlarge {
+      margin-top: $spacer-size * 2 !important;
+    }
   }
   &-bottom {
-    &-none { margin-bottom: 0 !important; }
-    &-small { margin-bottom: $spacer-size * 0.25 !important; }
-    &-medium { margin-bottom: $spacer-size * 0.5 !important; }
-    &-large { margin-bottom: $spacer-size * 1 !important; }
-    &-xlarge { margin-bottom: $spacer-size * 2 !important; }
+    &-none {
+      margin-bottom: 0 !important;
+    }
+    &-small {
+      margin-bottom: $spacer-size * 0.25 !important;
+    }
+    &-medium {
+      margin-bottom: $spacer-size * 0.5 !important;
+    }
+    &-large {
+      margin-bottom: $spacer-size * 1 !important;
+    }
+    &-xlarge {
+      margin-bottom: $spacer-size * 2 !important;
+    }
   }
   &-y {
-    &-none { @include margin-y(0); }
-    &-small { @include margin-y($spacer-size * 0.25); }
-    &-medium { @include margin-y($spacer-size * 0.5); }
-    &-large { @include margin-y($spacer-size * 1); }
-    &-xlarge { @include margin-y($spacer-size * 2); }
+    &-none {
+      @include margin-y(0);
+    }
+    &-small {
+      @include margin-y($spacer-size * 0.25);
+    }
+    &-medium {
+      @include margin-y($spacer-size * 0.5);
+    }
+    &-large {
+      @include margin-y($spacer-size * 1);
+    }
+    &-xlarge {
+      @include margin-y($spacer-size * 2);
+    }
   }
   &-x {
-    &-none { @include margin-x(0); }
-    &-small { @include margin-x($spacer-size * 0.25); }
-    &-medium { @include margin-x($spacer-size * 0.5); }
-    &-large { @include margin-x($spacer-size * 1); }
-    &-xlarge { @include margin-x($spacer-size * 2); }
+    &-none {
+      @include margin-x(0);
+    }
+    &-small {
+      @include margin-x($spacer-size * 0.25);
+    }
+    &-medium {
+      @include margin-x($spacer-size * 0.5);
+    }
+    &-large {
+      @include margin-x($spacer-size * 1);
+    }
+    &-xlarge {
+      @include margin-x($spacer-size * 2);
+    }
   }
 }
 
@@ -195,7 +293,6 @@ $spacer-size: 4rem;
   order: -1;
 }
 
-
 /************
  * Form elements
  * Styles and variables
@@ -208,16 +305,21 @@ label {
   margin-bottom: 0.25rem;
 }
 
- input,
- textarea {
+.label-spacer {
+  height: 24px;
+  margin-bottom: 0.25rem;
+}
+
+input,
+textarea {
   font-size: 100%;
   outline: 0;
-  padding: .5rem 2.5rem .5rem 1rem;
+  padding: 0.5rem 2.5rem 0.5rem 1rem;
   border: 1px solid currentColor;
-  border-radius: .25rem!important;
+  border-radius: 0.25rem !important;
   background-color: transparent;
-  border: 1px solid rgba(27,31,35,.2);
-  background-color: #FFF;
+  border: 1px solid rgba(27, 31, 35, 0.2);
+  background-color: #fff;
 
   &.full-width {
     width: 100%;
@@ -241,15 +343,15 @@ select {
   appearance: none;
   font-size: 100%;
   outline: 0;
-  padding: .5rem 2.5rem .5rem 1rem;
+  padding: 0.5rem 2.5rem 0.5rem 1rem;
   border: 1px solid currentColor;
-  border-radius: .25rem!important;
+  border-radius: 0.25rem !important;
   background-color: transparent;
-  border: 1px solid rgba(27,31,35,.2);
-  background-color: #FFF;
+  border: 1px solid rgba(27, 31, 35, 0.2);
+  background-color: #fff;
   background-image: $select-icon;
   background-position: center right 1rem;
-  background-size: .5rem .5rem;
+  background-size: 0.5rem 0.5rem;
   background-repeat: no-repeat;
 
   &::-ms-expand {
@@ -257,11 +359,12 @@ select {
   }
   &:focus {
     border-color: #2188ff;
-    box-shadow: inset 0 1px 2px rgba(27,31,35,.075), 0 0 0 0.2em rgba(3,102,214,.3);
+    box-shadow: inset 0 1px 2px rgba(27, 31, 35, 0.075),
+      0 0 0 0.2em rgba(3, 102, 214, 0.3);
   }
   &:hover {
     background-color: #e6ebf1;
-    border-color: rgba(27,31,35,.35);
+    border-color: rgba(27, 31, 35, 0.35);
   }
 
   &.full-width {
@@ -274,17 +377,17 @@ select {
  * Styles and variables
  * Nav animations based on: https://codepen.io/equinusocio/pen/wPvvmv
  ***********/
- $menu-item-color: hsl(0, 0%, 100%) !default;
+$menu-item-color: hsl(0, 0%, 100%) !default;
 //  $menu-item-radius: $radius-small !default;
 //  $menu-item-hover-color: $text-strong !default;
 //  $menu-item-hover-background-color: $background !default;
- $menu-item-active-color: hsl(0, 0%, 96%) !default;
+$menu-item-active-color: hsl(0, 0%, 96%) !default;
 //  $menu-item-active-background-color: $link !default;
 //  $menu-list-border-left: 1px solid $border !default;
- $menu-label-color: $inactive-color !default;
+$menu-label-color: $inactive-color !default;
 
 .navigation {
-  position:relative;
+  position: relative;
   background-image: $nav-bg, $bg-img;
   background-position: center;
   background-blend-mode: overlay;
@@ -353,7 +456,7 @@ select {
   top: 0;
   bottom: 0;
   transform: translateX(100%);
-  transition: transform 0.5s cubic-bezier(0.4, 0.0, 0.2, 1);
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
   transition-delay: 100ms;
   background: $paragon-blue;
   padding: 3.5rem 1.5rem 1.5rem;
@@ -373,7 +476,7 @@ select {
   overflow: auto;
   opacity: 0;
   transform: translateX(30%);
-  transition: all 500ms cubic-bezier(0.4, 0.0, 0.2, 1);
+  transition: all 500ms cubic-bezier(0.4, 0, 0.2, 1);
   transition-delay: 0;
 
   .drawer-menu.is-active & {
@@ -405,7 +508,7 @@ select {
  * Footer
  * Styles and variables
  ***********/
- .footer {
+.footer {
   background: $footer-color !important;
 }
 
@@ -415,7 +518,6 @@ select {
   justify-content: center;
   margin-bottom: 2.5rem;
 }
-
 
 /************
  * BannerImage
@@ -455,7 +557,12 @@ select {
     display: flex;
     justify-content: center;
     align-items: flex-end;
-    background: linear-gradient(to top, rgba(#000, 0.25), rgba(#000, 0.25) 20%, rgba(#000, 0.0) 35%);
+    background: linear-gradient(
+      to top,
+      rgba(#000, 0.25),
+      rgba(#000, 0.25) 20%,
+      rgba(#000, 0) 35%
+    );
   }
 }
 
@@ -501,7 +608,7 @@ select {
   }
 
   &::after {
-    content: "";
+    content: '';
     background: $logo-bw;
     opacity: 0.25;
     top: 0;
@@ -524,7 +631,7 @@ select {
   padding: calc(0.75 * 100%) 0 0 0 !important;
   flex: 0 0 100%;
   box-sizing: border-box;
-  overflow:hidden;
+  overflow: hidden;
   z-index: 99;
 
   @media screen and (min-width: 1088px) {
@@ -584,9 +691,19 @@ select {
 .gallery-icon {
   @extend %material-icons;
   cursor: pointer;
-  margin: 1rem;
+  padding: 1rem 0.25rem;
   font-size: 2rem;
   user-select: none;
+  background: none;
+  border: none;
+
+  &:hover {
+    text-decoration: none;
+  }
+
+  & + .gallery-icon {
+    margin-left: 1rem;
+  }
 }
 
 /************
@@ -596,7 +713,7 @@ select {
 .block {
   height: 100%;
   width: 100%;
-  box-shadow: 0 2px 24px 0 rgba(0,0,0,0.26);
+  box-shadow: 0 2px 24px 0 rgba(0, 0, 0, 0.26);
   background-color: #fff;
   padding: 1em 1.5em;
   display: flex;
@@ -641,12 +758,11 @@ select {
  * Product Page
  * Styles and variables
  ***********/
- .tech-specs-container {
-   background: $paragon-blue;
- }
+.tech-specs-container {
+  background: $paragon-blue;
+}
 
-
- /************
+/************
  * Dropdown
  * Styles and variables
  ***********/
@@ -678,7 +794,7 @@ select {
     background: $bg-img;
     z-index: 99;
     border-radius: 5px;
-    box-shadow: 0 2px 24px 0 rgba(0,0,0,0.26);
+    box-shadow: 0 2px 24px 0 rgba(0, 0, 0, 0.26);
 
     li {
       @include margin-y(0.5rem);
@@ -693,10 +809,7 @@ select {
     opacity: 1;
     display: block;
   }
-
 }
-
-
 
 /************
  * Modify Bulma Sections
@@ -740,4 +853,4 @@ select {
   margin-top: 0 !important;
 }
 
-@import "~bulma";
+@import '~bulma';

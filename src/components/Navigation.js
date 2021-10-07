@@ -48,14 +48,14 @@ class Navigation extends React.Component {
 
     return (
       <nav className="navigation">
-        <span
-          className="navigation--mobile-menu-btn nav-icon is-hidden-desktop"
+        <button
+          className="navigation--mobile-menu-btn nav-icon is-hidden-desktop btn-ghost"
           onClick={() =>
             this.setState({ isDrawerActive: !this.state.isDrawerActive })
           }
         >
           menu
-        </span>
+        </button>
         <div className="section">
           <div className="columns is-mobile is-vcentered">
             <div className="column has-text-left is-hidden-touch">
@@ -100,14 +100,14 @@ class Navigation extends React.Component {
           }
         >
           <div className="nav-controls">
-            <span
-              className="nav-icon nav-icon-inverted"
+            <button
+              className="nav-icon nav-icon-inverted btn-ghost"
               onClick={() =>
                 this.setState({ isDrawerActive: !this.state.isDrawerActive })
               }
             >
               close
-            </span>
+            </button>
           </div>
           <div className="menu-container has-text-centered">
             <div className="menu">
@@ -148,7 +148,7 @@ class Navigation extends React.Component {
   }
 }
 
-export default (props) => (
+const NavigationWithQuery = (props) => (
   <StaticQuery
     query={graphql`
       query {
@@ -188,4 +188,4 @@ export default (props) => (
   />
 )
 
-// export default Navigation
+export default NavigationWithQuery

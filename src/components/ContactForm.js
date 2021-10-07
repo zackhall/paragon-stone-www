@@ -29,9 +29,9 @@ const ContactFormSchema = Yup.object().shape({
   recaptcha: Yup.string().required(),
 })
 
-const encode = data => {
+const encode = (data) => {
   return Object.keys(data)
-    .map(key => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
+    .map((key) => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
     .join('&')
 }
 
@@ -68,9 +68,9 @@ class ContactForm extends React.Component {
           <input type="text" name="company" />
           <input type="email" name="email" />
           <input type="tel" name="phone" />
-          <select name="role" />
+          <select name="role">Role</select>
           <textarea name="message" />
-          <select name="referrer" />
+          <select name="referrer">Referrer</select>
           <input type="text" name="recaptcha" />
           <div data-netlify-recaptcha="true" />
         </form>
@@ -88,7 +88,7 @@ class ContactForm extends React.Component {
             recaptcha: '',
           }}
           validationSchema={ContactFormSchema}
-          onSubmit={values => {
+          onSubmit={(values) => {
             // same shape as initial values
             console.log(values)
             fetch('/', {
@@ -97,7 +97,7 @@ class ContactForm extends React.Component {
               body: encode({ 'form-name': 'contact-page', ...values }),
             })
               .then(() => navigate('/brochure/thanks'))
-              .catch(error => alert(error))
+              .catch((error) => alert(error))
           }}
         >
           {({ errors, touched, handleSubmit, setFieldValue }) => (
@@ -218,12 +218,13 @@ class ContactForm extends React.Component {
               </div>
               <div className="columns">
                 <div className="column">
-                  <label>Recaptcha Validation</label>
+                  <label htmlFor="recaptcha">Recaptcha Validation</label>
                   <Recaptcha
                     sitekey="6Lf7YJAUAAAAALXXdQwOuP3beVvRxouculbRmvcu"
                     render="explicit"
                     theme="dark"
-                    verifyCallback={response => {
+                    name="recaptcha"
+                    verifyCallback={(response) => {
                       setFieldValue('recaptcha', response)
                     }}
                     onloadCallback={() => {

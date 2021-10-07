@@ -9,9 +9,9 @@ const BrochureFormSchema = Yup.object().shape({
     .required('E-mail is required.'),
 })
 
-const encode = data => {
+const encode = (data) => {
   return Object.keys(data)
-    .map(key => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
+    .map((key) => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
     .join('&')
 }
 
@@ -30,7 +30,7 @@ const BrochureDownloadForm = () => (
         email: '',
       }}
       validationSchema={BrochureFormSchema}
-      onSubmit={values => {
+      onSubmit={(values) => {
         // same shape as initial values
         console.log(values)
         fetch('/', {
@@ -39,7 +39,7 @@ const BrochureDownloadForm = () => (
           body: encode({ 'form-name': 'download-brochure', ...values }),
         })
           .then(() => navigate('/brochure/thanks'))
-          .catch(error => alert(error))
+          .catch((error) => alert(error))
       }}
     >
       {({ errors, touched, handleSubmit }) => (
@@ -53,8 +53,8 @@ const BrochureDownloadForm = () => (
               </div>
             </div>
             <div className="column">
-              {/* Empty label for spacing. */}
-              <label>&nbsp;</label>
+              {/* Empty div to match spacing of label. */}
+              <div className="label-spacer" />
               <button
                 className="button"
                 type="submit"

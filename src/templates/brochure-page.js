@@ -9,7 +9,7 @@ import Layout from '../components/Layout'
 import BrochureDownloadForm from '../components/BrochureDownloadForm'
 import BrochureRequestForm from '../components/BrochureRequestForm'
 
-export const BrochurePageTemplate = ({
+const BrochurePageTemplate = ({
   title,
   bannerImage,
   content,

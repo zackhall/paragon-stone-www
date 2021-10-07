@@ -10,7 +10,7 @@ import Content, { HTMLContent } from '../components/Content'
 import Collection from '../components/Collection'
 import Layout from '../components/Layout'
 
-export const CollectionsPageTemplate = ({
+const CollectionsPageTemplate = ({
   title,
   bannerImage,
   content,
@@ -54,7 +54,7 @@ export const CollectionsPageTemplate = ({
             }
             return 0
           })
-          .map(key => (
+          .map((key) => (
             <Collection
               title={key.toUpperCase() !== 'NONE' ? key : 'Other'}
               products={collections[key]}
@@ -75,7 +75,7 @@ CollectionsPageTemplate.propTypes = {
 
 const CollectionsPage = ({ data }) => {
   const { markdownRemark: post } = data
-  const products = get(data, 'allMarkdownRemark.edges', []).map(product => ({
+  const products = get(data, 'allMarkdownRemark.edges', []).map((product) => ({
     slug: get(product, 'node.fields.slug'),
     name: get(product, 'node.frontmatter.title'),
     image: get(product, 'node.frontmatter.finishes[0].image'),

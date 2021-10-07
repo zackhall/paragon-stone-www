@@ -8,7 +8,7 @@ import BannerImage from '../components/BannerImage'
 import Gallery from '../components/Gallery'
 import GalleryItem from '../components/GalleryItem'
 
-export const AccessoryPageTemplate = ({
+const AccessoryPageTemplate = ({
   title,
   description,
   techSpecs,

@@ -8,7 +8,7 @@ import ContactForm from '../components/ContactForm'
 import Content, { HTMLContent } from '../components/Content'
 import Layout from '../components/Layout'
 
-export const ContactPageTemplate = ({
+const ContactPageTemplate = ({
   title,
   bannerImage,
   content,

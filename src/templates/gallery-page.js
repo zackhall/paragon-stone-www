@@ -9,7 +9,7 @@ import Helmet from 'react-helmet'
 import Content, { HTMLContent } from '../components/Content'
 import Layout from '../components/Layout'
 
-export class GalleryPageTemplate extends React.Component {
+class GalleryPageTemplate extends React.Component {
   constructor() {
     super()
     this.state = { currentImage: 0 }

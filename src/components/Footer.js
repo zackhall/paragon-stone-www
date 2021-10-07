@@ -63,7 +63,7 @@ const Footer = ({ data }) => {
   )
 }
 
-export default (props) => (
+const FooterWithQuery = (props) => (
   <StaticQuery
     query={graphql`
       query {
@@ -87,3 +87,5 @@ export default (props) => (
     render={(data) => <Footer data={data} {...props} />}
   />
 )
+
+export default FooterWithQuery

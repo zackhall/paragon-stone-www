@@ -7,7 +7,7 @@ import Helmet from 'react-helmet'
 import Content, { HTMLContent } from '../components/Content'
 import Layout from '../components/Layout'
 
-export const TwoColumnPageTemplate = ({
+const TwoColumnPageTemplate = ({
   title,
   bannerImage,
   content,

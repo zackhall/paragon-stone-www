@@ -9,7 +9,7 @@ import BannerImage from '../components/BannerImage'
 import Gallery from '../components/Gallery'
 import GalleryItem from '../components/GalleryItem'
 
-export const ProductPageTemplate = ({
+const ProductPageTemplate = ({
   title,
   description,
   techSpecs,

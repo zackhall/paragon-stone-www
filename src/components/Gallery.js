@@ -10,7 +10,7 @@ class Gallery extends React.Component {
     }
   }
 
-  scrollTo = to => {
+  scrollTo = (to) => {
     this.refs.primary.scrollTo(to)
     this.refs.next.scrollTo(to)
     this.refs.prev.scrollTo(to)
@@ -105,18 +105,20 @@ class Gallery extends React.Component {
             </div>
             {length > 1 ? (
               <div>
-                <span
+                <button
+                  aria-label="Previous gallery item"
                   className="gallery-icon"
                   onClick={() => this.scrollTo(this.mod(index - 1, length))}
                 >
                   arrow_back
-                </span>
-                <span
+                </button>
+                <button
+                  aria-label="Next gallery item"
                   className="gallery-icon"
                   onClick={() => this.scrollTo(this.mod(index + 1, length))}
                 >
                   arrow_forward
-                </span>
+                </button>
               </div>
             ) : null}
           </div>
