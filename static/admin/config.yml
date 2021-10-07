@@ -85,7 +85,7 @@ collections:
         fields:
           - {label: "Template Key", name: "templateKey", widget: "hidden", default: "gallery-page"}
           - {label: Title, name: "title", widget: "string"}
-          - {label: Images, name: "images", widget: list, fields: [{label: Image, name: image, widget: image}, {label: Text, name: text, widget: text}] }
+          - {label: Images, name: "images", widget: list, fields: [{label: Image, name: image, widget: image}, {label: Text, name: text, widget: text}, {label: Tags, name: tags, widget: list}] }
           - {label: "Body", name: "body", widget: "markdown"}
       - file: "src/pages/brochure/index.md"
         label: "Brochure"
