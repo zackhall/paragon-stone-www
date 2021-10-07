@@ -85,7 +85,7 @@ collections:
         fields:
           - {label: "Template Key", name: "templateKey", widget: "hidden", default: "gallery-page"}
           - {label: Title, name: "title", widget: "string"}
-          - {label: Images, name: "images", widget: list, fields: [{label: Image, name: image, widget: image}, {label: Text, name: text, widget: text}, {label: Tags, name: tags, widget: list, field: { label: "Tag", name: "tag", widget: "string" }}] }
+          - {label: Images, name: "images", widget: list, fields: [{label: Image, name: image, widget: image}, {label: Text, name: text, widget: text}, {label: Colors, name: colors, widget: list, field: { label: "Color", name: "color", widget: "string" }}, {label: Stones, name: stones, widget: list, field: { label: "Stone", name: "stone", widget: "string" }}] }
           - {label: "Body", name: "body", widget: "markdown"}
       - file: "src/pages/brochure/index.md"
         label: "Brochure"
