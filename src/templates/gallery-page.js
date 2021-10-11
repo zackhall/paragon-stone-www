@@ -96,33 +96,37 @@ const GalleryPageTemplate = ({ title, images, content, contentComponent }) => {
             <span className="icon-font valign-sub">filter_list</span>
             <span className="is-size-5">&nbsp;Filters</span>
           </div>
-          <select
-            className="mr-2"
-            onChange={(event) => setStoneFilter(event.target.value)}
-            value={stoneFilter}
-          >
-            <option value="">Stone type</option>
-            <option value="">None</option>
-            {stones.map((stone) => (
-              <option value={stone}>{stone}</option>
-            ))}
-          </select>
+          <div className="is-inline-block-tablet is-block-mobile">
+            <select
+              className="mr-2 my-2"
+              onChange={(event) => setStoneFilter(event.target.value)}
+              value={stoneFilter}
+            >
+              <option value="">Stone type</option>
+              <option value="">None</option>
+              {stones.map((stone) => (
+                <option value={stone}>{stone}</option>
+              ))}
+            </select>
 
-          <select
-            className="mr-2"
-            onChange={(event) => setColorFilter(event.target.value)}
-            value={colorFilter}
-          >
-            <option value="">Stone color</option>
-            <option value="">None</option>
-            {colors.map((color) => (
-              <option value={color}>{color}</option>
-            ))}
-          </select>
+            <select
+              className="mr-2 my-2"
+              onChange={(event) => setColorFilter(event.target.value)}
+              value={colorFilter}
+            >
+              <option value="">Stone color</option>
+              <option value="">None</option>
+              {colors.map((color) => (
+                <option value={color}>{color}</option>
+              ))}
+            </select>
+          </div>
 
-          <button className="button is-ghost" onClick={clearFilters}>
-            Clear
-          </button>
+          {(!!stoneFilter || !!colorFilter) && (
+            <button className="button is-ghost my-2" onClick={clearFilters}>
+              Clear
+            </button>
+          )}
         </div>
 
         {!!galleryImages.length ? (
