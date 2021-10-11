@@ -5,7 +5,7 @@ import groupBy from 'lodash/groupBy'
 import filter from 'lodash/filter'
 
 import logo from '../img/logo.svg'
-import Dropdown from '../components/Dropdown'
+import Dropdown from './NavDropdown'
 
 class Navigation extends React.Component {
   constructor(props) {

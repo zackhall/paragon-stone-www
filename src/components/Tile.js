@@ -12,8 +12,8 @@ const Tile = ({
 }) => (
   <div
     className={`
-      block
-      ${size === 4 ? 'block--height-2' : 'block--height-1'}
+      tile
+      ${size === 4 ? 'tile--height-2' : 'tile--height-1'}
       ${isInverted && 'has-text-white'}
     `}
     style={{

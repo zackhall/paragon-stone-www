@@ -1,3 +1,5 @@
+@use "sass:map";
+
 // Config vars
 $paragon-blue: #1a3551;
 $paragon-yellow: #fed839;
@@ -18,6 +20,24 @@ $logo-bw: url('../img/logo-bw.svg');
 $button-border-width: 2px;
 
 @import '~bulma/sass/utilities/initial-variables';
+@import '~bulma/sass/helpers/spacing';
+
+@debug $spacing-values;
+
+@mixin add-spacing-size($space, $size) {
+  $spacing-values: map.merge(
+    $spacing-values,
+    (
+      $space: $size,
+    )
+  ) !global;
+}
+
+@include add-spacing-size('extra-large', 10rem);
+
+@debug $spacing-values;
+
+@import '~bulma';
 
 /************
  * Mixins and Partials
@@ -113,6 +133,18 @@ h6 {
 .btn-ghost {
   background: none;
   border: none;
+}
+
+.valign {
+  &-top {
+    vertical-align: top;
+  }
+  &-bottom {
+    vertical-align: bottom;
+  }
+  &-sub {
+    vertical-align: sub;
+  }
 }
 
 /************
@@ -710,7 +742,7 @@ $menu-label-color: $inactive-color !default;
  * Tile
  * Styles and variables
  ***********/
-.block {
+.tile {
   height: 100%;
   width: 100%;
   box-shadow: 0 2px 24px 0 rgba(0, 0, 0, 0.26);
@@ -721,7 +753,7 @@ $menu-label-color: $inactive-color !default;
   flex-direction: column;
   background-repeat: no-repeat;
 
-  &.block--height-1 {
+  &.tile--height-1 {
     min-height: 240px;
 
     @media screen and (min-width: 1088px) {
@@ -737,7 +769,7 @@ $menu-label-color: $inactive-color !default;
     }
   }
 
-  &.block--height-2 {
+  &.tile--height-2 {
     min-height: 240px;
 
     @media screen and (min-width: 1088px) {
@@ -852,5 +884,3 @@ $menu-label-color: $inactive-color !default;
 .margin-top-0 {
   margin-top: 0 !important;
 }
-
-@import '~bulma';
